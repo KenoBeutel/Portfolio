@@ -103,3 +103,35 @@ main {
   .project { grid-template-columns: 1fr; }
   .project-content h2 { font-size: 2.25rem; }
 }
+/* --- Carousel (Planto) --- */
+.carousel { position: relative; }
+.carousel img {
+  display: block; width: 100%; height: auto;
+  transition: opacity .25s ease;
+}
+
+/* Dot-Navigation */
+.carousel-dots {
+  position: absolute; left: 50%; bottom: .75rem; transform: translateX(-50%);
+  display: flex; gap: .5rem; align-items: center;
+  padding: .35rem .55rem;
+  border-radius: 999px;
+  background: rgba(245, 241, 239, .6); /* dezent, passend zu --bg-page */
+  backdrop-filter: blur(2px);
+}
+.carousel .dot {
+  width: 8px; height: 8px; border-radius: 999px;
+  border: 0; cursor: pointer;
+  background: currentColor; opacity: .35;
+}
+.carousel .dot.is-active { opacity: 1; }
+.carousel .dot:focus-visible {
+  outline: 2px solid rgba(0,0,0,.35); outline-offset: 3px;
+}
+
+/* Aspect-Ratio wechselt je nach Bild */
+.project-image.carousel.portrait { aspect-ratio: 4 / 5; max-height: 600px; }
+.project-image.carousel.portrait img { width: auto; height: 100%; object-fit: cover; }
+.project-image.carousel.landscape { aspect-ratio: 16 / 9; }
+.project-image.carousel.landscape img { width: 100%; height: auto; object-fit: cover; }
+

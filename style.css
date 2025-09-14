@@ -145,3 +145,9 @@ main {
   height: auto;      /* keine Zwangshöhe mehr */
   object-fit: initial; /* object-fit greift bei height:auto sowieso nicht – nur zur Klarheit */
 }
+/* Aktiver Menüpunkt */
+.nav-list a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.logo { text-decoration: none; color: inherit; } /* Logo ist jetzt ein Link */

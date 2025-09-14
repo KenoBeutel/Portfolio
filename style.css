@@ -211,74 +211,89 @@ main {
   transition: transform .2s ease;
 }
 
-/* === Music: Professional Release Card (v2) === */
-:root {
-  --maxw: 1100px;
-  --gap-xl: 3rem;
-  --gap-lg: 2rem;
-  --gap-md: 1.1rem;    /* etwas kompakter */
-  --text-muted: #575757;
-  --rule: #e9e7e5;
-  --cover-w: 260px;    /* Größe des Covers – hier anpassen (z. B. 240/280) */
-}
-
-.music-section {
-  width: 90%;
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 4rem 0;
+/* Hero-Layout für Releases */
+.hero-layout {
   display: grid;
-  gap: var(--gap-xl);
-}
-
-.release-card {
-  display: grid;
-  grid-template-columns: var(--cover-w) 1fr;
-  gap: var(--gap-xl);
+  grid-template-columns: 320px 1fr;  /* Coverbreite + Content */
   align-items: start;
-  padding: 0 0 var(--gap-xl);
-  border-bottom: 1px solid var(--rule);
+  gap: 2.5rem;
 }
 
-/* Cover als „Passepartout“: hebt sich vom beige Background ab, ohne runde Ecken */
-.release-cover {
+.hero-layout .release-cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: #fff;
-  padding: 14px;                      /* Weißrand (Matte) */
-  border: 1px solid #e6e3e0;          /* feine Kontur */
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);  /* sehr dezente Tiefe */
+  padding: 18px;
+  border: 1px solid #e6e3e0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
-.release-cover img { width: 100%; height: auto; display: block; }
 
-.release-body { display: grid; gap: var(--gap-md); } /* kompakter Gesamtabstand */
+.hero-layout .release-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-.release-header { display: grid; gap: .7rem; }       /* MEHR Platz zw. Titel & Meta */
+.release-right {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Header oben, Credits mittig, Player unten */
+  gap: 1.2rem;
+}
+
+.release-header {
+  display: grid;
+  gap: .7rem;
+}
+
 .release-title {
-  font-size: clamp(2.1rem, 1.2rem + 2.2vw, 3rem);
-  font-weight: 800; line-height: 1.1; margin: 0;
+  font-size: clamp(2.2rem, 1.5rem + 1.8vw, 3rem);
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.1;
 }
-.release-title .dash { opacity: .5; margin: 0 .45ch; }
 
 .release-meta {
-  display: flex; flex-wrap: wrap; gap: 1rem;
-  color: var(--text-muted); font-size: .98rem;
+  display: flex;
+  gap: 1rem;
+  font-size: 0.95rem;
+  color: #555;
 }
-.release-meta .dot { opacity: .5; }
 
-.release-credits { color: var(--text-muted); display: grid; gap: .3rem; font-size: .95rem; }
+.release-credits {
+  font-size: 0.95rem;
+  color: #555;
+  display: grid;
+  gap: .3rem;
+}
+
 .release-credits .label {
-  text-transform: uppercase; letter-spacing: .08em;
-  font-size: .78rem; color: var(--text-muted); margin-right: .35rem;
+  font-size: 0.78rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-right: .3rem;
+  color: #777;
 }
 
-.release-player { max-width: 720px; } /* Player nicht überbreit */
+.release-player iframe {
+  width: 100%;
+  display: block;
+}
 
-@media (max-width: 980px) {
-  :root { --cover-w: 220px; }
+/* Responsive */
+@media (max-width: 960px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+  }
+  .hero-layout .release-cover {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .release-right {
+    grid-template-rows: auto auto auto;
+  }
 }
-@media (max-width: 760px) {
-  .release-card { grid-template-columns: 1fr; gap: var(--gap-lg); }
-  .release-player { max-width: none; }
-}
+
 
 
 

@@ -193,6 +193,41 @@
   <script>
     // Jahr im Footer
     document.getElementById('year').textContent = new Date().getFullYear();
+
+
+<script>
+  // Bild-Carousel (ohne Dependencies)
+  document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+    const img  = carousel.querySelector('img');
+    const dots = carousel.querySelectorAll('.dot');
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        if (dot.classList.contains('is-active')) return;
+
+        // Active-State aktualisieren
+        dots.forEach(d => { d.classList.remove('is-active'); d.setAttribute('aria-selected','false'); });
+        dot.classList.add('is-active'); dot.setAttribute('aria-selected','true');
+
+        // Bild & Alt-Text setzen
+        const nextSrc    = dot.getAttribute('data-src');
+        const nextAlt    = dot.getAttribute('data-alt') || '';
+        const nextAspect = dot.getAttribute('data-aspect'); // 'portrait' | 'landscape'
+
+        img.style.opacity = '0';
+        const onLoad = () => { img.style.opacity = '1'; img.removeEventListener('load', onLoad); };
+        img.addEventListener('load', onLoad);
+        img.src = nextSrc; img.alt = nextAlt;
+
+        // Aspect-Ratio umschalten
+        carousel.classList.remove('portrait','landscape');
+        if (nextAspect) carousel.classList.add(nextAspect);
+      });
+    });
+  });
+</script>
+
+    
   </script>
 </body>
 </html>

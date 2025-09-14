@@ -24,40 +24,54 @@
     <p class="music-intro">Ausgewählte Veröffentlichungen aus Bands & Projekten.</p>
 
     <!-- Projekt 1: Miles of Hope – Shark Bait -->
-    <article class="music-project">
-  <div class="album-cover">
-    <img src="https://f4.bcbits.com/img/a2727000644_16.jpg" alt="Albumcover Miles of Hope – Shark Bait">
+   <article class="release-card">
+  <div class="release-cover">
+    <img src="https://f4.bcbits.com/img/a2727000644_16.jpg" alt="Miles of Hope — Shark Bait Cover">
   </div>
 
-  <div class="album-info">
-    <h3 class="album-title">
-      <span class="band">Miles of Hope</span> — 
+  <div class="release-body">
+    <h3 class="release-title">
+      <span class="band">Miles of Hope</span>
+      <span class="dash">—</span>
       <span class="title">Shark Bait</span>
     </h3>
 
-    <ul class="album-meta">
-      <li>🎵 <strong>Instrument:</strong> Drums</li>
-      <li>📅 <strong>Release:</strong> 2023</li>
-      <li>🎧 <strong>Genre:</strong> Emo</li>
-    </ul>
+    <div class="release-meta">
+      <span class="meta-item">🥁 Drums</span>
+      <span class="dot">•</span>
+      <span class="meta-item">2023</span>
+      <span class="dot">•</span>
+      <span class="meta-item">Emo</span>
+    </div>
 
-    <div class="embed">
-      <iframe style="border: 0; width: 100%; height: 120px;"
+    <!-- Player -->
+    <div class="release-player">
+      <iframe style="border:0;width:100%;height:120px"
         src="https://bandcamp.com/EmbeddedPlayer/track=725278362/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
-        seamless>
-        <a href="https://milesofhope.bandcamp.com/track/shark-bait">
-          Shark Bait von Miles of Hope
-        </a>
+        loading="lazy" seamless>
+        <a href="https://milesofhope.bandcamp.com/track/shark-bait">Shark Bait von Miles of Hope</a>
       </iframe>
     </div>
 
-    <div class="album-credits">
+    <div class="release-sep" aria-hidden="true"></div>
+
+    <div class="release-credits">
       <p><strong>Credits:</strong> Daniel Müller, Dennis Thiele, Falk Nagel</p>
       <p><strong>Artwork:</strong> Sebastian von Haaren</p>
-      <p><a href="https://milesofhope.bandcamp.com/track/shark-bait" target="_blank" rel="noopener">Bandcamp-Seite</a></p>
+      <p><a class="release-link" href="https://milesofhope.bandcamp.com/track/shark-bait" target="_blank" rel="noopener">Bandcamp-Seite</a></p>
     </div>
+
+    <!-- Optional Video: einfach einkommentieren -->
+    <!--
+    <div class="release-video">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Music Video" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen loading="lazy"></iframe>
+    </div>
+    -->
   </div>
 </article>
+
 
   </main>
 </body>

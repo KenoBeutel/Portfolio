@@ -247,28 +247,65 @@ main {
   color: #444;
 }
 
-/* Release Layout */
-.release {
-  background: transparent;       /* kein weißer Block */
-  border: none;
-  padding: 0;
+/* ===== MUSIC (final override) ===== */
+:root {
+  --release-maxw: 1100px;
+  --cover-col: 340px;             /* Coverbreite -> gern 360 probieren */
+  --muted: #575757;
+}
+
+/* Section-Header wie Photography */
+.music-section {
+  width: 90%;
+  max-width: var(--release-maxw);
+  margin: 0 auto;
+  padding: 4rem 0;
+  display: grid;
+  gap: 3rem;
+}
+.music-section .section-header {
+  margin-bottom: 2rem;
+}
+.music-section .section-header h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: .5rem;
+}
+.music-section .section-header .subtitle {
+  display: block;
+  font-size: .875rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 1rem;
+}
+.music-section .section-header p { color:#444; }
+
+/* ---------- RELEASE LAYOUT (mit Resets) ---------- */
+.music-section .release {
+  /* harte Resets gegen ältere Regeln */
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+
   display: grid;
   grid-template-columns: var(--cover-col) 1fr;
   column-gap: 2.5rem;
   align-items: start;
 }
-.release + .release {
-  margin-top: 2.5rem;           /* Abstand zwischen Releases */
-}
+.music-section .release + .release { margin-top: 2.5rem; }
 
-/* Cover links, nur feine schwarze Kontur */
-.release__media {
-  margin: 0;
+/* Cover links, nur feine schwarze Linie */
+.music-section .release__media {
+  margin: 0 !important;
   height: 100%;
-  background: transparent;
-  outline: 1px solid #111;       /* schwarze Linie */
+  background: transparent !important;
+  padding: 0 !important;
+  outline: 1px solid #111;     /* die gewünschte feine Linie */
+  box-shadow: none !important;
+  border: 0 !important;
 }
-.release__media img {
+.music-section .release__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -276,40 +313,38 @@ main {
 }
 
 /* Rechte Spalte */
-.release__body {
+.music-section .release__body {
   display: flex;
   flex-direction: column;
   min-height: 0;
 }
 
-.release__header {
-  margin-bottom: 0.5rem;
-}
-.release__title {
+/* Header: Titel einzeilig, mehr Luft zum Meta */
+.music-section .release__header { margin-bottom: .5rem; }
+.music-section .release__title {
   margin: 0 0 .35rem 0;
-  font-size: clamp(1.8rem, 1.1rem + 1.8vw, 2.6rem);
+  font-size: clamp(1.7rem, 1.05rem + 1.8vw, 2.4rem); /* leicht kleiner -> bleibt einzeilig */
   font-weight: 800;
   line-height: 1.08;
   letter-spacing: .01em;
-  white-space: nowrap;           /* bleibt einzeilig auf Desktop */
+  white-space: nowrap;          /* EINZEILIG auf Desktop */
+  word-break: keep-all;
 }
-.release__title .dash {
-  opacity: .5;
-  margin: 0 .4ch;
-}
-.release__meta {
+.music-section .release__title .dash { opacity:.5; margin: 0 .4ch; }
+
+.music-section .release__meta {
   margin: 0;
   color: var(--muted);
   font-size: .98rem;
 }
 
-/* Credits über dem Player */
-.release__credits {
+/* Credits kompakt, über dem Player */
+.music-section .release__credits {
   margin-top: .7rem;
   color: var(--muted);
   font-size: .95rem;
 }
-.release__credits .label {
+.music-section .release__credits .label {
   text-transform: uppercase;
   letter-spacing: .08em;
   font-size: .78rem;
@@ -317,40 +352,30 @@ main {
   margin-right: .4rem;
 }
 
-/* Player mit Luft nach oben */
-.release__player {
-  margin-top: 1.2rem;
+/* Player mit Luft nach oben, nicht zu breit */
+.music-section .release__player {
+  margin-top: 1.2rem;       /* Abstand, damit er nicht „klebt“ */
   max-width: 760px;
 }
-.release__player iframe {
+.music-section .release__player iframe {
   width: 100%;
   display: block;
 }
 
-/* Responsive */
+/* ---------- Responsive ---------- */
 @media (max-width: 960px) {
   :root { --cover-col: 300px; }
-  .release {
-    column-gap: 2rem;
-  }
+  .music-section .release { column-gap: 2rem; }
 }
 @media (max-width: 760px) {
-  .release {
+  .music-section .release {
     grid-template-columns: 1fr;
     row-gap: 1rem;
   }
-  .release__title {
-    white-space: normal;       /* darf auf kleinen Screens umbrechen */
-  }
-  .release__media {
-    height: auto;
-  }
-  .release__media img {
-    height: auto;
-  }
-  .release__player {
-    max-width: none;
-  }
+  .music-section .release__title { white-space: normal; } /* darf mobil umbrechen */
+  .music-section .release__media,
+  .music-section .release__media img { height: auto; }
+  .music-section .release__player { max-width: none; }
 }
 
 

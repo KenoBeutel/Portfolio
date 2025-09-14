@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About &amp; Contact — Sebastian von Haaren</title>
+  <meta name="description" content="Über Sebastian von Haaren und Kontaktmöglichkeiten.">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Direkt zum Inhalt</a>
 
+  <header class="site-header">
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav-list">
+        <li><a href="./projects.html">Projects</a></li>
+        <li><a href="./photography.html">Photography</a></li>
+        <li><a href="./music.html">Music</a></li>
+        <li><a href="./about.html" aria-current="page">About &amp; Contact</a></li>
+      </ul>
+      <a class="logo" href="./">SEBASTIAN VON HAAREN</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <section class="intro">
+      <h1>About &amp; Contact</h1>
+      <p>Kurzvita, Arbeitsweise und direkte Kontaktmöglichkeiten folgen hier demnächst.</p>
+      <p>Schreib mir schon jetzt: <a href="mailto:hello@example.com">hello@example.com</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer" aria-label="Fußbereich">
+    <div class="footer-inner">
+      <p>&copy; <span id="year"></span> Sebastian von Haaren</p>
+      <p>Kontakt: <a href="mailto:hello@example.com">hello@example.com</a></p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

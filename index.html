@@ -3,27 +3,51 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Portfolio — Sebastian von Haaren</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Portfolio von Sebastian von Haaren: Grafikdesign, Branding, Editorial & Musik. Auswahl an Projekten, Fotografie und Kontaktdaten.">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Portfolio — Sebastian von Haaren">
+  <meta property="og:description" content="Grafikdesign, Branding, Editorial & Musik. Auswahl an Projekten und Kontaktdaten.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://cdn.glitch.global/7979987f-7bd8-4a37-a1a8-8a0b20a088de/NMCover.png?v=1747828127983">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav>
+  <!-- Skip to content -->
+  <a class="skip-link" href="#main">Direkt zum Inhalt</a>
+
+  <header class="site-header">
+    <nav aria-label="Hauptnavigation">
       <ul class="nav-list">
         <li><a href="#films">Projects</a></li>
         <li><a href="#photography">Photography</a></li>
         <li><a href="#reel">Music</a></li>
         <li><a href="#about">About &amp; Contact</a></li>
       </ul>
-      <div class="logo">SEBASTIAN VON HAAREN</div>
+      <div class="logo" aria-label="Logo">SEBASTIAN VON HAAREN</div>
     </nav>
   </header>
 
-  <main>
+  <main id="main">
+    <!-- Optional: sehr kurzer Intro-Hero -->
+    <section class="intro">
+      <h1>Grafikdesign &amp; Visual Storytelling</h1>
+      <p>Ausgewählte Arbeiten aus Editorial, Branding und Musikprojekten. Reduziert, klar, typografisch stark.</p>
+    </section>
+
     <!-- Projekt 1: Nature Methods Cover Illustration -->
     <section id="films" class="project">
       <div class="project-image bg-section">
-        <img src="https://cdn.glitch.global/7979987f-7bd8-4a37-a1a8-8a0b20a088de/NMCover.png?v=1747828127983" alt="Nature Methods Cover Illustration">
+        <img
+          src="https://cdn.glitch.global/7979987f-7bd8-4a37-a1a8-8a0b20a088de/NMCover.png?v=1747828127983"
+          alt="Nature Methods Cover Illustration"
+          loading="lazy" decoding="async">
       </div>
       <div class="project-content">
         <h2>Nature Methods Cover Illustration</h2>
@@ -49,7 +73,7 @@
     <!-- Photography -->
     <section id="photography" class="project reverse">
       <div class="project-image bg-section portrait">
-        <img src="images/villa-1.jpg" alt="Villa Yasmine Branding">
+        <img src="images/villa-1.jpg" alt="Villa Yasmine Branding" loading="lazy" decoding="async">
       </div>
       <div class="project-content">
         <h2>Villa Yasmine</h2>
@@ -66,7 +90,7 @@
     <!-- About -->
     <section id="about" class="project">
       <div class="project-image bg-section">
-        <img src="images/project3-1.jpg" alt="Projekt 3">
+        <img src="images/project3-1.jpg" alt="Projekt 3 Visual" loading="lazy" decoding="async">
       </div>
       <div class="project-content">
         <h2>Projekt Drei</h2>
@@ -83,7 +107,7 @@
     <!-- Music (Reel) -->
     <section id="reel" class="project reverse">
       <div class="project-image bg-section landscape">
-        <img src="images/project4-1.jpg" alt="Projekt 4">
+        <img src="images/project4-1.jpg" alt="Projekt 4 Visual" loading="lazy" decoding="async">
       </div>
       <div class="project-content">
         <h2>Projekt Vier</h2>
@@ -100,7 +124,7 @@
     <!-- Pitches -->
     <section id="pitches" class="project">
       <div class="project-image bg-section">
-        <img src="images/project5-1.jpg" alt="Projekt 5">
+        <img src="images/project5-1.jpg" alt="Projekt 5 Visual" loading="lazy" decoding="async">
       </div>
       <div class="project-content">
         <h2>Projekt Fünf</h2>
@@ -114,5 +138,17 @@
       </div>
     </section>
   </main>
+
+  <footer class="site-footer" aria-label="Fußbereich">
+    <div class="footer-inner">
+      <p>&copy; <span id="year"></span> Sebastian von Haaren</p>
+      <p>Kontakt: <a href="mailto:hello@example.com">hello@example.com</a> · <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Jahr im Footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

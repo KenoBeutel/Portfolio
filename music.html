@@ -5,67 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Music – Sebastian von Haaren</title>
   <link rel="stylesheet" href="style.css" />
-
-
-
-
-  
 </head>
 <body>
   <header>
     <nav>
       <ul class="nav-list">
         <li><a href="index.html#films">Projects</a></li>
-        <li><a href="photography.html#photography">Photography</a></li>
+        <li><a href="index.html#photography">Photography</a></li>
         <li><a href="music.html" aria-current="page">Music</a></li>
-        <li><a href="about.html#about">About &amp; Contact</a></li>
-      <li><a href="./about.html">About &amp; Contact</a></li>
-    </ul>
-    <a class="logo" href="./" aria-label="Zur Startseite">SEBASTIAN VON HAAREN</a>
-  </nav>
-</header>
+        <li><a href="index.html#about">About &amp; Contact</a></li>
+      </ul>
+      <div class="logo">SEBASTIAN VON HAAREN</div>
+    </nav>
+  </header>
 
   <main class="music-section">
     <h2>Music</h2>
     <p class="music-intro">Ausgewählte Veröffentlichungen aus Bands & Projekten.</p>
 
-    <!-- ========== RELEASE 1 ========== -->
-<article class="release-card hero">
-  <div class="release-cover">
-    <img src="https://f4.bcbits.com/img/a2727000644_16.jpg" alt="Miles of Hope — Shark Bait Cover">
-  </div>
+    <!-- ====== Release 1 ====== -->
+    <section class="release">
+      <figure class="release__media">
+        <img src="https://f4.bcbits.com/img/a2727000644_16.jpg" alt="Miles of Hope — Shark Bait Cover">
+      </figure>
 
-  <header class="release-header">
-    <h3 class="release-title">
-      <span class="band">Miles of Hope</span>
-      <span class="dash">—</span>
-      <span class="title">Shark Bait</span>
-    </h3>
-    <div class="release-meta">
-      <span class="meta-item">2023</span>
-      <span class="dot">•</span>
-      <span class="meta-item">Emo</span>
-    </div>
-  </header>
+      <div class="release__body">
+        <header class="release__header">
+          <h3 class="release__title">
+            <span class="band">Miles of Hope</span>
+            <span class="dash">—</span>
+            <span class="title">Shark Bait</span>
+          </h3>
+          <p class="release__meta">2023 · Emo</p>
+        </header>
 
-  <div class="release-credits">
-    <p><span class="label">Credits</span> Daniel Müller, Dennis Thiele, Falk Nagel</p>
-    <p><span class="label">Artwork</span> Sebastian von Haaren</p>
-  </div>
+        <div class="release__credits">
+          <p><span class="label">Credits</span> Daniel Müller, Dennis Thiele, Falk Nagel</p>
+          <p><span class="label">Artwork</span> Sebastian von Haaren</p>
+        </div>
 
-  <div class="release-player">
-    <iframe style="border:0;width:100%;height:120px"
-      src="https://bandcamp.com/EmbeddedPlayer/track=725278362/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
-      loading="lazy" seamless>
-      <a href="https://milesofhope.bandcamp.com/track/shark-bait">Shark Bait von Miles of Hope</a>
-    </iframe>
-  </div>
-</article>
+        <div class="release__player">
+          <iframe
+            src="https://bandcamp.com/EmbeddedPlayer/track=725278362/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+            loading="lazy" style="border:0;width:100%;height:120px" seamless>
+          </iframe>
+        </div>
+      </div>
+    </section>
+    <!-- ====== /Release 1 ====== -->
 
-
-
-
-    <!-- ========== /RELEASE 1 ========== -->
+    <!-- Hier kannst du weitere Releases einfach durch Kopieren von <section class="release">…</section> hinzufügen -->
 
   </main>
 </body>

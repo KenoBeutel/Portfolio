@@ -353,5 +353,16 @@ main {
     max-width: none;
   }
 }
+/* Header auf gleicher Höhe wie Cover-Oberkante ausrichten */
+.music-section .release__body {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Header oben, flex gap, Bottom unten */
+  align-items: start; /* sorgt dafür, dass der Header ganz oben sitzt */
+}
+
+.music-section .release__header {
+  margin-top: 0; /* keine zusätzliche Verschiebung */
+  padding-top: 0; /* falls woanders Padding vererbt wird */
+}
 
 

@@ -211,13 +211,13 @@ main {
   transition: transform .2s ease;
 }
 
-/* ========== MUSIC: modernes, luftiges Layout ========== */
+/* --- Music: Professional Release Card --- */
 :root {
   --maxw: 1100px;
   --gap-xl: 3rem;
   --gap-lg: 2rem;
   --gap-md: 1.25rem;
-  --text-muted: #555;
+  --text-muted: #575757;
   --rule: #e9e7e5;
 }
 
@@ -232,64 +232,65 @@ main {
 
 .release-card {
   display: grid;
-  grid-template-columns: 210px 1fr;   /* Cover-Breite hier feinjustieren (z.B. 200–260px) */
+  grid-template-columns: 220px 1fr;   /* Cover-Spalte */
   gap: var(--gap-xl);
   align-items: start;
   padding: 0 0 var(--gap-xl) 0;
   border-bottom: 1px solid var(--rule);
 }
 
-.release-cover img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+.release-cover img { width: 100%; height: auto; display: block; }
 
-.release-body {
-  display: grid;
-  gap: var(--gap-lg);
-}
+.release-body { display: grid; gap: var(--gap-lg); }
 
 .release-title {
-  font-size: clamp(1.8rem, 1.1rem + 2vw, 2.6rem);
+  font-size: clamp(2rem, 1.2rem + 2vw, 2.8rem);
   font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: 0.01em;
-  margin: 0;
+  line-height: 1.1;
+  margin: 0 0 .25rem 0;
+  letter-spacing: .01em;
 }
 
 .release-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  color: var(--text-muted);
-  font-size: 0.98rem;
+  display: flex; flex-wrap: wrap; gap: .9rem;
+  color: var(--text-muted); font-size: .98rem;
 }
-
-.release-meta .dot { opacity: .6; }
-
-.release-player iframe { width: 100%; display: block; }
-
-.release-sep {
-  height: 1px;
-  background: var(--rule);
-  margin-top: .25rem;
+.release-meta .label {
+  text-transform: uppercase;
+  font-size: .78rem; letter-spacing: .08em;
+  margin-right: .35rem; color: var(--text-muted);
 }
+.release-meta .dot { opacity: .5; }
 
 .release-credits {
   color: var(--text-muted);
-  display: grid;
-  gap: .35rem;
-  font-size: 0.95rem;
+  display: grid; gap: .35rem; font-size: .95rem;
+}
+.release-credits .label {
+  text-transform: uppercase; letter-spacing: .08em;
+  font-size: .78rem; color: var(--text-muted);
+  margin-right: .35rem;
 }
 
-/* Responsiv */
+.release-link {
+  color: inherit; text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.release-player {
+  max-width: 720px;   /* Player nicht überbreit, wirkt ruhiger */
+}
+
+.release-video { aspect-ratio: 16/9; width: 100%; }
+.release-video iframe { width: 100%; height: 100%; border: 0; display: block; }
+
 @media (max-width: 980px) {
-  .release-card { grid-template-columns: 190px 1fr; gap: var(--gap-lg); }
+  .release-card { grid-template-columns: 200px 1fr; gap: var(--gap-lg); }
 }
 @media (max-width: 760px) {
   .release-card { grid-template-columns: 1fr; }
   .release-cover { max-width: 360px; }
-  .release-cover img { width: 100%; }
+  .release-player { max-width: none; } /* auf Mobile volle Breite */
 }
+
 

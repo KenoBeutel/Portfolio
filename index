@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="#films">Projects</a></li>
+        <li><a href="#photography">Photography</a></li>
+        <li><a href="#reel">Music</a></li>
+        <li><a href="#about">About &amp; Contact</a></li>
+      </ul>
+      <div class="logo">SEBASTIAN VON HAAREN</div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Projekt 1: Nature Methods Cover Illustration -->
+    <section id="films" class="project">
+      <div class="project-image bg-section">
+        <img src="https://cdn.glitch.global/7979987f-7bd8-4a37-a1a8-8a0b20a088de/NMCover.png?v=1747828127983" alt="Nature Methods Cover Illustration">
+      </div>
+      <div class="project-content">
+        <h2>Nature Methods Cover Illustration</h2>
+        <span class="subtitle">Print Design | Artwork</span>
+        <p>
+          For the March 2025 cover of <em>Nature Methods</em>, I created an illustration to accompany the publication “Segment Anything for Microscopy” by Archit et al., which explores the application of foundation models for segmentation in high-resolution microscopy.
+        </p>
+        <p>
+          The cover visual features a stylized depiction of various subcellular structures, including a mitochondrion, Golgi apparatus, and other microscopic elements. The aesthetic merges clarity with abstraction—each structure is overlaid with segmented color masks representing the varying levels of segmentation success achieved by the method. This intentional layering visually communicates both the power and limitations of automated segmentation in complex biological data.
+        </p>
+        <p>
+          To make the subject approachable and visually engaging, I opted for a soft, pastel-inspired palette and simplified organic forms. These design choices aim to balance scientific relevance with visual appeal, helping to bridge the gap between computational analysis and biological intuition. The composition invites viewers to consider both the beauty and intricacy of cellular data, aligning with the cover’s editorial goal of accessible and compelling science communication.
+        </p>
+        <ul class="meta">
+          <li><strong>Client:</strong> Campus Institute for Data Science / Computational Cell Analytics Group</li>
+          <li><strong>Role:</strong> Grafikdesign</li>
+          <li><strong>Publication:</strong> Archit et al., “Segment Anything for Microscopy”, Nature Methods (2025)</li>
+          <li><strong>Link:</strong> <a href="https://www.nature.com/articles/s41592-024-02580-4" target="_blank" rel="noopener">nature.com/articles/s41592-024-02580-4</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Photography -->
+    <section id="photography" class="project reverse">
+      <div class="project-image bg-section portrait">
+        <img src="images/villa-1.jpg" alt="Villa Yasmine Branding">
+      </div>
+      <div class="project-content">
+        <h2>Villa Yasmine</h2>
+        <span class="subtitle">Branding &amp; Print</span>
+        <p>Komplettes Branding- und Print-Design für eine exklusive Ferienvilla in der Provence – von Logo bis Broschüre.</p>
+        <ul class="meta">
+          <li><strong>Date:</strong> Mai 2022</li>
+          <li><strong>Role:</strong> Art Direction &amp; Grafikdesign</li>
+          <li><strong>Client:</strong> Private Auftrag</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="project">
+      <div class="project-image bg-section">
+        <img src="images/project3-1.jpg" alt="Projekt 3">
+      </div>
+      <div class="project-content">
+        <h2>Projekt Drei</h2>
+        <span class="subtitle">Web Design</span>
+        <p>Responsive One-Page Website mit klarer Typografie und reduziertem Layout für einen Tech-Startup.</p>
+        <ul class="meta">
+          <li><strong>Date:</strong> Jan 2023</li>
+          <li><strong>Role:</strong> UI/UX Design</li>
+          <li><strong>Client:</strong> TechNova</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Music (Reel) -->
+    <section id="reel" class="project reverse">
+      <div class="project-image bg-section landscape">
+        <img src="images/project4-1.jpg" alt="Projekt 4">
+      </div>
+      <div class="project-content">
+        <h2>Projekt Vier</h2>
+        <span class="subtitle">Packaging</span>
+        <p>Minimalistisches Verpackungsdesign für eine nachhaltige Kosmetik-Marke, mit Fokus auf Naturmaterialien.</p>
+        <ul class="meta">
+          <li><strong>Date:</strong> Okt 2023</li>
+          <li><strong>Role:</strong> Konzept &amp; Design</li>
+          <li><strong>Client:</strong> GreenBeauty</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Pitches -->
+    <section id="pitches" class="project">
+      <div class="project-image bg-section">
+        <img src="images/project5-1.jpg" alt="Projekt 5">
+      </div>
+      <div class="project-content">
+        <h2>Projekt Fünf</h2>
+        <span class="subtitle">Pitch Deck</span>
+        <p>Visuelle Aufbereitung eines Pitch Decks für Investorengespräche, mit Fokus auf Klarheit und Storytelling.</p>
+        <ul class="meta">
+          <li><strong>Date:</strong> Feb 2024</li>
+          <li><strong>Role:</strong> Grafikdesign &amp; Präsentation</li>
+          <li><strong>Client:</strong> Startup XYZ</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

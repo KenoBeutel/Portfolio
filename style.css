@@ -211,7 +211,7 @@ main {
   transition: transform .2s ease;
 }
 
-/* --- Music page --- */
+/* ========== MUSIC: modernes, luftiges Layout ========== */
 :root {
   --maxw: 1100px;
   --gap-xl: 3rem;
@@ -232,7 +232,7 @@ main {
 
 .release-card {
   display: grid;
-  grid-template-columns: 240px 1fr;           /* Cover links fix, rechts flexibel */
+  grid-template-columns: 210px 1fr;   /* Cover-Breite hier feinjustieren (z.B. 200–260px) */
   gap: var(--gap-xl);
   align-items: start;
   padding: 0 0 var(--gap-xl) 0;
@@ -243,7 +243,6 @@ main {
   width: 100%;
   height: auto;
   display: block;
-  /* kantig lassen (kein border-radius), passend zu deiner Photography-Seite */
 }
 
 .release-body {
@@ -252,20 +251,19 @@ main {
 }
 
 .release-title {
-  font-size: clamp(1.6rem, 1.2rem + 1.5vw, 2.2rem);
+  font-size: clamp(1.8rem, 1.1rem + 2vw, 2.6rem);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: 0.01em;
+  margin: 0;
 }
-
-.release-title .dash { opacity: .6; margin: 0 .4ch; }
 
 .release-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: .8rem;
+  gap: 1rem;
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 0.98rem;
 }
 
 .release-meta .dot { opacity: .6; }
@@ -275,7 +273,7 @@ main {
 .release-sep {
   height: 1px;
   background: var(--rule);
-  margin: .5rem 0;
+  margin-top: .25rem;
 }
 
 .release-credits {
@@ -285,29 +283,13 @@ main {
   font-size: 0.95rem;
 }
 
-.release-link {
-  color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.release-video {
-  aspect-ratio: 16/9;
-  width: 100%;
-}
-.release-video iframe {
-  width: 100%;
-  height: 100%;
-  display: block;
-  border: 0;
-}
-
 /* Responsiv */
 @media (max-width: 980px) {
-  .release-card { grid-template-columns: 200px 1fr; gap: var(--gap-lg); }
+  .release-card { grid-template-columns: 190px 1fr; gap: var(--gap-lg); }
 }
 @media (max-width: 760px) {
   .release-card { grid-template-columns: 1fr; }
   .release-cover { max-width: 360px; }
   .release-cover img { width: 100%; }
 }
+

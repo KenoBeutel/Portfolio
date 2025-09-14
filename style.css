@@ -211,50 +211,14 @@ main {
   transition: transform .2s ease;
 }
 
-/* ===== Music Section ===== */
+/* ===== MUSIC SECTION ===== */
 :root {
   --release-maxw: 1100px;
-  --cover-col: 340px;          /* Breite der Cover-Spalte */
+  --cover-col: 340px;            /* Coverbreite anpassen (z. B. 360px) */
   --muted: #575757;
 }
 
-.music-section {
-  width: 90%;
-  max-width: var(--release-maxw);
-  margin: 0 auto;
-  padding: 4rem 0;
-  display: grid;
-  gap: 3rem;
-}
-
-/* Section-Header wie Photography */
-.section-header {
-  margin-bottom: 2rem;
-}
-.section-header h2 {
-  font-size: 3rem;
-  font-weight: 900;
-  margin-bottom: 0.5rem;
-}
-.section-header .subtitle {
-  display: block;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 1rem;
-}
-.section-header p {
-  color: #444;
-}
-
-/* ===== MUSIC (final override) ===== */
-:root {
-  --release-maxw: 1100px;
-  --cover-col: 340px;             /* Coverbreite -> gern 360 probieren */
-  --muted: #575757;
-}
-
-/* Section-Header wie Photography */
+/* Section Header wie Photography */
 .music-section {
   width: 90%;
   max-width: var(--release-maxw);
@@ -269,41 +233,40 @@ main {
 .music-section .section-header h2 {
   font-size: 3rem;
   font-weight: 900;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 .music-section .section-header .subtitle {
   display: block;
-  font-size: .875rem;
+  font-size: 0.875rem;
   text-transform: uppercase;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   margin-bottom: 1rem;
 }
-.music-section .section-header p { color:#444; }
+.music-section .section-header p {
+  color: #444;
+}
 
-/* ---------- RELEASE LAYOUT (mit Resets) ---------- */
+/* ===== Release Layout ===== */
 .music-section .release {
-  /* harte Resets gegen ältere Regeln */
   background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
+  border: none !important;
   padding: 0 !important;
 
   display: grid;
   grid-template-columns: var(--cover-col) 1fr;
   column-gap: 2.5rem;
-  align-items: start;
+  align-items: stretch; /* macht Cover & rechte Spalte gleich hoch */
 }
-.music-section .release + .release { margin-top: 2.5rem; }
+.music-section .release + .release {
+  margin-top: 2.5rem;
+}
 
-/* Cover links, nur feine schwarze Linie */
+/* Cover mit feiner schwarzer Linie */
 .music-section .release__media {
-  margin: 0 !important;
+  margin: 0;
   height: 100%;
-  background: transparent !important;
-  padding: 0 !important;
-  outline: 1px solid #111;     /* die gewünschte feine Linie */
-  box-shadow: none !important;
-  border: 0 !important;
+  background: transparent;
+  outline: 1px solid #111;
 }
 .music-section .release__media img {
   width: 100%;
@@ -316,31 +279,36 @@ main {
 .music-section .release__body {
   display: flex;
   flex-direction: column;
-  min-height: 0;
+  min-height: 100%;
 }
 
-/* Header: Titel einzeilig, mehr Luft zum Meta */
-.music-section .release__header { margin-bottom: .5rem; }
+/* Titel & Meta oben */
+.music-section .release__header {
+  margin-bottom: 0.5rem;
+}
 .music-section .release__title {
   margin: 0 0 .35rem 0;
-  font-size: clamp(1.7rem, 1.05rem + 1.8vw, 2.4rem); /* leicht kleiner -> bleibt einzeilig */
+  font-size: clamp(1.8rem, 1.1rem + 1.8vw, 2.6rem);
   font-weight: 800;
   line-height: 1.08;
   letter-spacing: .01em;
-  white-space: nowrap;          /* EINZEILIG auf Desktop */
-  word-break: keep-all;
+  white-space: nowrap;
 }
-.music-section .release__title .dash { opacity:.5; margin: 0 .4ch; }
-
+.music-section .release__title .dash {
+  opacity: .5;
+  margin: 0 .4ch;
+}
 .music-section .release__meta {
   margin: 0;
   color: var(--muted);
   font-size: .98rem;
 }
 
-/* Credits kompakt, über dem Player */
+/* Credits + Player als Block unten verankern */
+.music-section .release__bottom {
+  margin-top: auto; /* schiebt den gesamten Block nach unten */
+}
 .music-section .release__credits {
-  margin-top: .7rem;
   color: var(--muted);
   font-size: .95rem;
 }
@@ -351,10 +319,8 @@ main {
   color: #777;
   margin-right: .4rem;
 }
-
-/* Player mit Luft nach oben, nicht zu breit */
 .music-section .release__player {
-  margin-top: 1.2rem;       /* Abstand, damit er nicht „klebt“ */
+  margin-top: .9rem; /* Abstand zwischen Credits & Player */
   max-width: 760px;
 }
 .music-section .release__player iframe {
@@ -362,21 +328,30 @@ main {
   display: block;
 }
 
-/* ---------- Responsive ---------- */
+/* ===== Responsive Anpassungen ===== */
 @media (max-width: 960px) {
-  :root { --cover-col: 300px; }
-  .music-section .release { column-gap: 2rem; }
+  :root {
+    --cover-col: 300px;
+  }
+  .music-section .release {
+    column-gap: 2rem;
+  }
 }
 @media (max-width: 760px) {
   .music-section .release {
     grid-template-columns: 1fr;
     row-gap: 1rem;
   }
-  .music-section .release__title { white-space: normal; } /* darf mobil umbrechen */
+  .music-section .release__title {
+    white-space: normal; /* darf mobil umbrechen */
+  }
   .music-section .release__media,
-  .music-section .release__media img { height: auto; }
-  .music-section .release__player { max-width: none; }
+  .music-section .release__media img {
+    height: auto;
+  }
+  .music-section .release__player {
+    max-width: none;
+  }
 }
-
 
 

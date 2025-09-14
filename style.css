@@ -211,87 +211,91 @@ main {
   transition: transform .2s ease;
 }
 
-/* Hero-Layout für Releases */
-.hero-layout {
+/* ===== Music – Hero Release Card (Grid Areas) ===== */
+:root{
+  --hero-cover-w: 340px;         /* Cover-Breite (anpassen: 320–380px) */
+  --gap-xxl: 3rem;               /* großer Zwischenraum links–rechts */
+  --gap-lg: 1.4rem;              /* Abstand innerhalb rechts */
+  --gap-md: 0.9rem;              /* kompakter Abstand nach Meta */
+  --text-muted: #575757;
+  --rule: #e9e7e5;
+}
+
+.release-card.hero{
   display: grid;
-  grid-template-columns: 320px 1fr;  /* Coverbreite + Content */
+  grid-template-columns: var(--hero-cover-w) 1fr;
+  /* 3 Zeilen: Header oben, Credits in der Mitte, Player unten */
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "cover header"
+    "cover credits"
+    "cover player";
+  column-gap: var(--gap-xxl);
+  row-gap: var(--gap-lg);
   align-items: start;
-  gap: 2.5rem;
+  padding: 0 0 2.5rem;
+  border-bottom: 1px solid var(--rule);
 }
 
-.hero-layout .release-cover {
+/* Cover links spannt automatisch über alle drei Zeilen */
+.release-cover{
+  grid-area: cover;
+  background:#fff;
+  padding: 16px;                 /* weiße Matte */
+  border: 1px solid #e6e3e0;     /* feine Kontur */
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: #fff;
-  padding: 18px;
-  border: 1px solid #e6e3e0;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
-
-.hero-layout .release-cover img {
-  width: 100%;
-  height: 100%;
+.release-cover img{
+  width: 100%; height: auto; display:block;
   object-fit: cover;
 }
 
-.release-right {
-  display: grid;
-  grid-template-rows: auto 1fr auto; /* Header oben, Credits mittig, Player unten */
-  gap: 1.2rem;
+.release-header{ grid-area: header; display:grid; gap: .8rem; } /* MEHR Platz Titel↔Meta */
+.release-title{
+  margin:0;
+  font-size: clamp(2.2rem, 1.2rem + 2.2vw, 3.2rem);
+  font-weight: 800; line-height: 1.08; letter-spacing: .01em;
+}
+.release-title .dash{ opacity:.5; margin: 0 .5ch; }
+
+.release-meta{
+  display:flex; flex-wrap:wrap; gap: 1rem;
+  color: var(--text-muted); font-size: .98rem;
+  margin-bottom: var(--gap-md);            /* WENIG Abstand zur nächsten Sektion */
+}
+.release-meta .dot{ opacity:.5; }
+
+.release-credits{
+  grid-area: credits;
+  color: var(--text-muted);
+  display:grid; gap:.35rem; font-size:.95rem;
+}
+.release-credits .label{
+  text-transform: uppercase; letter-spacing:.08em;
+  font-size:.78rem; color:#777; margin-right:.35rem;
 }
 
-.release-header {
-  display: grid;
-  gap: .7rem;
-}
-
-.release-title {
-  font-size: clamp(2.2rem, 1.5rem + 1.8vw, 3rem);
-  font-weight: 800;
-  margin: 0;
-  line-height: 1.1;
-}
-
-.release-meta {
-  display: flex;
-  gap: 1rem;
-  font-size: 0.95rem;
-  color: #555;
-}
-
-.release-credits {
-  font-size: 0.95rem;
-  color: #555;
-  display: grid;
-  gap: .3rem;
-}
-
-.release-credits .label {
-  font-size: 0.78rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  margin-right: .3rem;
-  color: #777;
-}
-
-.release-player iframe {
-  width: 100%;
-  display: block;
-}
+.release-player{ grid-area: player; max-width: 760px; } /* Player-Breite für Ruhe */
+.release-player iframe{ width:100%; display:block; }
 
 /* Responsive */
-@media (max-width: 960px) {
-  .hero-layout {
+@media (max-width: 980px){
+  :root{ --hero-cover-w: 300px; }
+  .release-card.hero{ column-gap: 2rem; }
+}
+@media (max-width: 760px){
+  .release-card.hero{
     grid-template-columns: 1fr;
-  }
-  .hero-layout .release-cover {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  .release-right {
     grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "cover"
+      "header"
+      "credits"
+      "player";
+    row-gap: 1.2rem;
   }
+  .release-player{ max-width: none; }
 }
 
 

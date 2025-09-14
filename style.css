@@ -320,6 +320,28 @@ main {
   .release__player{ max-width: none; }
 }
 
+/* Einheitlicher Section-Header (wie Photography) */
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.section-header .subtitle {
+  display: block;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  color: #444;
+}
 
 
 

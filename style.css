@@ -1,0 +1,133 @@
+/* style.css */
+:root {
+  --bg-page: #f5f1ef;
+  --bg-section: #dedbd2;
+  --text-color: #111;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Kein Rahmen und keine Hinterlegung für alle Bilder */
+.project-image,
+.project-image.bg-section,
+.project-image.no-frame {
+  background: none;
+  padding: 0;
+}
+.project-image img {
+  border: none;
+}
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-color);
+}
+header {
+  background: var(--bg-page);
+  padding: 1rem 0;
+}
+header nav {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  font-size: 1.25rem;
+}
+.nav-list a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+.logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+main {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 0;
+  display: grid;
+  gap: 8rem;
+}
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  position: relative;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid #ccc;
+  align-items: start;
+}
+.project.reverse {
+  direction: rtl;
+}
+.project.reverse .project-content,
+.project.reverse .project-image {
+  direction: ltr;
+}
+.bg-section {
+  background: var(--bg-section);
+  /* oben kein Padding, damit Bild und Überschrift auf gleicher Höhe sind */
+  padding: 0 2rem 2rem;
+}
+.project-image.portrait {
+  aspect-ratio: 4 / 5;
+  max-height: 600px;
+}
+.project-image.portrait img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+.project-image.landscape {
+  aspect-ratio: 16 / 9;
+}
+.project-image.landscape img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.project-content h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+.subtitle {
+  display: block;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+.project-content p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.meta {
+  list-style: none;
+  font-size: 0.875rem;
+  color: #555;
+}
+.meta li + li {
+  margin-top: 0.5rem;
+}
+@media (max-width: 768px) {
+  header nav,
+  main {
+    width: 95%;
+  }
+  .project {
+    grid-template-columns: 1fr;
+  }
+}

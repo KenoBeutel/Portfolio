@@ -193,16 +193,21 @@ main {
 }
 
 .card {
-  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0,0,0,.08);
-  background: #fff;
+  box-shadow: none; /* optional: auch Schatten weg für ganz flachen Look */
+  background: transparent;
   transform: translateZ(0);
 }
+
 
 .card img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.card:hover {
+  transform: scale(1.01);
+  transition: transform .2s ease;
 }
 

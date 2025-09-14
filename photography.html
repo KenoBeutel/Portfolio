@@ -23,10 +23,26 @@
   </header>
 
   <main id="main" class="page">
-    <section class="intro">
-      <h1>Photography</h1>
-      <p>Hier entsteht eine Auswahl an Fotoprojekten und Serien. Coming soon.</p>
-    </section>
+    <section id="photography" class="project">
+  <div class="project-content">
+    <h2>Photography</h2>
+    <span class="subtitle">Selected Works</span>
+    <p>Ein kuratierter Auszug. Mehr Bilder folgen.</p>
+  </div>
+
+  <!-- Masonry-Galerie -->
+  <div class="gallery-masonry" id="photoGallery">
+    <!-- Beispiel-Items – dupliziere / ersetze die srcs durch deine eigenen -->
+    <figure class="card"><img loading="lazy" src="assets/photos/01.jpg" alt="Photo 01"></figure>
+    <figure class="card"><img loading="lazy" src="assets/photos/02.jpg" alt="Photo 02"></figure>
+    <figure class="card"><img loading="lazy" src="assets/photos/03.jpg" alt="Photo 03"></figure>
+    <figure class="card"><img loading="lazy" src="assets/photos/04.jpg" alt="Photo 04"></figure>
+    <figure class="card"><img loading="lazy" src="assets/photos/05.jpg" alt="Photo 05"></figure>
+    <figure class="card"><img loading="lazy" src="assets/photos/06.jpg" alt="Photo 06"></figure>
+    <!-- ...so viele wie du willst -->
+  </div>
+</section>
+
   </main>
 
   <footer class="site-footer" aria-label="Fußbereich">
@@ -36,6 +52,61 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();
+  
+  
+  
+  
+  // --- Masonry Helfer ---
+function resizeMasonryItem(item) {
+  const grid = item.parentElement;
+  const styles = window.getComputedStyle(grid);
+  const rowHeight = parseInt(styles.getPropertyValue('grid-auto-rows'));
+  const rowGap = parseInt(styles.getPropertyValue('gap'));
+  const contentHeight = item.querySelector('img').getBoundingClientRect().height;
+  const rowSpan = Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap));
+  item.style.gridRowEnd = `span ${rowSpan}`;
+}
+
+function resizeAllMasonryItems(container) {
+  container.querySelectorAll('.card').forEach(resizeMasonryItem);
+}
+
+// Optional: leicht „willkürliche“ Ordnung (einmaliges Mischen beim Laden)
+function shuffleChildren(container) {
+  const nodes = Array.from(container.children);
+  for (let i = nodes.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    container.appendChild(nodes[j]);
+    nodes.splice(j, 1);
+  }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const gallery = document.getElementById('photoGallery');
+  if (!gallery) return;
+
+  // Einmalig mischen (fühlt sich organischer an, bleibt aber „geordnet“)
+  shuffleChildren(gallery);
+
+  // Masonry initial nach Bild-Load setzen
+  gallery.querySelectorAll('img').forEach(img => {
+    if (img.complete) {
+      resizeMasonryItem(img.closest('.card'));
+    } else {
+      img.addEventListener('load', () => resizeMasonryItem(img.closest('.card')));
+    }
+  });
+
+  // Bei Resize neu berechnen
+  window.addEventListener('resize', () => resizeAllMasonryItems(gallery));
+});
+
+  
+  
+  
+  
+  
+  </script>
 </body>
 </html>

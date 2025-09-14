@@ -73,7 +73,7 @@
     <!-- Photography -->
 <section id="photography" class="project reverse">
   <div
-    class="project-image carousel portrait"
+    class="project-image carousel"
     data-carousel="planto"
     role="region"
     aria-label="Bildergalerie zu »Planto – Atlas der Gemüsekulturen«"
@@ -218,9 +218,7 @@
         img.addEventListener('load', onLoad);
         img.src = nextSrc; img.alt = nextAlt;
 
-        // Aspect-Ratio umschalten
-        carousel.classList.remove('portrait','landscape');
-        if (nextAspect) carousel.classList.add(nextAspect);
+
       });
     });
   });

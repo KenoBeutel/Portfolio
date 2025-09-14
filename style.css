@@ -158,13 +158,38 @@ main {
 
 
 
-/* --- Masonry Galerie --- */
+/* Photography-Section über volle Breite */
+.photography-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+  padding-bottom: 4rem;
+}
+
+.photography-header {
+  margin-bottom: 2rem;
+}
+
+.photography-header h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.photography-header .subtitle {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
 .gallery-masonry {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  grid-auto-rows: 10px;               /* Basis-Zeilenhöhe für Masonry-Rechnung */
-  gap: 16px;                          /* gleichmäßiger Abstand */
-  align-items: start;
+  grid-auto-rows: 10px;
+  gap: 16px;
 }
 
 .card {
@@ -172,23 +197,12 @@ main {
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0,0,0,.08);
   background: #fff;
-  transform: translateZ(0);           /* besseres Rendering */
+  transform: translateZ(0);
 }
 
 .card img {
   width: 100%;
-  height: auto;                       /* Landscape-Bilder bleiben unverzerrt */
+  height: auto;
   display: block;
 }
-
-/* dezentes Hover-Feedback */
-.card:hover { transform: translateZ(0) scale(1.015); transition: transform .2s ease; }
-
-/* Mobile: größere Spaltenbreite → 2 Spalten */
-@media (max-width: 768px) {
-  .gallery-masonry { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
-}
-
-/* Damit die #photography-Sektion nicht gespiegelt wird (du hattest .project.reverse) */
-#photography.project { direction: ltr; }
 

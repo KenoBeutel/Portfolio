@@ -211,91 +211,113 @@ main {
   transition: transform .2s ease;
 }
 
-/* ===== Music – Hero Release Card (Grid Areas) ===== */
+/* ===== Minimal Release List ===== */
 :root{
-  --hero-cover-w: 340px;         /* Cover-Breite (anpassen: 320–380px) */
-  --gap-xxl: 3rem;               /* großer Zwischenraum links–rechts */
-  --gap-lg: 1.4rem;              /* Abstand innerhalb rechts */
-  --gap-md: 0.9rem;              /* kompakter Abstand nach Meta */
-  --text-muted: #575757;
+  --release-maxw: 1100px;
+  --release-gap: 2.5rem;      /* Abstand Cover ↔ Text */
+  --release-pad: 28px;        /* Innenabstand des weißen Blocks */
+  --cover-col: 340px;         /* Breite der Cover-Spalte (größer/kleiner nach Wunsch) */
+  --muted: #575757;
   --rule: #e9e7e5;
 }
 
-.release-card.hero{
+.music-section{
+  width: 90%;
+  max-width: var(--release-maxw);
+  margin: 0 auto;
+  padding: 4rem 0;
   display: grid;
-  grid-template-columns: var(--hero-cover-w) 1fr;
-  /* 3 Zeilen: Header oben, Credits in der Mitte, Player unten */
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas:
-    "cover header"
-    "cover credits"
-    "cover player";
-  column-gap: var(--gap-xxl);
-  row-gap: var(--gap-lg);
-  align-items: start;
-  padding: 0 0 2.5rem;
-  border-bottom: 1px solid var(--rule);
+  gap: 3rem;
 }
 
-/* Cover links spannt automatisch über alle drei Zeilen */
-.release-cover{
-  grid-area: cover;
-  background:#fff;
-  padding: 16px;                 /* weiße Matte */
-  border: 1px solid #e6e3e0;     /* feine Kontur */
-  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+/* Der weiße Block */
+.release{
+  background: #fff;
+  border: 1px solid #ece9e6;
+  padding: var(--release-pad);
+  display: grid;
+  grid-template-columns: var(--cover-col) 1fr;
+  align-items: stretch;             /* beide Spalten gleich hoch */
+  column-gap: var(--release-gap);
+  row-gap: 0;
+}
+
+/* Linke Spalte (Cover) füllt die Kartenhöhe → Player unten rechts bündig */
+.release__media{
+  margin: 0;
+  height: 100%;
+  background: #fff;
+  outline: 1px solid #e6e3e0;       /* feine Kontur, hebt sich vom Beige ab */
+}
+.release__media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                 /* füllt die Höhe sauber, ohne Verzerrung */
+  display: block;
+}
+
+/* Rechte Spalte organisiert in Vertikalfluss; Player wird nach unten gedrückt */
+.release__body{
   display: flex;
-}
-.release-cover img{
-  width: 100%; height: auto; display:block;
-  object-fit: cover;
+  flex-direction: column;
+  min-height: 0;
 }
 
-.release-header{ grid-area: header; display:grid; gap: .8rem; } /* MEHR Platz Titel↔Meta */
-.release-title{
-  margin:0;
-  font-size: clamp(2.2rem, 1.2rem + 2.2vw, 3.2rem);
-  font-weight: 800; line-height: 1.08; letter-spacing: .01em;
-}
-.release-title .dash{ opacity:.5; margin: 0 .5ch; }
-
-.release-meta{
-  display:flex; flex-wrap:wrap; gap: 1rem;
-  color: var(--text-muted); font-size: .98rem;
-  margin-bottom: var(--gap-md);            /* WENIG Abstand zur nächsten Sektion */
-}
-.release-meta .dot{ opacity:.5; }
-
-.release-credits{
-  grid-area: credits;
-  color: var(--text-muted);
-  display:grid; gap:.35rem; font-size:.95rem;
-}
-.release-credits .label{
-  text-transform: uppercase; letter-spacing:.08em;
-  font-size:.78rem; color:#777; margin-right:.35rem;
+.release__header{
+  margin-bottom: 0.75rem;            /* MEHR Abstand Titel ↔ Meta */
 }
 
-.release-player{ grid-area: player; max-width: 760px; } /* Player-Breite für Ruhe */
-.release-player iframe{ width:100%; display:block; }
+.release__title{
+  margin: 0 0 .35rem 0;
+  font-size: clamp(2.2rem, 1.2rem + 2.4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: .01em;
+}
+.release__title .dash{ opacity:.5; margin: 0 .5ch; }
+
+.release__meta{
+  margin: 0;
+  color: var(--muted);
+  font-size: .98rem;
+}
+
+/* Credits über dem Player, kompakt */
+.release__credits{
+  margin-top: .6rem;                 /* WENIG Abstand nach Meta */
+  color: var(--muted);
+  font-size: .95rem;
+}
+.release__credits .label{
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .78rem;
+  color: #777;
+  margin-right: .4rem;
+}
+
+/* Player sitzt unten rechts auf einer Linie mit der Unterkante des Covers */
+.release__player{
+  margin-top: auto;                  /* schiebt den Player an das untere Ende */
+  max-width: 760px;                  /* nicht zu breit, wirkt ruhiger */
+}
+.release__player iframe{ display:block; width:100%; }
+
+/* Abstand zwischen Karten */
+.release + .release{ margin-top: 2.2rem; }
 
 /* Responsive */
-@media (max-width: 980px){
-  :root{ --hero-cover-w: 300px; }
-  .release-card.hero{ column-gap: 2rem; }
+@media (max-width: 960px){
+  :root{ --cover-col: 300px; }
 }
 @media (max-width: 760px){
-  .release-card.hero{
+  .release{
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-      "cover"
-      "header"
-      "credits"
-      "player";
-    row-gap: 1.2rem;
+    row-gap: 1.25rem;
   }
-  .release-player{ max-width: none; }
+  .release__media{ height: auto; }
+  .release__media img{ height: auto; }
+  .release__player{ max-width: none; }
 }
 
 

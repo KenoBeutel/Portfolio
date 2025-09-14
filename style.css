@@ -135,3 +135,13 @@ main {
 .project-image.carousel.landscape { aspect-ratio: 16 / 9; }
 .project-image.carousel.landscape img { width: 100%; height: auto; object-fit: cover; }
 
+.project-image.carousel { 
+  aspect-ratio: auto;
+  height: auto;
+  max-height: none;
+}
+.project-image.carousel img {
+  width: 100%;
+  height: auto;      /* keine Zwangshöhe mehr */
+  object-fit: initial; /* object-fit greift bei height:auto sowieso nicht – nur zur Klarheit */
+}

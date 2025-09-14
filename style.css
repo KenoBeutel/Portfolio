@@ -211,17 +211,14 @@ main {
   transition: transform .2s ease;
 }
 
-/* ===== Minimal Release List ===== */
-:root{
+/* ===== Music Section ===== */
+:root {
   --release-maxw: 1100px;
-  --release-gap: 2.5rem;      /* Abstand Cover ↔ Text */
-  --release-pad: 28px;        /* Innenabstand des weißen Blocks */
-  --cover-col: 340px;         /* Breite der Cover-Spalte (größer/kleiner nach Wunsch) */
+  --cover-col: 340px;          /* Breite der Cover-Spalte */
   --muted: #575757;
-  --rule: #e9e7e5;
 }
 
-.music-section{
+.music-section {
   width: 90%;
   max-width: var(--release-maxw);
   margin: 0 auto;
@@ -230,107 +227,15 @@ main {
   gap: 3rem;
 }
 
-/* Der weiße Block */
-.release{
-  background: #fff;
-  border: 1px solid #ece9e6;
-  padding: var(--release-pad);
-  display: grid;
-  grid-template-columns: var(--cover-col) 1fr;
-  align-items: stretch;             /* beide Spalten gleich hoch */
-  column-gap: var(--release-gap);
-  row-gap: 0;
-}
-
-/* Linke Spalte (Cover) füllt die Kartenhöhe → Player unten rechts bündig */
-.release__media{
-  margin: 0;
-  height: 100%;
-  background: #fff;
-  outline: 1px solid #e6e3e0;       /* feine Kontur, hebt sich vom Beige ab */
-}
-.release__media img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;                 /* füllt die Höhe sauber, ohne Verzerrung */
-  display: block;
-}
-
-/* Rechte Spalte organisiert in Vertikalfluss; Player wird nach unten gedrückt */
-.release__body{
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-}
-
-.release__header{
-  margin-bottom: 0.75rem;            /* MEHR Abstand Titel ↔ Meta */
-}
-
-.release__title{
-  margin: 0 0 .35rem 0;
-  font-size: clamp(2.2rem, 1.2rem + 2.4vw, 3.2rem);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: .01em;
-}
-.release__title .dash{ opacity:.5; margin: 0 .5ch; }
-
-.release__meta{
-  margin: 0;
-  color: var(--muted);
-  font-size: .98rem;
-}
-
-/* Credits über dem Player, kompakt */
-.release__credits{
-  margin-top: .6rem;                 /* WENIG Abstand nach Meta */
-  color: var(--muted);
-  font-size: .95rem;
-}
-.release__credits .label{
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  font-size: .78rem;
-  color: #777;
-  margin-right: .4rem;
-}
-
-/* Player sitzt unten rechts auf einer Linie mit der Unterkante des Covers */
-.release__player{
-  margin-top: auto;                  /* schiebt den Player an das untere Ende */
-  max-width: 760px;                  /* nicht zu breit, wirkt ruhiger */
-}
-.release__player iframe{ display:block; width:100%; }
-
-/* Abstand zwischen Karten */
-.release + .release{ margin-top: 2.2rem; }
-
-/* Responsive */
-@media (max-width: 960px){
-  :root{ --cover-col: 300px; }
-}
-@media (max-width: 760px){
-  .release{
-    grid-template-columns: 1fr;
-    row-gap: 1.25rem;
-  }
-  .release__media{ height: auto; }
-  .release__media img{ height: auto; }
-  .release__player{ max-width: none; }
-}
-
-/* Einheitlicher Section-Header (wie Photography) */
+/* Section-Header wie Photography */
 .section-header {
   margin-bottom: 2rem;
 }
-
 .section-header h2 {
   font-size: 3rem;
   font-weight: 900;
   margin-bottom: 0.5rem;
 }
-
 .section-header .subtitle {
   display: block;
   font-size: 0.875rem;
@@ -338,9 +243,114 @@ main {
   letter-spacing: 0.1em;
   margin-bottom: 1rem;
 }
-
 .section-header p {
   color: #444;
+}
+
+/* Release Layout */
+.release {
+  background: transparent;       /* kein weißer Block */
+  border: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: var(--cover-col) 1fr;
+  column-gap: 2.5rem;
+  align-items: start;
+}
+.release + .release {
+  margin-top: 2.5rem;           /* Abstand zwischen Releases */
+}
+
+/* Cover links, nur feine schwarze Kontur */
+.release__media {
+  margin: 0;
+  height: 100%;
+  background: transparent;
+  outline: 1px solid #111;       /* schwarze Linie */
+}
+.release__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Rechte Spalte */
+.release__body {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.release__header {
+  margin-bottom: 0.5rem;
+}
+.release__title {
+  margin: 0 0 .35rem 0;
+  font-size: clamp(1.8rem, 1.1rem + 1.8vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: .01em;
+  white-space: nowrap;           /* bleibt einzeilig auf Desktop */
+}
+.release__title .dash {
+  opacity: .5;
+  margin: 0 .4ch;
+}
+.release__meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: .98rem;
+}
+
+/* Credits über dem Player */
+.release__credits {
+  margin-top: .7rem;
+  color: var(--muted);
+  font-size: .95rem;
+}
+.release__credits .label {
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .78rem;
+  color: #777;
+  margin-right: .4rem;
+}
+
+/* Player mit Luft nach oben */
+.release__player {
+  margin-top: 1.2rem;
+  max-width: 760px;
+}
+.release__player iframe {
+  width: 100%;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  :root { --cover-col: 300px; }
+  .release {
+    column-gap: 2rem;
+  }
+}
+@media (max-width: 760px) {
+  .release {
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+  }
+  .release__title {
+    white-space: normal;       /* darf auf kleinen Screens umbrechen */
+  }
+  .release__media {
+    height: auto;
+  }
+  .release__media img {
+    height: auto;
+  }
+  .release__player {
+    max-width: none;
+  }
 }
 
 

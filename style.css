@@ -365,4 +365,9 @@ main {
   padding-top: 0; /* falls woanders Padding vererbt wird */
 }
 
+/* Spezieller Rahmen nur für das KI-Poster */
+.project-image img.framed {
+  border: 1px solid #111;   /* feine schwarze Linie */
+  display: block;
+}
 

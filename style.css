@@ -363,3 +363,71 @@ main {
   display: block;
 }
 
+
+/* ===== About & Contact ===== */
+.about-section {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 0;
+  display: grid;
+  gap: 2.5rem;
+}
+
+/* Einheitlicher Section-Header (bereits genutzt) */
+.section-header { margin-bottom: 1rem; }
+.section-header h2 { font-size: 3rem; font-weight: 900; margin-bottom: .5rem; }
+.section-header .subtitle {
+  display: block; font-size: .875rem; text-transform: uppercase;
+  letter-spacing: .1em; margin-bottom: 1rem;
+}
+.section-header p { color: #444; }
+
+/* 2-Spalten-Grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr; /* Sidebar links, Content rechts */
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Sidebar / Aside */
+.about-aside { display: grid; gap: 1.25rem; }
+
+.about-portrait img {
+  width: 100%; height: auto; display: block; object-fit: cover;
+  border: 1px solid #111; /* feine Linie – wie bei KI-Poster */
+}
+
+.about-facts {
+  list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem;
+  color: #333; font-size: .96rem;
+}
+.about-facts .label {
+  text-transform: uppercase; letter-spacing: .08em; font-size: .78rem; color: #666;
+  margin-right: .4rem;
+}
+
+/* Buttons */
+.about-links { display: grid; gap: .6rem; }
+.btn {
+  display: inline-block; padding: .7rem 1rem; border: 1px solid #111; text-decoration: none;
+  color: #111; background: transparent; transition: transform .15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+
+/* Haupttext / Content */
+.about-content { display: grid; gap: 1rem; }
+.about-content p { font-size: 1.05rem; line-height: 1.7; }
+.about-content h3 { font-size: 1.25rem; margin-top: 1rem; }
+.about-services, .about-clients, .about-socials {
+  list-style: none; margin: 0; padding: 0; display: grid; gap: .35rem;
+}
+.about-socials a { text-decoration: underline; text-underline-offset: 3px; color: inherit; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about-portrait { max-width: 420px; }
+}
+

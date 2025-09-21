@@ -1,42 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About &amp; Contact — Sebastian von Haaren</title>
-  <meta name="description" content="Über Sebastian von Haaren und Kontaktmöglichkeiten.">
-  <link rel="stylesheet" href="./style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About & Contact – Sebastian von Haaren</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main">Direkt zum Inhalt</a>
-
-  <header class="site-header">
-    <nav aria-label="Hauptnavigation">
+  <header>
+    <nav>
       <ul class="nav-list">
-        <li><a href="./projects.html">Projects</a></li>
-        <li><a href="./photography.html">Photography</a></li>
-        <li><a href="./music.html">Music</a></li>
-        <li><a href="./about.html" aria-current="page">About &amp; Contact</a></li>
+        <li><a href="index.html#films">Projects</a></li>
+        <li><a href="index.html#photography">Photography</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="about.html" aria-current="page">About &amp; Contact</a></li>
       </ul>
-      <a class="logo" href="./">SEBASTIAN VON HAAREN</a>
+      <div class="logo">SEBASTIAN VON HAAREN</div>
     </nav>
   </header>
 
-  <main id="main" class="page">
-    <section class="intro">
-      <h1>About &amp; Contact</h1>
-      <p>Kurzvita, Arbeitsweise und direkte Kontaktmöglichkeiten folgen hier demnächst.</p>
-      <p>Schreib mir schon jetzt: <a href="mailto:hello@example.com">hello@example.com</a></p>
+  <main class="about-section">
+    <header class="section-header">
+      <h2>About &amp; Contact</h2>
+      <span class="subtitle">Profile · Services · Get in touch</span>
+      <p>Kurz über dich, wie du arbeitest und wie man dich erreicht.</p>
+    </header>
+
+    <section class="about-grid">
+      <!-- Optional: Portrait/Sidefacts – gern anpassen oder entfernen -->
+      <aside class="about-aside">
+        <figure class="about-portrait">
+          <img src="assets/portrait.jpg" alt="Portrait Sebastian von Haaren">
+        </figure>
+
+        <ul class="about-facts">
+          <li><span class="label">Location</span> Göttingen / DE</li>
+          <li><span class="label">Focus</span> Visual Design · Editorial · Web</li>
+          <li><span class="label">Tools</span> Figma · Adobe CC · HTML/CSS</li>
+        </ul>
+
+        <div class="about-links">
+          <a class="btn" href="assets/cv.pdf" target="_blank" rel="noopener">CV herunterladen</a>
+          <a class="btn" href="mailto:hello@example.com">E-Mail senden</a>
+        </div>
+      </aside>
+
+      <article class="about-content">
+        <p>I am a designer drawn to the spaces where structure and creativity meet. Editorial design is where this comes into focus for me: typography, color, rhythm, and composition converge into a medium that is both precise and expressive. Web design holds a similar appeal, offering a landscape of decisions where detail and system-building come together to shape how people interact with information.</p>
+
+        <p>My path into design has been anything but linear. I first trained as an office administrator, studied Business Administration with a focus on marketing and consumer behavior, and eventually taught myself graphic design. That unconventional route continues to shape my approach: I work hands-on, setting a clear goal at the start of every project and adjusting decisions along the way in close exchange with clients. For me, design is less about rigid process and more about responsive problem-solving—always with the outcome in focus.</p>
+
+        <p>I thrive on the variety of projects I take on. Creating a scientific cover for Nature Methods is a very different challenge than building visual systems for research labs or curating the identity of an interactive exhibition—but the joy is the same. Each project opens a window into new subject matter and gives me the chance to learn while designing. That interplay of curiosity and craft is what keeps my work alive.</p>
+
+        <p>Inspiration often comes from outside the boundaries of design. Music, photography, and illustration inform each other in my practice, showing me how ideas migrate across disciplines. I see design as a dialogue, not a closed system: lessons learned in one medium can spark entirely new approaches in another.</p>
+
+        <p>A thread that runs through all of this is my relationship with ADHD. Since childhood, I’ve had to navigate a constant flood of impressions, ideas, and impulses. Design became a way of creating order where my mind sees only excess. This is why my practice naturally gravitates toward reduction and minimalism: stripping things down to their essence is not just an aesthetic choice, it is a necessity. It is how I create clarity—for myself as a designer, and for the people who encounter my work.</p>
+
+        <h3>Contact</h3>
+        <p>Für Anfragen: <a href="mailto:hello@example.com">hello@example.com</a></p>
+
+        <ul class="about-socials">
+          <li><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </article>
     </section>
   </main>
-
-  <footer class="site-footer" aria-label="Fußbereich">
-    <div class="footer-inner">
-      <p>&copy; <span id="year"></span> Sebastian von Haaren</p>
-      <p>Kontakt: <a href="mailto:hello@example.com">hello@example.com</a></p>
-    </div>
-  </footer>
-
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -364,70 +364,59 @@ main {
 }
 
 
-/* ===== About & Contact ===== */
-.about-section {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 4rem 0;
-  display: grid;
-  gap: 2.5rem;
+/* ===== ABOUT (final override) ===== */
+.about-section{
+  width:90%;max-width:1100px;margin:0 auto;padding:4rem 0;display:grid;gap:2.5rem;
 }
 
-/* Einheitlicher Section-Header (bereits genutzt) */
-.section-header { margin-bottom: 1rem; }
-.section-header h2 { font-size: 3rem; font-weight: 900; margin-bottom: .5rem; }
-.section-header .subtitle {
-  display: block; font-size: .875rem; text-transform: uppercase;
-  letter-spacing: .1em; margin-bottom: 1rem;
+/* Section header (wie Photography/Music) */
+.about-section .section-header{margin-bottom:1rem;}
+.about-section .section-header h2{font-size:3rem;font-weight:900;margin-bottom:.5rem;}
+.about-section .section-header .subtitle{
+  display:block;font-size:.875rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem;
 }
-.section-header p { color: #444; }
+.about-section .section-header p{color:#444;}
 
-/* 2-Spalten-Grid */
-.about-grid {
-  display: grid;
-  grid-template-columns: 320px 1fr; /* Sidebar links, Content rechts */
-  gap: 3rem;
-  align-items: start;
+/* 2-Spalten-Layout */
+.about-section .about-grid{
+  display:grid;grid-template-columns:320px 1fr;gap:3rem;align-items:start;
 }
 
-/* Sidebar / Aside */
-.about-aside { display: grid; gap: 1.25rem; }
-
-.about-portrait img {
-  width: 100%; height: auto; display: block; object-fit: cover;
-  border: 1px solid #111; /* feine Linie – wie bei KI-Poster */
+/* Sidebar */
+.about-section .about-aside{display:grid;gap:1.25rem;}
+.about-section .about-portrait img{
+  width:100%;height:auto;display:block;object-fit:cover;border:1px solid #111;
 }
 
-.about-facts {
-  list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem;
-  color: #333; font-size: .96rem;
-}
-.about-facts .label {
-  text-transform: uppercase; letter-spacing: .08em; font-size: .78rem; color: #666;
-  margin-right: .4rem;
+/* Facts-Liste ohne Bullets, typografisch ruhig */
+.about-section .about-facts{list-style:none;margin:0;padding:0;display:grid;gap:.4rem;color:#333;font-size:.96rem;}
+.about-section .about-facts .label{
+  text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;color:#666;margin-right:.4rem;
 }
 
 /* Buttons */
-.about-links { display: grid; gap: .6rem; }
-.btn {
-  display: inline-block; padding: .7rem 1rem; border: 1px solid #111; text-decoration: none;
-  color: #111; background: transparent; transition: transform .15s ease;
+.about-section .about-links{display:grid;gap:.6rem;}
+.about-section .btn{
+  display:inline-block;padding:.7rem 1rem;border:1px solid #111;text-decoration:none;color:#111;background:transparent;
+  transition:transform .15s ease;
 }
-.btn:hover { transform: translateY(-1px); }
+.about-section .btn:hover{transform:translateY(-1px);}
 
-/* Haupttext / Content */
-.about-content { display: grid; gap: 1rem; }
-.about-content p { font-size: 1.05rem; line-height: 1.7; }
-.about-content h3 { font-size: 1.25rem; margin-top: 1rem; }
-.about-services, .about-clients, .about-socials {
-  list-style: none; margin: 0; padding: 0; display: grid; gap: .35rem;
-}
-.about-socials a { text-decoration: underline; text-underline-offset: 3px; color: inherit; }
+/* Haupttext rechts */
+.about-section .about-content{display:grid;gap:1rem;}
+.about-section .about-content p{font-size:1.05rem;line-height:1.7;}
+.about-section .about-content h3{font-size:1.25rem;margin-top:1rem;}
+
+/* Listen im Content ohne Bullets, mit ruhigem Zeilenabstand */
+.about-section .about-services,
+.about-section .about-clients,
+.about-section .about-socials{list-style:none;margin:0;padding:0;display:grid;gap:.35rem;}
+.about-section .about-socials a{text-decoration:underline;text-underline-offset:3px;color:inherit;}
 
 /* Responsive */
-@media (max-width: 900px) {
-  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .about-portrait { max-width: 420px; }
+@media (max-width:900px){
+  .about-section .about-grid{grid-template-columns:1fr;gap:2rem;}
+  .about-section .about-portrait{max-width:420px;}
 }
+
 

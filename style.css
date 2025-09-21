@@ -158,57 +158,49 @@ main {
 
 
 
-/* Photography-Section über volle Breite */
+/* --- Photography: größere Kacheln, responsiv --- */
+
+/* Container etwas breiter, damit große Kacheln Platz haben */
 .photography-section {
-  width: 100%;
-  max-width: 1200px;
+  width: 95%;
+  max-width: 1500px;   /* vorher 1200px – mehr Bühne für die Bilder */
   margin: 0 auto;
-  display: block;
-  padding-bottom: 4rem;
 }
 
-.photography-header {
-  margin-bottom: 2rem;
+/* Kachelgröße zentral steuerbar */
+:root {
+  --tile-min: 360px;   /* Basis-Kachelbreite auf Desktop */
 }
 
-.photography-header h2 {
-  font-size: 3rem;
-  font-weight: 900;
-  margin-bottom: 0.5rem;
-}
-
-.photography-header .subtitle {
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 1rem;
-  display: block;
-}
-
+/* Masonry-Grid mit größeren Kacheln */
 .gallery-masonry {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  grid-auto-rows: 10px;
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(var(--tile-min), 1fr));
+  grid-auto-rows: 10px;   /* Masonry-Basis (wie vorher) */
+  gap: 20px;              /* etwas mehr Luft zwischen Bildern */
 }
 
-.card {
-  overflow: hidden;
-  box-shadow: none; /* optional: auch Schatten weg für ganz flachen Look */
-  background: transparent;
-  transform: translateZ(0);
-}
-
-
+/* Bilder unverzerrt, füllen die Karte vollständig */
 .card img {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
 }
 
-.card:hover {
-  transform: scale(1.01);
-  transition: transform .2s ease;
+/* Responsiv feinjustieren: weniger Spalten -> größere Bilder auf großen Screens,
+   und kleinere Minbreite auf mobilen Geräten */
+@media (min-width: 1700px) {
+  :root { --tile-min: 420px; }    /* Ultra-wide: noch größer */
+}
+@media (max-width: 1300px) {
+  :root { --tile-min: 320px; }
+}
+@media (max-width: 1000px) {
+  :root { --tile-min: 260px; }
+}
+@media (max-width: 700px) {
+  :root { --tile-min: 180px; }    /* Handy */
 }
 
 /* ===== MUSIC SECTION ===== */

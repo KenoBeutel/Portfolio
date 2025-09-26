@@ -419,4 +419,36 @@ main {
   .about-section .about-portrait{max-width:420px;}
 }
 
+/* ===== Einheitliche Seitenbreite & linke Ausrichtung ===== */
+:root{
+  /* Gleiche Werte wie dein Header-NAV: */
+  --container-w: 90%;
+  --container-max: 1200px;
+}
+
+/* Header-NAV hat das bereits – wir ziehen alle Main-Container gleich */
+main,
+.photography-section,
+.music-section,
+.about-section {
+  width: var(--container-w) !important;
+  max-width: var(--container-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;   /* keine zusätzlichen Einzüge */
+  padding-right: 0 !important;
+}
+
+/* Falls irgendwo zusätzliche linke Abstände gesetzt wurden */
+.section-header,
+.release,
+.gallery-masonry,
+.project {
+  margin-left: 0 !important;
+}
+
+/* (Optional) wenn du auf Mobil etwas mehr Rand willst, kannst du das hier feinjustieren */
+@media (max-width: 768px){
+  :root{ --container-w: 95%; }  /* etwas breiterer Rand auf kleinen Screens */
+}
 

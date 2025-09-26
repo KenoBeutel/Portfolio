@@ -454,3 +454,23 @@ main,
 
 
 
+
+
+
+/* Portrait Styling (About Page) */
+.about-portrait {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-portrait img {
+  width: 220px;           /* Größe des Kreises, kannst du anpassen */
+  height: 220px;
+  border-radius: 50%;     /* macht es rund */
+  object-fit: cover;      /* füllt den Kreis gleichmäßig */
+  border: 2px solid #111; /* feine schwarze Linie für Klarheit */
+  filter: grayscale(100%);/* macht das Bild schwarz-weiß */
+}
+
+

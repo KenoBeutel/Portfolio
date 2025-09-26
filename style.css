@@ -67,7 +67,7 @@ main {
 .project {
   display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; position: relative;
   padding-bottom: 4rem; border-bottom: 1px solid var(--border); align-items: start;
-  scroll-margin-top: 6rem; /* damit Anker nicht unter den sticky Header rutschen */
+
 }
 .project.reverse { direction: rtl; }
 .project.reverse .project-content, .project.reverse .project-image { direction: ltr; }

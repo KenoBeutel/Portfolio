@@ -474,3 +474,46 @@ main,
 }
 
 
+
+
+
+
+
+
+/* === Align Photography with nav (final) === */
+:root{
+  --container-w: 90%;
+  --container-max: 1200px;
+}
+
+/* Main-Container exakt wie auf Index/Music/About */
+.photography-section{
+  width: var(--container-w) !important;
+  max-width: var(--container-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Keine Extra-Einrückungen im Header und Grid */
+.photography-section .section-header{
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+.photography-section .gallery-masonry{
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Behalte die große Kachelgröße ohne den Container zu verbreitern */
+.photography-section .gallery-masonry{
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)) !important;
+  gap: 20px !important;
+}
+
+/* Mobile: etwas mehr Rand, wie auf den anderen Seiten */
+@media (max-width: 768px){
+  :root{ --container-w: 95%; }
+}
+

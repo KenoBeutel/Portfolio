@@ -454,14 +454,3 @@ main,
 
 
 
-
-
-
-
-
-/* Größere Kacheln ohne Container zu verbreitern */
-.photography-section .gallery-masonry{
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)) !important;
-  gap: 20px;
-}
-

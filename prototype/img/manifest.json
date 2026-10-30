@@ -1,0 +1,553 @@
+[
+ {
+  "name": "portrait-color",
+  "files": [
+   "portrait-color.webp",
+   "portrait-color.jpg"
+  ],
+  "width": 900,
+  "height": 990,
+  "aspect": "portrait",
+  "source": "assets/vonHaaren.png",
+  "note": "head+shoulders crop 60:66; top extended with background"
+ },
+ {
+  "name": "portrait-duo",
+  "files": [
+   "portrait-duo.webp",
+   "portrait-duo.jpg"
+  ],
+  "width": 900,
+  "height": 990,
+  "aspect": "portrait",
+  "source": "assets/vonHaaren.png",
+  "note": "background lifted to paper: luminance>0.36 AND chroma<16, mask feathered 2px"
+ },
+ {
+  "name": "planto-cover-color",
+  "files": [
+   "planto-cover-color.webp",
+   "planto-cover-color.jpg"
+  ],
+  "width": 1039,
+  "height": 1478,
+  "aspect": "portrait",
+  "source": "assets/Cover 1.png",
+  "note": ""
+ },
+ {
+  "name": "planto-cover-duo",
+  "files": [
+   "planto-cover-duo.webp",
+   "planto-cover-duo.jpg"
+  ],
+  "width": 1039,
+  "height": 1478,
+  "aspect": "portrait",
+  "source": "assets/Cover 1.png",
+  "note": ""
+ },
+ {
+  "name": "planto-inner-color",
+  "files": [
+   "planto-inner-color.webp",
+   "planto-inner-color.jpg"
+  ],
+  "width": 1600,
+  "height": 1183,
+  "aspect": "landscape",
+  "source": "assets/Planto_Inner2.png",
+  "note": "white corner was transparent area; flattened onto paper so it is invisible"
+ },
+ {
+  "name": "planto-inner-duo",
+  "files": [
+   "planto-inner-duo.webp",
+   "planto-inner-duo.jpg"
+  ],
+  "width": 1600,
+  "height": 1183,
+  "aspect": "landscape",
+  "source": "assets/Planto_Inner2.png",
+  "note": "white corner was transparent area; flattened onto paper so it is invisible"
+ },
+ {
+  "name": "planto-back-color",
+  "files": [
+   "planto-back-color.webp",
+   "planto-back-color.jpg"
+  ],
+  "width": 1103,
+  "height": 1554,
+  "aspect": "portrait",
+  "source": "assets/Planto_Back.png",
+  "note": ""
+ },
+ {
+  "name": "planto-back-duo",
+  "files": [
+   "planto-back-duo.webp",
+   "planto-back-duo.jpg"
+  ],
+  "width": 1103,
+  "height": 1554,
+  "aspect": "portrait",
+  "source": "assets/Planto_Back.png",
+  "note": ""
+ },
+ {
+  "name": "planto-spread-color",
+  "files": [
+   "planto-spread-color.webp",
+   "planto-spread-color.jpg"
+  ],
+  "width": 1600,
+  "height": 1186,
+  "aspect": "landscape",
+  "source": "assets/Planto_Inner.png",
+  "note": ""
+ },
+ {
+  "name": "planto-spread-duo",
+  "files": [
+   "planto-spread-duo.webp",
+   "planto-spread-duo.jpg"
+  ],
+  "width": 1600,
+  "height": 1186,
+  "aspect": "landscape",
+  "source": "assets/Planto_Inner.png",
+  "note": ""
+ },
+ {
+  "name": "ki-poster-color",
+  "files": [
+   "ki-poster-color.webp",
+   "ki-poster-color.jpg"
+  ],
+  "width": 859,
+  "height": 1208,
+  "aspect": "portrait",
+  "source": "assets/kientdecken.png",
+  "note": "native size, not upscaled"
+ },
+ {
+  "name": "ki-poster-duo",
+  "files": [
+   "ki-poster-duo.webp",
+   "ki-poster-duo.jpg"
+  ],
+  "width": 859,
+  "height": 1208,
+  "aspect": "portrait",
+  "source": "assets/kientdecken.png",
+  "note": "native size, not upscaled"
+ },
+ {
+  "name": "ffd-cover-color",
+  "files": [
+   "ffd-cover-color.webp",
+   "ffd-cover-color.jpg"
+  ],
+  "width": 1000,
+  "height": 1000,
+  "aspect": "square",
+  "source": "assets/Far_From_Dreaming.jpg",
+  "note": ""
+ },
+ {
+  "name": "ffd-cover-duo",
+  "files": [
+   "ffd-cover-duo.webp",
+   "ffd-cover-duo.jpg"
+  ],
+  "width": 1000,
+  "height": 1000,
+  "aspect": "square",
+  "source": "assets/Far_From_Dreaming.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-01-color",
+  "files": [
+   "photo-01-color.webp",
+   "photo-01-color.jpg"
+  ],
+  "width": 900,
+  "height": 1600,
+  "aspect": "portrait",
+  "source": "assets/photos/01.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-01-duo",
+  "files": [
+   "photo-01-duo.webp",
+   "photo-01-duo.jpg"
+  ],
+  "width": 900,
+  "height": 1600,
+  "aspect": "portrait",
+  "source": "assets/photos/01.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-01-thumb-color",
+  "files": [
+   "photo-01-thumb-color.webp",
+   "photo-01-thumb-color.jpg"
+  ],
+  "width": 394,
+  "height": 700,
+  "aspect": "portrait",
+  "source": "assets/photos/01.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-01-thumb-duo",
+  "files": [
+   "photo-01-thumb-duo.webp",
+   "photo-01-thumb-duo.jpg"
+  ],
+  "width": 394,
+  "height": 700,
+  "aspect": "portrait",
+  "source": "assets/photos/01.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-02-color",
+  "files": [
+   "photo-02-color.webp",
+   "photo-02-color.jpg"
+  ],
+  "width": 900,
+  "height": 1600,
+  "aspect": "portrait",
+  "source": "assets/photos/02.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-02-duo",
+  "files": [
+   "photo-02-duo.webp",
+   "photo-02-duo.jpg"
+  ],
+  "width": 900,
+  "height": 1600,
+  "aspect": "portrait",
+  "source": "assets/photos/02.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-02-thumb-color",
+  "files": [
+   "photo-02-thumb-color.webp",
+   "photo-02-thumb-color.jpg"
+  ],
+  "width": 394,
+  "height": 700,
+  "aspect": "portrait",
+  "source": "assets/photos/02.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-02-thumb-duo",
+  "files": [
+   "photo-02-thumb-duo.webp",
+   "photo-02-thumb-duo.jpg"
+  ],
+  "width": 394,
+  "height": 700,
+  "aspect": "portrait",
+  "source": "assets/photos/02.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-03-color",
+  "files": [
+   "photo-03-color.webp",
+   "photo-03-color.jpg"
+  ],
+  "width": 1600,
+  "height": 900,
+  "aspect": "landscape",
+  "source": "assets/photos/03.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-03-duo",
+  "files": [
+   "photo-03-duo.webp",
+   "photo-03-duo.jpg"
+  ],
+  "width": 1600,
+  "height": 900,
+  "aspect": "landscape",
+  "source": "assets/photos/03.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-03-thumb-color",
+  "files": [
+   "photo-03-thumb-color.webp",
+   "photo-03-thumb-color.jpg"
+  ],
+  "width": 700,
+  "height": 394,
+  "aspect": "landscape",
+  "source": "assets/photos/03.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-03-thumb-duo",
+  "files": [
+   "photo-03-thumb-duo.webp",
+   "photo-03-thumb-duo.jpg"
+  ],
+  "width": 700,
+  "height": 394,
+  "aspect": "landscape",
+  "source": "assets/photos/03.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-04-color",
+  "files": [
+   "photo-04-color.webp",
+   "photo-04-color.jpg"
+  ],
+  "width": 900,
+  "height": 1600,
+  "aspect": "portrait",
+  "source": "assets/photos/04.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-04-duo",
+  "files": [
+   "photo-04-duo.webp",
+   "photo-04-duo.jpg"
+  ],
+  "width": 900,
+  "height": 1600,
+  "aspect": "portrait",
+  "source": "assets/photos/04.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-04-thumb-color",
+  "files": [
+   "photo-04-thumb-color.webp",
+   "photo-04-thumb-color.jpg"
+  ],
+  "width": 394,
+  "height": 700,
+  "aspect": "portrait",
+  "source": "assets/photos/04.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-04-thumb-duo",
+  "files": [
+   "photo-04-thumb-duo.webp",
+   "photo-04-thumb-duo.jpg"
+  ],
+  "width": 394,
+  "height": 700,
+  "aspect": "portrait",
+  "source": "assets/photos/04.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-05-color",
+  "files": [
+   "photo-05-color.webp",
+   "photo-05-color.jpg"
+  ],
+  "width": 1600,
+  "height": 900,
+  "aspect": "landscape",
+  "source": "assets/photos/05.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-05-duo",
+  "files": [
+   "photo-05-duo.webp",
+   "photo-05-duo.jpg"
+  ],
+  "width": 1600,
+  "height": 900,
+  "aspect": "landscape",
+  "source": "assets/photos/05.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-05-thumb-color",
+  "files": [
+   "photo-05-thumb-color.webp",
+   "photo-05-thumb-color.jpg"
+  ],
+  "width": 700,
+  "height": 394,
+  "aspect": "landscape",
+  "source": "assets/photos/05.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-05-thumb-duo",
+  "files": [
+   "photo-05-thumb-duo.webp",
+   "photo-05-thumb-duo.jpg"
+  ],
+  "width": 700,
+  "height": 394,
+  "aspect": "landscape",
+  "source": "assets/photos/05.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-06-color",
+  "files": [
+   "photo-06-color.webp",
+   "photo-06-color.jpg"
+  ],
+  "width": 1600,
+  "height": 900,
+  "aspect": "landscape",
+  "source": "assets/photos/06.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-06-duo",
+  "files": [
+   "photo-06-duo.webp",
+   "photo-06-duo.jpg"
+  ],
+  "width": 1600,
+  "height": 900,
+  "aspect": "landscape",
+  "source": "assets/photos/06.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-06-thumb-color",
+  "files": [
+   "photo-06-thumb-color.webp",
+   "photo-06-thumb-color.jpg"
+  ],
+  "width": 700,
+  "height": 394,
+  "aspect": "landscape",
+  "source": "assets/photos/06.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-06-thumb-duo",
+  "files": [
+   "photo-06-thumb-duo.webp",
+   "photo-06-thumb-duo.jpg"
+  ],
+  "width": 700,
+  "height": 394,
+  "aspect": "landscape",
+  "source": "assets/photos/06.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-07-color",
+  "files": [
+   "photo-07-color.webp",
+   "photo-07-color.jpg"
+  ],
+  "width": 1600,
+  "height": 914,
+  "aspect": "landscape",
+  "source": "assets/photos/07.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-07-duo",
+  "files": [
+   "photo-07-duo.webp",
+   "photo-07-duo.jpg"
+  ],
+  "width": 1600,
+  "height": 914,
+  "aspect": "landscape",
+  "source": "assets/photos/07.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-07-thumb-color",
+  "files": [
+   "photo-07-thumb-color.webp",
+   "photo-07-thumb-color.jpg"
+  ],
+  "width": 700,
+  "height": 400,
+  "aspect": "landscape",
+  "source": "assets/photos/07.jpg",
+  "note": ""
+ },
+ {
+  "name": "photo-07-thumb-duo",
+  "files": [
+   "photo-07-thumb-duo.webp",
+   "photo-07-thumb-duo.jpg"
+  ],
+  "width": 700,
+  "height": 400,
+  "aspect": "landscape",
+  "source": "assets/photos/07.jpg",
+  "note": ""
+ },
+ {
+  "name": "og-image",
+  "files": [
+   "og-image.jpg"
+  ],
+  "width": 1200,
+  "height": 630,
+  "aspect": "landscape",
+  "source": "portrait-duo",
+  "note": "left area empty for text"
+ },
+ {
+  "name": "nm-cover",
+  "files": [],
+  "width": null,
+  "height": null,
+  "aspect": null,
+  "source": "https://pbs.twimg.com/media/Gl7pwD3WgAADTgO.png",
+  "note": "DOWNLOAD FAILED: proxy CONNECT 403 (host blocked); not generated"
+ },
+ {
+  "name": "moh-palelight",
+  "files": [],
+  "width": null,
+  "height": null,
+  "aspect": null,
+  "source": "https://f4.bcbits.com/img/a2551538820_16.jpg",
+  "note": "DOWNLOAD FAILED: proxy CONNECT 403 (host blocked); not generated"
+ },
+ {
+  "name": "moh-sharkbait",
+  "files": [],
+  "width": null,
+  "height": null,
+  "aspect": null,
+  "source": "https://f4.bcbits.com/img/a2727000644_16.jpg",
+  "note": "DOWNLOAD FAILED: proxy CONNECT 403 (host blocked); not generated"
+ },
+ {
+  "name": "skyglow",
+  "files": [],
+  "width": null,
+  "height": null,
+  "aspect": null,
+  "source": "https://f4.bcbits.com/img/a1695298054_16.jpg",
+  "note": "DOWNLOAD FAILED: proxy CONNECT 403 (host blocked); not generated"
+ }
+]

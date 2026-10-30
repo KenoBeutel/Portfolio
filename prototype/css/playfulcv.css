@@ -121,7 +121,7 @@ a:hover { text-decoration-thickness: 2px; }
 /* ---------- stations ---------- */
 .stations { position: relative; list-style: none; margin: 0; padding: 0 0 0 30px; }
 .thread { position: absolute; left: 0; top: 0; width: 30px; height: 100%; overflow: visible; pointer-events: none; color: var(--ink); }
-.talk-label { display: grid; grid-template-columns: var(--col-year) minmax(0, 1fr) minmax(0, 1.25fr) 168px; gap: 0 28px; margin-bottom: 4px; }
+.talk-label { padding-left: 30px; display: grid; grid-template-columns: var(--col-year) minmax(0, 1fr) minmax(0, 1.25fr) 168px; gap: 0 28px; margin-bottom: 4px; }
 .talk-label .hand { grid-column: 3; transform: rotate(-3deg); transform-origin: left; display: inline-block; }
 .station { position: relative; }
 .station > a {
@@ -141,7 +141,8 @@ a:hover { text-decoration-thickness: 2px; }
 .more { font: 500 13px/1 var(--f-struct); margin-top: 12px; display: inline-flex; gap: 8px; color: var(--ink-mute); }
 .station > a:hover .more { color: var(--ink); }
 .circ { position: relative; white-space: nowrap; }
-.circ svg { position: absolute; left: -12%; top: -38%; width: 124%; height: 176%; overflow: visible; pointer-events: none; }
+.circ { margin-right: .2em; }
+.circ svg { position: absolute; left: -20%; top: -46%; width: 140%; height: 192%; overflow: visible; pointer-events: none; }
 
 /* duotone → colour swap */
 .swap { position: relative; margin: 0; align-self: start; background: var(--sheet); }
@@ -192,15 +193,18 @@ a:hover .swap .c, a:focus-visible .swap .c, .swap:hover .c { opacity: 1; }
 
 /* ---------- photography: justified bands, every row one height ---------- */
 .photos { display: flex; flex-wrap: wrap; gap: 12px; }
-.photos::after { content: ""; flex: 999 1 0; }
 .photos button { all: unset; cursor: zoom-in; display: block; position: relative; min-width: 0;
-  flex: calc(var(--ar) * 100) 1 calc(var(--ar) * 250px); }
+  flex: calc(var(--ar) * 100) 1 calc(var(--ar) * 200px); }
 .photos .p { --ar: .5625; }
 .photos .l { --ar: 1.7778; }
 .photos button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .photos .swap { display: block; }
 .photos .swap img { width: 100%; height: auto; aspect-ratio: var(--ar); object-fit: cover; }
-@media (max-width: 719px) { .photos button { flex-basis: calc(var(--ar) * 150px); } }
+@media (max-width: 719px) {
+  .photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .photos button { --ar: 1; }
+  .photos button:last-child { grid-column: span 2; --ar: 2; }
+}
 dialog.lb { border: 0; padding: 0; background: transparent; max-width: min(92vw, 1400px); max-height: 92vh; }
 dialog.lb::backdrop { background: color-mix(in srgb, var(--paper) 92%, transparent); }
 dialog.lb img { max-height: 86vh; width: auto; margin: 0 auto; }
@@ -228,6 +232,7 @@ dialog.lb form { display: flex; justify-content: flex-end; margin-top: 8px; }
 .cell.serif li { font: 400 18px/1.32 var(--f-voice); overflow-wrap: normal; }
 .copy { all: unset; cursor: pointer; font: 500 12px/1 var(--f-struct); color: var(--ink-mute); text-decoration: underline; text-underline-offset: .2em; }
 .copy:hover { color: var(--ink); }
+.copy:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 @media (max-width: 899px) { .grid4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 479px) { .grid4 { grid-template-columns: minmax(0, 1fr); } .cell { min-height: 0; } }
 
@@ -269,3 +274,26 @@ a:hover .swap.remote img, a:focus-visible .swap.remote img { filter: none; }
 .swap.missing img { display: none; }
 .swap.missing::after { content: attr(data-ph); font: 400 17px/1.1 var(--f-hand); color: var(--ink-mute); transform: rotate(-4deg); }
 .cover.missing::after { content: "♪"; font: 400 18px/1 var(--f-hand); color: var(--ink-mute); }
+
+/* ---------- header on phones: signature + paper switch in one row, nav below ---------- */
+.head .theme-btn { flex: none; }
+@media (max-width: 719px) {
+  .head .sig { order: 0; }
+  .head .theme-btn { order: 1; margin-left: auto; }
+  .head .nav { order: 2; width: 100%; }
+}
+
+/* ---------- night paper: every duotone reprints in chalk on night, no cobalt left ---------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .swap img:not(.c),
+  :root:not([data-theme="light"]) .portrait img { filter: url(#duo-night); }
+}
+:root[data-theme="dark"] .swap img:not(.c),
+:root[data-theme="dark"] .portrait img { filter: url(#duo-night); }
+a:hover .swap.remote img, a:focus-visible .swap.remote img { filter: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) a:hover .swap.remote img,
+  :root:not([data-theme="light"]) a:focus-visible .swap.remote img { filter: none; }
+}
+:root[data-theme="dark"] a:hover .swap.remote img,
+:root[data-theme="dark"] a:focus-visible .swap.remote img { filter: none; }

@@ -16,9 +16,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600&family=Newsreader:ital,wght@0,400;1,400&family=Gochi+Hand&display=swap">
 <link rel="stylesheet" href="css/playfulcv.css">
+<script>try{var t=localStorage.getItem('pcv-theme');t&&document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="duo" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="table" tableValues=".043 .47 .937"/><feFuncG type="table" tableValues=".208 .53 .902"/><feFuncB type="table" tableValues=".639 .745 .863"/></feComponentTransfer></filter></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="duo" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="table" tableValues=".043 .47 .937"/><feFuncG type="table" tableValues=".208 .53 .902"/><feFuncB type="table" tableValues=".639 .745 .863"/></feComponentTransfer></filter><filter id="duo-night" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="table" tableValues=".059 .839"/><feFuncG type="table" tableValues=".090 .878"/><feFuncB type="table" tableValues=".188 .980"/></feComponentTransfer></filter></svg>
 <a class="skip" href="#work">Skip to work</a>
 
 <div class="wrap">
@@ -29,10 +30,10 @@
       <a href="#music">Music</a>
       <a href="#photography">Photography</a>
       <a href="#about">About</a>
-      <button class="theme-btn" type="button" aria-label="Switch paper">
+    </nav>
+    <button class="theme-btn" type="button" aria-label="Switch paper">
         <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"/></svg>
       </button>
-    </nav>
   </header>
 
   <section class="anchor" aria-labelledby="name">
@@ -46,6 +47,7 @@
       where my mind sees only excess.</p>
   </section>
 
+  <main>
   <!-- WORK ============================================================ -->
   <section class="sec" id="work" aria-labelledby="work-h">
     <div class="sec-head"><h2 id="work-h">Work</h2><span class="caps mute">2023 – 2025</span></div>
@@ -56,7 +58,7 @@
           <div class="yr">2025<span class="caps">March issue</span><span class="hand note">on the cover</span></div>
           <div class="who">
             <p class="role"><span class="circ">Cover<svg viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M80 6C60 0 21 2 8 12-3 22 14 37 49 37 82 38 100 28 96 16 92 5 70 2 55 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span> illustration</p>
-            <p class="org">Nature Methods · CIDAS Göttingen</p>
+            <p class="org">Nature Methods · CIDAS</p>
           </div>
           <ul class="talk">
             <li>Cell structures drawn soft, segmentation shown as colour.</li>
@@ -70,7 +72,7 @@
           <div class="yr">2025<span class="caps">and 2023</span></div>
           <div class="who">
             <p class="role">Single artwork</p>
-            <p class="org">Miles of Hope · emo</p>
+            <p class="org">Miles of Hope · on Bandcamp ↗</p>
           </div>
           <ul class="talk">
             <li>Two covers for a band I play in.</li>
@@ -100,7 +102,7 @@
             <p class="org">Planto · self-published</p>
           </div>
           <ul class="talk">
-            <li>A book I wrote, designed and typeset alone.</li>
+            <li>A book I wrote, designed and fully typeset.</li>
             <li>For a winter morning and for planting season.</li>
           </ul>
           <figure class="swap"><img src="img/planto-cover-duo.webp" alt="Cover of Planto – Atlas der Gemüsekulturen" loading="lazy"><img class="c" src="img/planto-cover-color.webp" alt="" loading="lazy"></figure>
@@ -111,7 +113,7 @@
 
   <!-- MUSIC =========================================================== -->
   <section class="sec" id="music" aria-labelledby="music-h">
-    <div class="sec-head"><h2 id="music-h">Music</h2><span class="hand">on the side, loudly</span></div>
+    <div class="sec-head"><h2 id="music-h">Music</h2><span class="caps mute">Four releases · 2022 – 2025</span></div>
     <ul class="tracks">
       <li>
         <span class="yr">2025</span>
@@ -131,7 +133,7 @@
         <span class="yr">2022</span>
         <img class="cover remote-cover" src="img/ffd-cover-color.webp" alt="" loading="lazy" width="64" height="64">
         <p class="t">Far From Dreaming <span class="mute">· Torch | Eye Of The Storm</span></p>
-        <p class="credit">Double single, alternative metal.<span class="mute">With Sascha, Tiemo, Lars, Daniel</span></p>
+        <p class="credit">Two songs, alternative metal.<span class="mute">With Sascha, Tiemo, Lars, Daniel</span></p>
         <a class="listen" href="https://open.spotify.com/album/3AGlDhleyOhrrUFYpTtErg" target="_blank" rel="noopener">listen →</a>
       </li>
       <li>
@@ -146,7 +148,7 @@
 
   <!-- PHOTOGRAPHY ===================================================== -->
   <section class="sec" id="photography" aria-labelledby="photo-h">
-    <div class="sec-head"><h2 id="photo-h">Photography</h2><span class="hand">coasts, fire, blossom</span></div>
+    <div class="sec-head"><h2 id="photo-h">Photography</h2><span class="caps mute">Seven photographs</span></div>
     <div class="photos">
       <button class="p" type="button" data-full="img/photo-01-color.webp" data-alt="Sunset over the sea, orange sky"><span class="sr">Open photo: sunset over the sea</span><span class="swap"><img src="img/photo-01-thumb-duo.webp" alt="" loading="lazy"><img class="c" src="img/photo-01-thumb-color.webp" alt="" loading="lazy"></span></button>
       <button class="l" type="button" data-full="img/photo-03-color.webp" data-alt="Campfire on a beach at dusk"><span class="sr">Open photo: campfire on a beach</span><span class="swap"><img src="img/photo-03-thumb-duo.webp" alt="" loading="lazy"><img class="c" src="img/photo-03-thumb-color.webp" alt="" loading="lazy"></span></button>
@@ -164,7 +166,7 @@
 
   <!-- ABOUT =========================================================== -->
   <section class="sec" id="about" aria-labelledby="about-h">
-    <div class="sec-head"><h2 id="about-h">About</h2><span class="hand">the long way round</span></div>
+    <div class="sec-head"><h2 id="about-h">About</h2></div>
     <div class="about">
       <div>
         <p>I trained as an office administrator, studied business with a focus on marketing and consumer behaviour, and taught myself design. I still work that way: set a clear goal, then adjust in close exchange with the people I design for.</p>
@@ -177,7 +179,7 @@
       <div class="cell">
         <span class="hand">contact</span>
         <ul>
-          <li><span>sebastian.vonhaaren@gmail.com</span> <button class="copy" type="button" data-copy="sebastian.vonhaaren@gmail.com">copy</button></li>
+          <li><a href="mailto:sebastian.vonhaaren@gmail.com">sebastian.vonhaaren@gmail.com</a> <button class="copy" type="button" data-copy="sebastian.vonhaaren@gmail.com">copy</button></li>
           <li>Göttingen<span class="mute">Germany</span></li>
         </ul>
       </div>
@@ -206,6 +208,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <footer class="foot">
     <span class="place">Göttingen</span>

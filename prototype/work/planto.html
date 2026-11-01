@@ -36,7 +36,7 @@
   .case-stage, .case-next { display: block; }
 }
 </style>
-<script>try{var t=localStorage.getItem('pcv-theme');t&&document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script>try{sessionStorage.getItem('pcv-paper')==='night'&&document.documentElement.setAttribute('data-paper','night')}catch(e){}</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="duo" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="table" tableValues=".043 .47 .937"/><feFuncG type="table" tableValues=".208 .53 .902"/><feFuncB type="table" tableValues=".639 .745 .863"/></feComponentTransfer></filter><filter id="duo-night" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="table" tableValues=".059 .839"/><feFuncG type="table" tableValues=".090 .878"/><feFuncB type="table" tableValues=".188 .980"/></feComponentTransfer></filter></svg>
@@ -51,7 +51,7 @@
       <a href="../index.html#photography">Photography</a>
       <a href="../index.html#about">About</a>
     </nav>
-    <button class="theme-btn" type="button" aria-label="Switch paper">
+    <button class="theme-btn" type="button" aria-label="Switch to night paper" aria-pressed="false">
         <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"/></svg>
       </button>
   </header>

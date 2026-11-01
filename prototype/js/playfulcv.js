@@ -1,25 +1,24 @@
 /* PlayfulCV · web behaviour: theme toggle, chalk thread, lightbox, copy. */
 (function () {
   var root = document.documentElement;
-  var KEY = 'pcv-theme';
-  try { var saved = localStorage.getItem(KEY); if (saved) root.setAttribute('data-theme', saved); } catch (e) {}
+  /* Light paper is the default. The night switch is remembered only for this visit
+     (sessionStorage), so moving between pages keeps it but a new visit opens light. */
+  var KEY = 'pcv-paper';
+  try { if (sessionStorage.getItem(KEY) === 'night') root.setAttribute('data-paper', 'night'); } catch (e) {}
 
-  function isDark() {
-    var t = root.getAttribute('data-theme');
-    if (t) return t === 'dark';
-    return window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches;
-  }
+  function isDark() { return root.getAttribute('data-paper') === 'night'; }
   function paintToggle() {
     document.querySelectorAll('.theme-btn').forEach(function (b) {
       b.setAttribute('aria-label', isDark() ? 'Switch to light paper' : 'Switch to night paper');
+      b.setAttribute('aria-pressed', isDark() ? 'true' : 'false');
     });
   }
   document.addEventListener('click', function (e) {
     var b = e.target.closest('.theme-btn');
     if (!b) return;
-    var next = isDark() ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    try { localStorage.setItem(KEY, next); } catch (err) {}
+    var night = !isDark();
+    if (night) root.setAttribute('data-paper', 'night'); else root.removeAttribute('data-paper');
+    try { if (night) sessionStorage.setItem(KEY, 'night'); else sessionStorage.removeItem(KEY); } catch (err) {}
     paintToggle();
   });
 

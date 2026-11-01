@@ -16,10 +16,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600&family=Newsreader:ital,wght@0,400;1,400&family=Gochi+Hand&display=swap">
 <link rel="stylesheet" href="css/playfulcv.css">
-<script>try{var t=localStorage.getItem('pcv-theme');t&&document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script>try{sessionStorage.getItem('pcv-paper')==='night'&&document.documentElement.setAttribute('data-paper','night')}catch(e){}</script>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="duo" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="table" tableValues=".043 .47 .937"/><feFuncG type="table" tableValues=".208 .53 .902"/><feFuncB type="table" tableValues=".639 .745 .863"/></feComponentTransfer></filter><filter id="duo-night" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="table" tableValues=".059 .839"/><feFuncG type="table" tableValues=".090 .878"/><feFuncB type="table" tableValues=".188 .980"/></feComponentTransfer></filter></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="duo" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="table" tableValues=".043 .47 .937"/><feFuncG type="table" tableValues=".208 .53 .902"/><feFuncB type="table" tableValues=".639 .745 .863"/></feComponentTransfer></filter><filter id="chalk-ic" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="1.6"/></filter><filter id="duo-night" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="table" tableValues=".059 .839"/><feFuncG type="table" tableValues=".090 .878"/><feFuncB type="table" tableValues=".188 .980"/></feComponentTransfer></filter></svg>
 <a class="skip" href="#work">Skip to work</a>
 
 <div class="wrap">
@@ -31,7 +31,7 @@
       <a href="#photography">Photography</a>
       <a href="#about">About</a>
     </nav>
-    <button class="theme-btn" type="button" aria-label="Switch paper">
+    <button class="theme-btn" type="button" aria-label="Switch to night paper" aria-pressed="false">
         <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"/></svg>
       </button>
   </header>
@@ -173,6 +173,21 @@
         <p>Editorial and web design pull me most, because that is where structure and expression meet. Music, photography and illustration keep feeding each other.</p>
         <p>I have ADHD. Reduction is not a style for me, it is how I make things clear, for myself and for whoever reads the work.</p>
       </div>
+    </div>
+
+    <div class="holes" aria-labelledby="holes-h">
+      <div class="holes-head">
+        <h3 class="hand" id="holes-h">rabbit holes, right now</h3>
+        <span class="caps mute">As of November 2026</span>
+      </div>
+      <!-- Rabbit holes: one <li> per topic. Change the list whenever your obsessions change. -->
+      <ul class="holes-row">
+          <li><svg viewBox="0 0 64 56" aria-hidden="true" focusable="false"><g filter="url(#chalk-ic)"><ellipse cx="30" cy="45.5" rx="17" ry="2.6" class="s"/><path d="M41.5 26.5C49 25.5 49 35 40.6 34.5"/><path d="M18 22H42L40.2 37.5Q30 44.5 19.8 37.5Z" class="s"/><ellipse cx="30" cy="23.6" rx="10.6" ry="1.7" class="f"/><path class="d" d="M26 17C24 14 28 12.5 26 9.5M33.5 17C31.5 14 35.5 12.5 33.5 9.5"/><line class="g" x1="4" y1="50.5" x2="60" y2="50.5"/></g></svg><span>Coffee</span></li>
+          <li><svg viewBox="0 0 64 56" aria-hidden="true" focusable="false"><g filter="url(#chalk-ic)"><circle cx="49" cy="13" r="4.6" class="f"/><path d="M5 50.5L23 20L32 33.5L39.5 25L59 50.5" class="s"/><path class="d" d="M19.5 26L23 20L26.5 25.5L24.2 24.2L22 26.8Z"/><path class="d dash" d="M29 50C33 45 26.5 41.5 33 37.5"/><line class="g" x1="4" y1="50.5" x2="60" y2="50.5"/></g></svg><span>Hiking</span></li>
+          <li><svg viewBox="0 0 64 56" aria-hidden="true" focusable="false"><g filter="url(#chalk-ic)"><rect x="12" y="11" width="40" height="29" class="s"/><path d="M6 45H58L55.5 49.5H8.5Z" class="s"/><path class="d" d="M12 17H52"/><circle class="d" cx="15.5" cy="14" r=".9"/><circle class="d" cx="19" cy="14" r=".9"/><rect x="16" y="21" width="13" height="14" class="f"/><path class="d" d="M33 23H48M33 27.5H45M33 32H47"/><line class="g" x1="4" y1="50.5" x2="60" y2="50.5"/></g></svg><span>Web design</span></li>
+          <li><svg viewBox="0 0 64 56" aria-hidden="true" focusable="false"><g filter="url(#chalk-ic)"><path d="M39 11H52L55.5 21H35.5Z" class="f"/><path d="M45.5 21V50.5M41 50.5H50"/><path d="M8 31Q8 26 12.5 26H27Q31 26 31 31V41H8Z" class="s"/><path class="d" d="M8 35H31M10.5 41V50.5M28.5 41V50.5"/><line class="g" x1="4" y1="50.5" x2="60" y2="50.5"/></g></svg><span>Interior design</span></li>
+          <li><svg viewBox="0 0 64 56" aria-hidden="true" focusable="false"><g filter="url(#chalk-ic)"><path d="M12 29H40V50.5H12Z" class="s"/><path d="M12 29L5.5 22.5M40 29L46.5 22.5"/><path class="d" d="M19 37H33V43H19Z"/><path d="M41 10.5L51 6.5L54.5 15L44.5 19Z" class="f"/><path class="d" d="M28 19C31.5 17 34 16 37.5 16M31 24C34.5 22 37 21 40 21"/><line class="g" x1="4" y1="50.5" x2="60" y2="50.5"/></g></svg><span>Getting rid of stuff</span></li>
+      </ul>
     </div>
 
     <div class="grid4">

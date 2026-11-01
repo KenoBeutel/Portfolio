@@ -347,3 +347,4 @@ a:hover .swap.remote img, a:focus-visible .swap.remote img { filter: none; }
   .fold p { font-size: 18.5px; }
 }
 
+.grid4-end { margin-top: 0; }

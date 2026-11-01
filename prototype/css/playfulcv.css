@@ -315,33 +315,35 @@ a:hover .swap.remote img, a:focus-visible .swap.remote img { filter: none; }
   .holes-row svg { width: 64px; }
 }
 
-/* ---------- about as doors: phrases in one paragraph open short answers below ---------- */
+/* ---------- about as folds: clear headings, short answers underneath ---------- */
 .about { align-items: start; }
-.about-hint { grid-column: 1; grid-row: 1; justify-self: start; margin-top: .55em; font-size: 20px; color: var(--ink-mute); transform: rotate(-4deg); }
-.doors { grid-column: 2; min-width: 0; max-width: 36em; }
-.doors-lead { font: 400 clamp(22px, 2.3vw, 27px)/1.5 var(--f-voice); margin: 0; text-wrap: pretty; }
-.door {
-  font: inherit; color: inherit; background: none; border: 0; padding: 0 .12em; margin: 0 -.12em; cursor: pointer;
-  text-decoration: underline dotted 1.5px; text-underline-offset: .22em; text-decoration-color: var(--ink);
-  transition: background-color .15s, color .15s;
+.about-hint { grid-column: 1; grid-row: 1; justify-self: start; margin-top: .4em; font-size: 20px; color: var(--ink-mute); transform: rotate(-4deg); }
+.folds { grid-column: 2; min-width: 0; max-width: 40em; }
+.folds-lead { font: 400 clamp(22px, 2.3vw, 27px)/1.4 var(--f-voice); margin: 0 0 22px; }
+.fold { border-top: 1px solid var(--ink-line); }
+.fold:first-of-type { border-top-color: var(--ink); }
+.fold:last-of-type { border-bottom: 1px solid var(--ink-line); }
+.fold summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 16px 8px; margin: 0 -8px;
+  font: 600 20px/1.25 var(--f-struct); letter-spacing: -.01em;
+  transition: background-color .15s;
 }
-.door::after {
-  content: "+"; display: inline-block; margin-left: .18em; font: 600 .55em/1 var(--f-struct);
-  vertical-align: .55em; transition: transform .15s;
-}
-.door:hover { background: var(--ink-tint); }
-.door[aria-expanded="true"] { background: var(--ink); color: var(--paper); text-decoration: none; }
-.door[aria-expanded="true"]::after { transform: rotate(45deg); }
-.door:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-.door-panel { margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--ink); }
-.door-panel .hand { display: inline-block; transform: rotate(-3deg); transform-origin: left; font-size: 21px; margin-bottom: 8px; }
-.door-panel p { font: 400 20px/1.48 var(--f-voice); margin: 0; }
-.js-doors .door-panel:not(.open) { display: none; }
-.js-doors .door-panel.open { animation: door-in .2s ease-out; }
-@keyframes door-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) { .js-doors .door-panel.open { animation: none; } .door, .door::after { transition: none; } }
+.fold summary::-webkit-details-marker { display: none; }
+.fold summary:hover { background: var(--ink-tint); }
+.fold summary:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+.fold-sign { position: relative; flex: none; width: 14px; height: 14px; }
+.fold-sign::before, .fold-sign::after { content: ""; position: absolute; left: 0; top: 6.5px; width: 14px; height: 1.5px; background: currentColor; transition: transform .15s; }
+.fold-sign::after { transform: rotate(90deg); }
+.fold[open] .fold-sign::after { transform: rotate(0deg); }
+.fold p { font: 400 20px/1.5 var(--f-voice); margin: 0; padding: 0 0 22px; max-width: 34em; }
+.fold[open] p { animation: fold-in .2s ease-out; }
+@keyframes fold-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .fold[open] p { animation: none; } .fold-sign::before, .fold-sign::after, .fold summary { transition: none; } }
 @media (max-width: 719px) {
   .about-hint { display: inline-block; margin: 0 0 6px; }
-  .doors-lead { font-size: 21px; }
-  .door-panel p { font-size: 18.5px; }
+  .folds-lead { font-size: 21px; }
+  .fold summary { font-size: 18px; margin: 0; padding: 16px 2px 16px 0; }
+  .fold p { font-size: 18.5px; }
 }

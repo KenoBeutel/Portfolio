@@ -320,9 +320,8 @@ a:hover .swap.remote img, a:focus-visible .swap.remote img { filter: none; }
 .about-hint { grid-column: 1; grid-row: 1; justify-self: start; margin-top: .4em; font-size: 20px; color: var(--ink-mute); transform: rotate(-4deg); }
 .folds { grid-column: 2; min-width: 0; max-width: 40em; }
 .folds-lead { font: 400 clamp(22px, 2.3vw, 27px)/1.4 var(--f-voice); margin: 0 0 22px; }
-.fold { border-top: 1px solid var(--ink-line); }
-.fold:first-of-type { border-top-color: var(--ink); }
-.fold:last-of-type { border-bottom: 1px solid var(--ink-line); }
+.fold { border-bottom: 1px solid var(--ink-line); }
+.fold:first-of-type { border-top: 1px solid var(--ink); }
 .fold summary {
   list-style: none; cursor: pointer;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -347,3 +346,4 @@ a:hover .swap.remote img, a:focus-visible .swap.remote img { filter: none; }
   .fold summary { font-size: 18px; margin: 0; padding: 16px 2px 16px 0; }
   .fold p { font-size: 18.5px; }
 }
+

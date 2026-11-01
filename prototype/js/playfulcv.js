@@ -122,9 +122,33 @@
     });
   }
 
+  /* ---------- about doors: one answer open at a time; without JS all answers show ---------- */
+  function doors() {
+    var wrap = document.querySelector('.doors');
+    if (!wrap) return;
+    wrap.classList.add('js-doors');
+    var btns = wrap.querySelectorAll('.door');
+    function set(btn, open) {
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.getElementById(btn.getAttribute('aria-controls')).classList.toggle('open', open);
+    }
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var opening = b.getAttribute('aria-expanded') !== 'true';
+        btns.forEach(function (o) { set(o, false); });
+        if (opening) set(b, true);
+      });
+    });
+    wrap.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      btns.forEach(function (o) { if (o.getAttribute('aria-expanded') === 'true') { set(o, false); o.focus(); } });
+    });
+  }
+
   function boot() {
     paintToggle();
     guardRemote();
+    doors();
     window.__redraw = function () { requestAnimationFrame(drawAll); };
     document.querySelectorAll('[data-year]').forEach(function (n) { n.textContent = new Date().getFullYear(); });
     lightbox();

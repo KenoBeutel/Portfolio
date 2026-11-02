@@ -46,13 +46,14 @@
       var yr = s.querySelector('.yr');
       var r = yr.getBoundingClientRect();
       var lh = parseFloat(getComputedStyle(yr).fontSize);
-      rings.push({ x: cx + (i % 2 ? 2.6 : -2.2), y: r.top - box.top + lh * .48, focus: s.hasAttribute('data-focus') });
+      var sway = list.hasAttribute('data-straight') ? 0 : 1;
+      rings.push({ x: cx + sway * (i % 2 ? 2.6 : -2.2), y: r.top - box.top + lh * .48, focus: s.hasAttribute('data-focus') });
     });
     var pts = [[cx + 1, rings[0].y - 26]];
     rings.forEach(function (r, i) {
       pts.push([r.x, r.y]);
       var nx = rings[i + 1];
-      if (nx) pts.push([cx + (i % 2 ? -1.4 : 1.8), (r.y + nx.y) / 2]);
+      if (nx) pts.push([cx + (list.hasAttribute('data-straight') ? 0 : (i % 2 ? -1.4 : 1.8)), (r.y + nx.y) / 2]);
     });
     pts.push([cx - 1, rings[rings.length - 1].y + 30]);
 
@@ -64,7 +65,7 @@
       '<feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="7"/>' +
       '<feDisplacementMap in="SourceGraphic" scale="1.8"/></filter></defs>';
     var g = document.createElementNS(NS, 'g');
-    g.setAttribute('filter', 'url(#' + fid + ')');
+    if (!list.hasAttribute('data-straight')) g.setAttribute('filter', 'url(#' + fid + ')');
     var path = document.createElementNS(NS, 'path');
     path.setAttribute('d', catmull(pts)); path.setAttribute('fill', 'none');
     path.setAttribute('stroke', 'currentColor'); path.setAttribute('stroke-width', '1.1'); path.setAttribute('stroke-linecap', 'round');

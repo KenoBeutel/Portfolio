@@ -16,9 +16,7 @@
    when | what and where | what to ask about. */
 .cv-anchor { padding-block: 40px 30px; }
 .cv-anchor .caps { margin: 0 0 16px; }
-.cv-name { margin: 0; font: 600 clamp(52px, 9vw, 120px)/.84 var(--f-struct); letter-spacing: -.045em; }
-.cv-name span { display: block; }
-.cv-line { margin: 26px 0 0; max-width: 28ch; font: 400 clamp(21px, 2.2vw, 26px)/1.3 var(--f-voice); }
+.cv-title { margin: 0; font: 600 clamp(40px, 6vw, 72px)/.95 var(--f-struct); letter-spacing: -.035em; }
 
 .cv-list > .station > .cv {
   display: grid; grid-template-columns: var(--col-year) minmax(0, 1fr) minmax(0, 1.25fr); gap: 0 28px;
@@ -35,6 +33,7 @@
 .edu .talk li { font-size: 17px; }
 .cv-grid { margin-top: 56px; }
 .cv-grid .cell li .mute { margin-top: 1px; }
+.cell-label { display: block; margin-bottom: 14px; font: 600 11px/1.2 var(--f-struct); letter-spacing: .2em; text-transform: uppercase; }
 .tel-note { display: block; margin-top: 10px; font: 500 12px/1.4 var(--f-struct); color: var(--ink-mute); }
 
 @media (max-width: 899px) {
@@ -54,7 +53,7 @@
   body::after { display: none; }
   .wrap { padding: 0; max-width: none; }
   .cv-anchor { padding-block: 0 14px; }
-  .cv-name { font-size: 44pt; }
+  .cv-title { font-size: 30pt; }
   .cv-list > .station > .cv { padding-block: 8px; break-inside: avoid; }
   .sec { padding-block: 14px; }
 }
@@ -84,30 +83,25 @@
   <main>
     <p class="back"><a class="caps" href="index.html">← back to the portfolio</a></p>
 
-    <section class="cv-anchor" aria-labelledby="cv-name">
-      <p class="caps">Office administrator · Certified trainer (AEVO) · B.Sc. Business Administration</p>
-      <h1 class="cv-name" id="cv-name"><span>Sebastian</span><span>von</span><span>Haaren</span></h1>
-      <p class="cv-line">Creative work is the
-        <span class="ul">equator<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 6.5C18 3.6 41 7.8 63 4.9S92 4.4 99 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span>
-        of everything I do.</p>
+    <section class="cv-anchor" aria-labelledby="cv-title">
+      <p class="caps">Sebastian von Haaren · Office administrator · Certified trainer (AEVO) · B.Sc. Business Administration</p>
+      <h1 class="cv-title" id="cv-title">Curriculum vitae</h1>
     </section>
 
     <!-- EXPERIENCE ===================================================== -->
     <section class="sec" id="experience" aria-labelledby="exp-h">
       <div class="sec-head"><h2 id="exp-h">Experience</h2></div>
       <div class="cv-list">
-        <div class="talk-label" aria-hidden="true"><span class="hand">ask me about</span></div>
-        <ol class="stations cv-list" reversed>
+        <ol class="stations cv-list" reversed data-straight>
           <li class="station" data-focus>
             <div class="cv">
-              <div class="yr">2024<span class="caps">Sep 2024 – today</span><span class="hand note">where it comes together</span></div>
+              <div class="yr">2024<span class="caps">Sep 2024 – today</span></div>
               <div>
-                <p class="role"><span class="circ">Communication<svg viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M80 6C60 0 21 2 8 12-3 22 14 37 49 37 82 38 100 28 96 16 92 5 70 2 55 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span> and project manager</p>
+                <p class="role">Communication and project manager</p>
                 <p class="org">L3S Research Center · Leibniz University Hannover</p>
               </div>
               <ul class="talk">
-                <li>Public relations for L3S and the CAIMed project.</li>
-                <li>Two student assistants to guide, two full-time posts to coordinate.</li>
+                <li>I coordinate public relations for the L3S Research Center and the CAIMed project, plan and run events, look after websites and social media including layout and graphic design, and guide two student assistants while coordinating two full-time positions.</li>
               </ul>
             </div>
           </li>
@@ -119,8 +113,7 @@
                 <p class="org">CIDAS · University of Göttingen</p>
               </div>
               <ul class="talk">
-                <li>Websites, logos and figures for scientific publications.</li>
-                <li>Teaching videos and events.</li>
+                <li>I design websites and logos, create figures for scientific publications, produce teaching videos and support the institute’s event management.</li>
               </ul>
             </div>
           </li>
@@ -132,8 +125,7 @@
                 <p class="org">CIDAS · University of Göttingen</p>
               </div>
               <ul class="talk">
-                <li>An exhibition on artificial intelligence, conceived and carried out.</li>
-                <li>The KISSKI logo, and a catalogue of data science learning materials.</li>
+                <li>I developed and realised an exhibition on artificial intelligence, coordinated the cataloguing of data science learning materials and designed the KISSKI logo as well as websites.</li>
               </ul>
             </div>
           </li>
@@ -145,8 +137,7 @@
                 <p class="org">Faculty of Humanities · University of Göttingen</p>
               </div>
               <ul class="talk">
-                <li>A university certificate programme, planned and coordinated.</li>
-                <li>Online and classroom modules, learning videos, partners across faculties.</li>
+                <li>I planned and coordinated a university certificate programme, designed an online self-study module and a classroom module, produced learning videos and negotiated cooperation across faculties.</li>
               </ul>
             </div>
           </li>
@@ -158,8 +149,7 @@
                 <p class="org">History department · University of Göttingen</p>
               </div>
               <ul class="talk">
-                <li>Websites and graphics, built and looked after.</li>
-                <li>What CLARIAH-DE could offer research projects.</li>
+                <li>I designed and maintained websites, created graphics and assessed how CLARIAH-DE could support the department’s research projects.</li>
               </ul>
             </div>
           </li>
@@ -171,8 +161,7 @@
                 <p class="org">xplace GmbH</p>
               </div>
               <ul class="talk">
-                <li>Music and audiobooks in a CMS, chart posters for the MediaSaturn Group.</li>
-                <li>New colleagues onboarded, quality kept in check.</li>
+                <li>I maintained music and audiobook content in a content management system, created chart posters for the MediaSaturn Group, trained new colleagues and took care of quality assurance.</li>
               </ul>
             </div>
           </li>
@@ -184,8 +173,7 @@
                 <p class="org">KOBAU Betriebsführungs GmbH · Bremerhaven</p>
               </div>
               <ul class="talk">
-                <li>Two apprentices taken all the way to their final exam.</li>
-                <li>Accounts payable and receivable, monthly closings.</li>
+                <li>I trained two apprentices through to their final examination, managed accounts payable and receivable and prepared the monthly closings.</li>
               </ul>
             </div>
           </li>
@@ -196,7 +184,7 @@
     <!-- EDUCATION ====================================================== -->
     <section class="sec edu" aria-labelledby="edu-h">
       <div class="sec-head"><h2 id="edu-h">Education</h2></div>
-      <ol class="stations cv-list" reversed>
+      <ol class="stations cv-list" reversed data-straight>
         <li class="station">
           <div class="cv">
             <div class="yr">2021</div>
@@ -204,7 +192,7 @@
               <p class="role">B.Sc. Business Administration</p>
               <p class="org">University of Göttingen</p>
             </div>
-            <ul class="talk"><li>Focus on marketing and e-business. The first in my family to go to university.</li></ul>
+            <ul class="talk"><li>Focus on marketing and e-business.</li></ul>
           </div>
         </li>
         <li class="station">
@@ -214,7 +202,7 @@
               <p class="role">Trainer qualification (AEVO)</p>
               <p class="org">IHK Bremen / Bremerhaven</p>
             </div>
-            <ul class="talk"><li>Certified to train apprentices.</li></ul>
+            <ul class="talk"></ul>
           </div>
         </li>
         <li class="station">
@@ -224,7 +212,7 @@
               <p class="role">Office administrator</p>
               <p class="org">Apprenticeship · KOBAU, Bremerhaven</p>
             </div>
-            <ul class="talk"><li>Bookkeeping entries and exam questions, seen from the learner’s side.</li></ul>
+            <ul class="talk"></ul>
           </div>
         </li>
         <li class="station">
@@ -244,7 +232,7 @@
     <section aria-label="Contact, skills, languages, on the side">
       <div class="grid4 cv-grid">
         <div class="cell">
-          <span class="hand">contact</span>
+          <span class="cell-label">Contact</span>
           <ul>
             <li><a href="mailto:sebastian.vonhaaren@gmail.com">sebastian.vonhaaren@gmail.com</a> <button class="copy" type="button" data-copy="sebastian.vonhaaren@gmail.com">copy</button></li>
             <li>Göttingen<span class="mute">Germany</span></li>
@@ -252,7 +240,7 @@
           </ul>
         </div>
         <div class="cell">
-          <span class="hand">skills</span>
+          <span class="cell-label">Skills</span>
           <ul>
             <li>AI literacy<span class="mute">Safe, responsible use of AI tools, shaped by work in AI research</span></li>
             <li>Adobe CC<span class="mute">InDesign, Illustrator, Photoshop, Premiere Pro</span></li>
@@ -261,7 +249,7 @@
           </ul>
         </div>
         <div class="cell">
-          <span class="hand">languages</span>
+          <span class="cell-label">Languages</span>
           <ul>
             <li>German<span class="mute">Native</span></li>
             <li>English<span class="mute">Very good</span></li>
@@ -269,7 +257,7 @@
           </ul>
         </div>
         <div class="cell">
-          <span class="hand">on the side</span>
+          <span class="cell-label">Interests</span>
           <ul>
             <li>Drums and guitar<span class="mute">Miles of Hope, Skyglow, Far From Dreaming</span></li>
             <li>A book on growing vegetables<span class="mute">Written and laid out myself</span></li>

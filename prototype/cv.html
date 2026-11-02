@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CV · Sebastian von Haaren</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Curriculum vitae of Sebastian von Haaren: office administrator, certified trainer, B.Sc. Business Administration; communication, project management and design in research.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600&family=Newsreader:ital,wght@0,400;1,400&family=Gochi+Hand&display=swap">
+<link rel="stylesheet" href="css/playfulcv.css">
+<style>
+/* CV: anchor (qualifications, name stack, own line) → experience with the station thread
+   → education on the same thread → calendar grid → poster foot. Three columns read top to bottom:
+   when | what and where | what to ask about. */
+.cv-anchor { padding-block: 40px 30px; }
+.cv-anchor .caps { margin: 0 0 16px; }
+.cv-name { margin: 0; font: 600 clamp(52px, 9vw, 120px)/.84 var(--f-struct); letter-spacing: -.045em; }
+.cv-name span { display: block; }
+.cv-line { margin: 26px 0 0; max-width: 28ch; font: 400 clamp(21px, 2.2vw, 26px)/1.3 var(--f-voice); }
+
+.cv-list > .station > .cv {
+  display: grid; grid-template-columns: var(--col-year) minmax(0, 1fr) minmax(0, 1.25fr); gap: 0 28px;
+  padding-block: 22px; border-bottom: 1px solid var(--ink-line);
+}
+.cv-list > .station:last-child > .cv { border-bottom: 0; }
+.cv-list .talk-label { grid-template-columns: var(--col-year) minmax(0, 1fr) minmax(0, 1.25fr); }
+.cv-list { --col-year: 158px; }
+.cv .yr .caps { white-space: nowrap; }
+@media (max-width: 1023px) { .cv-list { --col-year: 132px; } .cv .yr .caps { white-space: normal; } }
+.cv .org { margin-top: 5px; }
+.edu .cv { padding-block: 16px; }
+.edu .role { font-size: 16px; }
+.edu .talk li { font-size: 17px; }
+.cv-grid { margin-top: 56px; }
+.cv-grid .cell li .mute { margin-top: 1px; }
+.tel-note { display: block; margin-top: 10px; font: 500 12px/1.4 var(--f-struct); color: var(--ink-mute); }
+
+@media (max-width: 899px) {
+  .cv-list > .station > .cv { grid-template-columns: var(--col-year) minmax(0, 1fr); gap: 10px 20px; }
+  .cv-list .cv .talk { grid-column: 2; }
+}
+@media (max-width: 559px) {
+  .cv-list > .station > .cv { grid-template-columns: minmax(0, 1fr); }
+  .cv-list .cv .yr { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .cv-list .cv .yr .caps { margin: 0; }
+  .cv-list .cv .talk { grid-column: 1; }
+}
+/* print: one clean document, no site chrome */
+@media print {
+  @page { size: A4; margin: 14mm 16mm 12mm; }
+  .head, .back, .theme-btn, .skip, .foot { display: none !important; }
+  body::after { display: none; }
+  .wrap { padding: 0; max-width: none; }
+  .cv-anchor { padding-block: 0 14px; }
+  .cv-name { font-size: 44pt; }
+  .cv-list > .station > .cv { padding-block: 8px; break-inside: avoid; }
+  .sec { padding-block: 14px; }
+}
+.back { margin: 0; padding-top: 34px; }
+.back a { text-decoration: none; }
+.back a:hover { text-decoration: underline; }
+</style>
+<script>try{sessionStorage.getItem('pcv-paper')==='night'&&document.documentElement.setAttribute('data-paper','night')}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#experience">Skip to experience</a>
+<div class="wrap">
+  <header class="head">
+    <a class="sig" href="index.html">sebastian.von.haaren</a>
+    <nav class="nav caps" aria-label="Main">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#music">Music</a>
+      <a href="index.html#photography">Photography</a>
+      <a href="cv.html" aria-current="page">CV</a>
+    </nav>
+    <button class="theme-btn" type="button" aria-label="Switch to night paper" aria-pressed="false">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"/></svg>
+    </button>
+  </header>
+
+  <main>
+    <p class="back"><a class="caps" href="index.html">← back to the portfolio</a></p>
+
+    <section class="cv-anchor" aria-labelledby="cv-name">
+      <p class="caps">Office administrator · Certified trainer (AEVO) · B.Sc. Business Administration</p>
+      <h1 class="cv-name" id="cv-name"><span>Sebastian</span><span>von</span><span>Haaren</span></h1>
+      <p class="cv-line">Creative work is the
+        <span class="ul">equator<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 6.5C18 3.6 41 7.8 63 4.9S92 4.4 99 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span>
+        of everything I do.</p>
+    </section>
+
+    <!-- EXPERIENCE ===================================================== -->
+    <section class="sec" id="experience" aria-labelledby="exp-h">
+      <div class="sec-head"><h2 id="exp-h">Experience</h2></div>
+      <div class="cv-list">
+        <div class="talk-label" aria-hidden="true"><span class="hand">ask me about</span></div>
+        <ol class="stations cv-list" reversed>
+          <li class="station" data-focus>
+            <div class="cv">
+              <div class="yr">2024<span class="caps">Sep 2024 – today</span><span class="hand note">where it comes together</span></div>
+              <div>
+                <p class="role"><span class="circ">Communication<svg viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M80 6C60 0 21 2 8 12-3 22 14 37 49 37 82 38 100 28 96 16 92 5 70 2 55 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span> and project manager</p>
+                <p class="org">L3S Research Center · Leibniz University Hannover</p>
+              </div>
+              <ul class="talk">
+                <li>Public relations for L3S and the CAIMed project.</li>
+                <li>Two student assistants to guide, two full-time posts to coordinate.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="station">
+            <div class="cv">
+              <div class="yr">2024<span class="caps">Jan 2024 – today</span></div>
+              <div>
+                <p class="role">Media designer</p>
+                <p class="org">CIDAS · University of Göttingen</p>
+              </div>
+              <ul class="talk">
+                <li>Websites, logos and figures for scientific publications.</li>
+                <li>Teaching videos and events.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="station">
+            <div class="cv">
+              <div class="yr">2023<span class="caps">Jan – Dec 2023</span></div>
+              <div>
+                <p class="role">Project manager</p>
+                <p class="org">CIDAS · University of Göttingen</p>
+              </div>
+              <ul class="talk">
+                <li>An exhibition on artificial intelligence, conceived and carried out.</li>
+                <li>The KISSKI logo, and a catalogue of data science learning materials.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="station">
+            <div class="cv">
+              <div class="yr">2021<span class="caps">Oct 2021 – Jul 2022</span></div>
+              <div>
+                <p class="role">Project coordinator, Europa-Zertifikat</p>
+                <p class="org">Faculty of Humanities · University of Göttingen</p>
+              </div>
+              <ul class="talk">
+                <li>A university certificate programme, planned and coordinated.</li>
+                <li>Online and classroom modules, learning videos, partners across faculties.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="station">
+            <div class="cv">
+              <div class="yr">2021<span class="caps">May – Nov 2021</span></div>
+              <div>
+                <p class="role">Student assistant, websites and digital humanities</p>
+                <p class="org">History department · University of Göttingen</p>
+              </div>
+              <ul class="talk">
+                <li>Websites and graphics, built and looked after.</li>
+                <li>What CLARIAH-DE could offer research projects.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="station">
+            <div class="cv">
+              <div class="yr">2017<span class="caps">Sep 2017 – Dec 2022</span></div>
+              <div>
+                <p class="role">Content management</p>
+                <p class="org">xplace GmbH</p>
+              </div>
+              <ul class="talk">
+                <li>Music and audiobooks in a CMS, chart posters for the MediaSaturn Group.</li>
+                <li>New colleagues onboarded, quality kept in check.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="station">
+            <div class="cv">
+              <div class="yr">2011<span class="caps">Jul 2011 – Sep 2015</span></div>
+              <div>
+                <p class="role">Commercial clerk and trainer</p>
+                <p class="org">KOBAU Betriebsführungs GmbH · Bremerhaven</p>
+              </div>
+              <ul class="talk">
+                <li>Two apprentices taken all the way to their final exam.</li>
+                <li>Accounts payable and receivable, monthly closings.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- EDUCATION ====================================================== -->
+    <section class="sec edu" aria-labelledby="edu-h">
+      <div class="sec-head"><h2 id="edu-h">Education</h2></div>
+      <ol class="stations cv-list" reversed>
+        <li class="station">
+          <div class="cv">
+            <div class="yr">2021</div>
+            <div>
+              <p class="role">B.Sc. Business Administration</p>
+              <p class="org">University of Göttingen</p>
+            </div>
+            <ul class="talk"><li>Focus on marketing and e-business. The first in my family to go to university.</li></ul>
+          </div>
+        </li>
+        <li class="station">
+          <div class="cv">
+            <div class="yr">2014</div>
+            <div>
+              <p class="role">Trainer qualification (AEVO)</p>
+              <p class="org">IHK Bremen / Bremerhaven</p>
+            </div>
+            <ul class="talk"><li>Certified to train apprentices.</li></ul>
+          </div>
+        </li>
+        <li class="station">
+          <div class="cv">
+            <div class="yr">2011</div>
+            <div>
+              <p class="role">Office administrator</p>
+              <p class="org">Apprenticeship · KOBAU, Bremerhaven</p>
+            </div>
+            <ul class="talk"><li>Bookkeeping entries and exam questions, seen from the learner’s side.</li></ul>
+          </div>
+        </li>
+        <li class="station">
+          <div class="cv">
+            <div class="yr">2008</div>
+            <div>
+              <p class="role">Higher commercial school</p>
+              <p class="org">Two years · Bremerhaven</p>
+            </div>
+            <ul class="talk"></ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- GRID ============================================================ -->
+    <section aria-label="Contact, skills, languages, on the side">
+      <div class="grid4 cv-grid">
+        <div class="cell">
+          <span class="hand">contact</span>
+          <ul>
+            <li><a href="mailto:sebastian.vonhaaren@gmail.com">sebastian.vonhaaren@gmail.com</a> <button class="copy" type="button" data-copy="sebastian.vonhaaren@gmail.com">copy</button></li>
+            <li>Göttingen<span class="mute">Germany</span></li>
+            <li><a href="index.html">Portfolio</a><span class="mute">kenobeutel.github.io/Portfolio</span></li>
+          </ul>
+        </div>
+        <div class="cell">
+          <span class="hand">skills</span>
+          <ul>
+            <li>AI literacy<span class="mute">Safe, responsible use of AI tools, shaped by work in AI research</span></li>
+            <li>Adobe CC<span class="mute">InDesign, Illustrator, Photoshop, Premiere Pro</span></li>
+            <li>Web<span class="mute">HTML, CSS, JavaScript, WordPress</span></li>
+            <li>MS Office, Canva, content management systems</li>
+          </ul>
+        </div>
+        <div class="cell">
+          <span class="hand">languages</span>
+          <ul>
+            <li>German<span class="mute">Native</span></li>
+            <li>English<span class="mute">Very good</span></li>
+            <li>Russian<span class="mute">Basics</span></li>
+          </ul>
+        </div>
+        <div class="cell">
+          <span class="hand">on the side</span>
+          <ul>
+            <li>Drums and guitar<span class="mute">Miles of Hope, Skyglow, Far From Dreaming</span></li>
+            <li>A book on growing vegetables<span class="mute">Written and laid out myself</span></li>
+            <li>Pottery<span class="mute">Still learning</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span class="place">Göttingen</span>
+    <span class="caps mute">Curriculum vitae · <span data-year>2026</span></span>
+  </footer>
+</div>
+<script src="js/playfulcv.js"></script>
+</body>
+</html>

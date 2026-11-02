@@ -141,7 +141,7 @@ a:hover { text-decoration-thickness: 2px; }
 .circ svg { position: absolute; left: -20%; top: -46%; width: 140%; height: 192%; overflow: visible; pointer-events: none; }
 
 /* duotone → colour swap */
-.swap { position: relative; margin: 0; align-self: start; background: var(--sheet); }
+.swap { position: relative; margin: 0; align-self: start; background: transparent; }
 .swap img { width: 100%; height: auto; }
 .swap .c { position: absolute; inset: 0; height: 100%; object-fit: cover; opacity: 0; transition: opacity .25s; }
 a:hover .swap .c, a:focus-visible .swap .c, .swap:hover .c { opacity: 1; }

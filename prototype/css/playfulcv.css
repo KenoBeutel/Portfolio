@@ -82,10 +82,11 @@ a:hover { text-decoration-thickness: 2px; }
 .theme-btn svg { width: 16px; height: 16px; }
 
 /* ---------- anchor ---------- */
-.anchor { position: relative; padding-block: 56px 40px; }
+.anchor { position: relative; padding-block: 56px 40px; --F: clamp(64px, 13.2vw, 172px); }
 .anchor .caps { margin: 0 0 18px; }
+.name-row { position: relative; }
 .name {
-  margin: 0; font: 600 clamp(64px, 13.2vw, 172px)/.84 var(--f-struct); letter-spacing: -.045em;
+  margin: 0; font: 600 var(--F)/.84 var(--f-struct); letter-spacing: -.045em;
   position: relative; z-index: 2;
 }
 .name span { display: block; }
@@ -95,16 +96,16 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .ul { position: relative; white-space: nowrap; }
 .ul svg { position: absolute; left: -2%; width: 104%; bottom: -.32em; height: .5em; overflow: visible; pointer-events: none; }
+/* Portrait sits inside the content column, as tall as "von / Haaren",
+   its lower edge on the baseline of "Haaren" (the grid edge the photo is cut at). */
 .portrait {
-  position: absolute; top: 56px;
-  /* bleed exactly to the window edge: gutter + the margin beside the centred column */
-  right: calc(-1 * max(var(--gut), env(safe-area-inset-right, 0px)) - max(0px, (100vw - var(--maxw)) / 2));
-  width: clamp(200px, 27vw, 330px); aspect-ratio: 60 / 66; margin: 0; overflow: hidden; z-index: 1;
+  position: absolute; right: 0; bottom: var(--port-bottom, calc(var(--F) * .045));
+  height: calc(var(--F) * 1.62); aspect-ratio: 60 / 66; margin: 0; overflow: hidden; z-index: 1;
 }
 .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; }
-@media (max-width: 719px) {
-  .anchor { padding-top: 36px; }
-  .portrait { position: relative; top: auto; right: auto; width: 62%; margin: 0 calc(-1 * max(16px, env(safe-area-inset-right, 0px))) 26px auto; }
+@media (max-width: 719px) { .anchor { padding-top: 36px; } }
+@media (max-width: 359px) {
+  .portrait { position: relative; right: auto; bottom: auto; height: auto; width: 56%; margin: 22px 0 0 auto; }
 }
 
 /* ---------- section label ---------- */
@@ -167,23 +168,33 @@ a:hover .swap .c, a:focus-visible .swap .c, .swap:hover .c { opacity: 1; }
 
 /* ---------- tracks: music ---------- */
 .tracks { list-style: none; margin: 0; padding: 0; }
-.tracks li {
-  display: grid; grid-template-columns: var(--col-year) 64px minmax(0, 1fr) minmax(0, 1fr) auto; gap: 0 28px; align-items: center;
+.tracks > li {
+  display: grid; grid-template-columns: var(--col-year) 64px minmax(0, 1fr) minmax(0, 1fr) 190px; gap: 0 28px; align-items: center;
   padding-block: 14px; border-bottom: 1px solid var(--ink-line);
 }
-.tracks li:first-child { border-top: 1px solid var(--ink-line); }
+.tracks > li:first-child { border-top: 1px solid var(--ink-line); }
 .tracks .yr { font-size: 20px; }
 .tracks .cover { width: 64px; aspect-ratio: 1; }
 .tracks .t { font: 600 16px/1.25 var(--f-struct); margin: 0; }
 .tracks .t .mute { font-weight: 500; }
 .tracks .credit { font: 400 17px/1.3 var(--f-voice); margin: 0; }
 .tracks .credit .mute { display: block; font: 500 12px/1.4 var(--f-struct); margin-top: 2px; }
-.listen { font: 500 13px/1 var(--f-struct); white-space: nowrap; }
+.tracks .cover { object-fit: cover; background: var(--sheet); }
+/* streaming links: named square chips in the one ink, no brand logos */
+.platforms { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+.platforms a {
+  display: inline-block; border: 1px solid var(--ink-line); padding: 7px 9px 6px;
+  font: 600 10.5px/1 var(--f-struct); letter-spacing: .14em; text-transform: uppercase; text-decoration: none; white-space: nowrap;
+  transition: background-color .15s, color .15s, border-color .15s;
+}
+.platforms a:hover, .platforms a:focus-visible { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+@media (max-width: 1023px) and (min-width: 720px) { .tracks > li { grid-template-columns: 64px 64px minmax(0, 1fr) minmax(0, 1fr) 150px; gap: 0 20px; } }
 @media (max-width: 719px) {
-  .tracks li { grid-template-columns: 56px minmax(0, 1fr) auto; gap: 6px 16px; }
+  .tracks > li { grid-template-columns: 56px minmax(0, 1fr) auto; gap: 6px 16px; }
   .tracks .yr { grid-column: 1 / -1; font-size: 16px; }
   .tracks .cover { width: 56px; grid-row: span 2; }
   .tracks .credit { grid-column: 2 / -1; }
+  .tracks .platforms { grid-column: 2 / -1; justify-content: flex-start; }
 }
 
 /* ---------- photography: justified bands, every row one height ---------- */

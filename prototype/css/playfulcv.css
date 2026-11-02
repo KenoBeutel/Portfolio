@@ -166,35 +166,41 @@ a:hover .swap .c, a:focus-visible .swap .c, .swap:hover .c { opacity: 1; }
   .talk li { font-size: 18px; }
 }
 
-/* ---------- tracks: music ---------- */
+/* ---------- tracks: music ----------
+   year + genre (like the stations) | cover | title, band | everyone who played | where to listen */
 .tracks { list-style: none; margin: 0; padding: 0; }
 .tracks > li {
-  display: grid; grid-template-columns: var(--col-year) 64px minmax(0, 1fr) minmax(0, 1fr) 190px; gap: 0 28px; align-items: center;
-  padding-block: 14px; border-bottom: 1px solid var(--ink-line);
+  display: grid; grid-template-columns: var(--col-year) 64px minmax(0, 1fr) minmax(0, 1fr) 200px;
+  gap: 0 28px; align-items: start; padding-block: 18px; border-bottom: 1px solid var(--ink-line);
 }
 .tracks > li:first-child { border-top: 1px solid var(--ink-line); }
-.tracks .yr { font-size: 20px; }
-.tracks .cover { width: 64px; aspect-ratio: 1; }
-.tracks .t { font: 600 16px/1.25 var(--f-struct); margin: 0; }
-.tracks .t .mute { font-weight: 500; }
-.tracks .credit { font: 400 17px/1.3 var(--f-voice); margin: 0; }
-.tracks .credit .mute { display: block; font: 500 12px/1.4 var(--f-struct); margin-top: 2px; }
-.tracks .cover { object-fit: cover; background: var(--sheet); }
-/* streaming links: named square chips in the one ink, no brand logos */
-.platforms { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+.tracks .yr { margin: 0; font: 600 22px/1 var(--f-struct); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.tracks .yr .caps { display: block; margin-top: 8px; font-size: 10px; letter-spacing: .18em; color: var(--ink-mute); }
+.tracks .cover { width: 64px; aspect-ratio: 1; object-fit: cover; background: var(--sheet); }
+.tracks .t { margin: 0; font: 600 17px/1.25 var(--f-struct); }
+.tracks .t .band { display: block; margin-top: 3px; font: 500 14px/1.35 var(--f-struct); color: var(--ink-mute); }
+.tracks .t .ctx { display: block; margin-top: 2px; font: 500 12.5px/1.4 var(--f-struct); color: var(--ink-mute); }
+.tracks .people { margin: 0; font: 400 16px/1.4 var(--f-voice); }
+.tracks .people .art { display: block; margin-top: 6px; font: 500 12.5px/1.4 var(--f-struct); color: var(--ink-mute); }
+/* where to listen: named square chips, always in the order Bandcamp, Spotify, Apple Music */
+.platforms { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; width: 150px; justify-self: end; }
 .platforms a {
-  display: inline-block; border: 1px solid var(--ink-line); padding: 7px 9px 6px;
+  display: flex; justify-content: space-between; gap: 10px; border: 1px solid var(--ink-line); padding: 7px 9px 6px;
   font: 600 10.5px/1 var(--f-struct); letter-spacing: .14em; text-transform: uppercase; text-decoration: none; white-space: nowrap;
   transition: background-color .15s, color .15s, border-color .15s;
 }
 .platforms a:hover, .platforms a:focus-visible { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-@media (max-width: 1023px) and (min-width: 720px) { .tracks > li { grid-template-columns: 64px 64px minmax(0, 1fr) minmax(0, 1fr) 150px; gap: 0 20px; } }
+@media (max-width: 1023px) and (min-width: 720px) {
+  .tracks > li { grid-template-columns: 84px 64px minmax(0, 1fr) minmax(0, 1fr); gap: 12px 20px; }
+  .tracks .platforms { grid-column: 3 / -1; justify-self: start; flex-direction: row; flex-wrap: wrap; width: auto; }
+}
 @media (max-width: 719px) {
-  .tracks > li { grid-template-columns: 56px minmax(0, 1fr) auto; gap: 6px 16px; }
-  .tracks .yr { grid-column: 1 / -1; font-size: 16px; }
+  .tracks > li { grid-template-columns: 56px minmax(0, 1fr); gap: 8px 16px; }
+  .tracks .yr { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 12px; font-size: 17px; }
+  .tracks .yr .caps { margin: 0; }
   .tracks .cover { width: 56px; grid-row: span 2; }
-  .tracks .credit { grid-column: 2 / -1; }
-  .tracks .platforms { grid-column: 2 / -1; justify-content: flex-start; }
+  .tracks .people { grid-column: 2; font-size: 15px; }
+  .tracks .platforms { grid-column: 2; justify-self: start; flex-direction: row; flex-wrap: wrap; width: auto; margin-top: 4px; }
 }
 
 /* ---------- photography: justified bands, every row one height ---------- */

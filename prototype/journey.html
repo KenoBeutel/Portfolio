@@ -59,7 +59,7 @@
 .board.focus .node.on .ttl, .board.focus .node.on .note { color: var(--ink); }
 /* text knocks out the lines behind it, so arrows never cross a word */
 .board { --knock: var(--paper); }
-.node .ttl, .node .meta, .node .note, .node .kind { width: fit-content; max-width: 100%; background: var(--knock); padding-right: 3px; }
+.node { width: fit-content; max-width: 100%; background: var(--knock); padding: 2px 4px 4px 0; }
 .board.focus .node.self { --knock: color-mix(in srgb, var(--ink) 8%, var(--paper)); background: var(--knock); outline: 8px solid var(--knock); }
 
 /* SVG layer: lane threads, rings, arrows */
@@ -74,6 +74,11 @@
 .ink .mark.focus { fill: currentColor; }
 .ink .mark.seed { stroke-dasharray: 1.6 2.2; }
 .ink .today { font: 400 17px/1 var(--f-hand); fill: var(--ink-mute); }
+.ink .lane-edge { stroke: transparent !important; }
+.board.focus .ink .lane-edge.on { stroke: currentColor !important; stroke-width: 2.4; }
+.why-ink { z-index: 3; }
+.ink .why { font: 400 16px/1 var(--f-hand); fill: currentColor; paint-order: stroke; stroke: var(--paper); stroke-width: 5px; stroke-linejoin: round; display: none; }
+.board.focus .ink .why.on { display: inline; }
 
 /* ---------- narrow screens: one list, arrows become "builds on" lines ---------- */
 .list { display: none; list-style: none; margin: 28px 0 0; padding: 0; }
@@ -86,12 +91,14 @@
 .list .note { display: block; margin-top: 6px; font: 400 16px/1.35 var(--f-voice); }
 .list .from { display: block; margin-top: 8px; font: 500 12.5px/1.4 var(--f-struct); }
 .list .from span { color: var(--ink-mute); }
+.list .from em { font-style: normal; font-family: var(--f-hand); font-size: 15px; color: var(--ink-mute); }
 .list > li.focus .ttl::after { content: "today"; margin-left: 8px; padding: 3px 6px 2px; font: 600 9.5px/1 var(--f-struct); letter-spacing: .14em; text-transform: uppercase; background: var(--ink); color: var(--paper); vertical-align: 2px; }
 @media (max-width: 899px) {
   .board { display: none; }
   .list { display: block; }
   .jr-anchor, .jr-tools { display: block; }
   .switches { display: none; }
+  .legend .arrow-key { display: none; }
 }
 .back { margin: 0; padding-top: 34px; }
 .back a { text-decoration: none; }
@@ -134,7 +141,7 @@
           <li><svg viewBox="0 0 22 16" aria-hidden="true"><path d="M8 2.5L13.5 8 8 13.5 2.5 8Z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>decision</li>
           <li><svg viewBox="0 0 22 16" aria-hidden="true"><circle cx="8" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="1.6 2.2"/></svg>a new interest</li>
           <li><svg viewBox="0 0 22 16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="currentColor"/></svg>where I am today</li>
-          <li><svg viewBox="0 0 22 16" aria-hidden="true"><path d="M1 3C9 3 13 13 20 13M16 10.4L20 13 16.4 15.6" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>feeds into</li>
+          <li class="arrow-key"><svg viewBox="0 0 22 16" aria-hidden="true"><path d="M1 3C9 3 13 13 20 13M16 10.4L20 13 16.4 15.6" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>feeds into</li>
         </ul>
         <div class="switches" role="group" aria-label="Follow one thread">
           <span class="hand">follow a thread</span>
@@ -146,6 +153,7 @@
       <div class="lanes-head" id="lanes-head" aria-hidden="true"></div>
       <div id="rows"></div>
       <svg class="ink" id="ink" aria-hidden="true"></svg>
+      <svg class="ink why-ink" id="why-ink" aria-hidden="true"></svg>
     </div>
 
     <ol class="list" id="list" aria-label="All stations from earliest to today"></ol>
@@ -172,7 +180,7 @@ var ROWS = [
   { id: 'r2008', when: '2008' },
   { id: 'r2011', when: '2011' },
   { id: 'r2014', when: '2014' },
-  { id: 'r2015', when: '2015', sub: 'after KOBAU' },
+  { id: 'r2015', when: '~2015', sub: 'after KOBAU' },
   { id: 'r2017', when: '2017' },
   { id: 'r2021a', when: '2021' },
   { id: 'r2021b', when: '' },
@@ -191,7 +199,7 @@ var NODES = [
   { id: 'appr',     lane: 'learn',  row: 'r2011',  kind: 'station',  title: 'Office administrator', meta: 'Apprenticeship · KOBAU, Bremerhaven', note: 'After commercial school, that seemed to be what you do.' },
   { id: 'kobau',    lane: 'work',   row: 'r2011',  kind: 'station',  title: 'Commercial clerk and trainer', meta: 'KOBAU · 2011 – 2015', note: 'Accounts and monthly closings.' },
   { id: 'aevo',     lane: 'learn',  row: 'r2014',  kind: 'station',  title: 'Trainer qualification (AEVO)', meta: 'IHK Bremen / Bremerhaven' },
-  { id: 'trainees', lane: 'teach',  row: 'r2014',  kind: 'station',  title: 'Two apprentices to their final exam', meta: 'KOBAU', note: 'From “that’s how it’s done” to “I know why I do it”.' },
+  { id: 'trainees', lane: 'teach',  row: 'r2014',  kind: 'station',  title: 'Two apprentices to their final exam', meta: 'KOBAU · 2011 – 2015', note: 'From “that’s how it’s done” to “I know why I do it”.' },
   { id: 'leave',    lane: 'learn',  row: 'r2015',  kind: 'decision', title: 'Off to university', meta: 'First in my family tree', note: 'Purely administrative work was keeping my thinking small.' },
   { id: 'xplace',   lane: 'work',   row: 'r2017',  kind: 'station',  title: 'Content management', meta: 'xplace · 2017 – 2022', note: 'Music and audiobooks in a CMS, chart posters for MediaSaturn.' },
   { id: 'onboard',  lane: 'teach',  row: 'r2017',  kind: 'station',  title: 'Onboarding new colleagues', meta: 'xplace' },
@@ -211,7 +219,7 @@ var NODES = [
   { id: 'videos',   lane: 'teach',  row: 'r2024a', kind: 'station',  title: 'Teaching videos', meta: 'CIDAS' },
   { id: 'l3s',      lane: 'work',   row: 'r2024b', kind: 'station',  focus: true, title: 'Communication and project manager', meta: 'L3S Research Center · Leibniz University Hannover', note: 'Public relations for L3S and CAIMed, two student assistants to guide. Design and business studies meet here.' },
   { id: 'nm',       lane: 'design', row: 'r2025',  kind: 'station',  title: 'Nature Methods cover', meta: 'Illustration · March issue', href: 'work/nature-methods.html' },
-  { id: 'onloss',   lane: 'music',  row: 'r2025',  kind: 'station',  title: 'Miles of Hope · On Loss', meta: 'EP and a Deep Elm compilation · my own artwork' }
+  { id: 'onloss',   lane: 'music',  row: 'r2025',  kind: 'station',  title: 'Miles of Hope · On Loss', meta: 'EP with my own artwork · Echoes on a Deep Elm compilation' }
 ];
 /* strong = the arrows that carry the story; the rest stay quiet until a station is chosen */
 var EDGES = [
@@ -225,7 +233,7 @@ var EDGES = [
   { from: 'leave', to: 'bsc', strong: true },
   { from: 'bsc', to: 'design', strong: true, why: 'a new world' },
   { from: 'design', to: 'hiwi' },
-  { from: 'trainees', to: 'modules', strong: true, why: 'knowing where understanding gets stuck' },
+  { from: 'trainees', to: 'modules', strong: true, why: 'where understanding gets stuck' },
   { from: 'bsc', to: 'europa' },
   { from: 'europa', to: 'modules' },
   { from: 'europa', to: 'cidas', why: 'project management' },
@@ -238,7 +246,6 @@ var EDGES = [
   { from: 'bsc', to: 'l3s', strong: true, why: 'marketing from my studies' },
   { from: 'media', to: 'nm' },
   { from: 'design', to: 'shark', why: 'artwork' },
-  { from: 'identity', to: 'onloss', why: 'artwork' },
   { from: 'xplace', to: 'onboard' },
   { from: 'modules', to: 'cidas', why: 'learning materials' },
   { from: 'trainees', to: 'l3s', why: 'guiding people' },
@@ -282,12 +289,13 @@ var EDGES = [
   var list = document.getElementById('list'), rowWhen = {}, prev = '';
   ROWS.forEach(function (r) { rowWhen[r.id] = r.when || prev; if (r.when) prev = r.when; });
   var order = {}; ROWS.forEach(function (r, i) { order[r.id] = i; });
-  NODES.slice().sort(function (a, b) { return order[a.row] - order[b.row] || laneIdx[a.lane] - laneIdx[b.lane]; }).forEach(function (n) {
-    var from = (incoming[n.id] || []).map(function (e) { return byId[e.from].title; });
+  function feeds(a, b) { return EDGES.some(function (e) { return e.from === a.id && e.to === b.id; }); }
+  NODES.slice().sort(function (a, b) { return order[a.row] - order[b.row] || (feeds(a, b) ? -1 : feeds(b, a) ? 1 : laneIdx[a.lane] - laneIdx[b.lane]); }).forEach(function (n) {
+    var from = (incoming[n.id] || []).map(function (e) { return esc(byId[e.from].title) + (e.why ? ' <em>(' + esc(e.why) + ')</em>' : ''); });
     var li = document.createElement('li'); if (n.focus) li.className = 'focus';
     li.innerHTML = '<div class="when">' + esc(rowWhen[n.row]) + '</div><div><span class="lane-tag">' + esc(laneLabel[n.lane].toLowerCase()) + (n.kind === 'decision' ? ' · decision' : n.kind === 'seed' ? ' · a new interest' : '') + '</span>' +
       '<span class="ttl">' + esc(n.title) + '</span>' + (n.meta ? '<span class="meta">' + esc(n.meta) + '</span>' : '') + (n.note ? '<span class="note">' + esc(n.note) + '</span>' : '') +
-      (from.length ? '<span class="from"><span>builds on</span> ' + from.map(esc).join(' · ') + '</span>' : '') + (n.href ? '<span class="from"><a href="' + n.href + '">see the project →</a></span>' : '') + '</div>';
+      (from.length ? '<span class="from"><span>builds on</span> ' + from.join(' · ') + '</span>' : '') + (n.href ? '<span class="from"><a href="' + n.href + '">see the project →</a></span>' : '') + '</div>';
     list.appendChild(li);
   });
 
@@ -301,12 +309,15 @@ var EDGES = [
   var NS = 'http://www.w3.org/2000/svg';
   var pos = {};
   function el(tag, attrs) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+  var whyLayer = null;
+  function addWhy(e, x, y) { var t = el('text', { x: x, y: y, class: 'why', 'data-from': e.from, 'data-to': e.to }); t.textContent = e.why; whyLayer.appendChild(t); }
   function draw() {
     if (getComputedStyle(board).display === 'none') return;
     var B = board.getBoundingClientRect();
     ink.setAttribute('viewBox', '0 0 ' + B.width + ' ' + B.height);
     ink.innerHTML = '';
     var g = el('g', { filter: 'url(#chalk-jr)' }); ink.appendChild(g);
+    whyLayer = el('g', {});
     var cells = head.children; /* lane x positions from the header columns */
     var laneX = {};
     LANES.forEach(function (l, i) { var r = cells[i + 1].getBoundingClientRect(); laneX[l.id] = r.left - B.left + 8; });
@@ -332,21 +343,30 @@ var EDGES = [
     EDGES.forEach(function (e, i) {
       var a = pos[e.from], b = pos[e.to]; if (!a || !b) return;
       var sx = a.x, sy = a.y + 7, tx = b.x, ty = b.y - 7, d;
-      if (byId[e.from].lane === byId[e.to].lane) return; /* the lane thread already shows it */
-      var dx = tx - sx, sgn = dx > 0 ? 1 : -1;
-      if (Math.abs(b.y - a.y) < 12) { /* same row: arc over */
-        sy = a.y; ty = b.y; var mx = (sx + tx) / 2;
-        d = 'M' + (sx + 7 * sgn) + ' ' + sy + ' Q' + mx + ' ' + (sy - 26) + ' ' + (tx - 7 * sgn) + ' ' + ty;
-        var ang = Math.atan2(ty - (sy - 26), (tx - 7 * sgn) - mx);
-      } else {
-        var my = sy + (ty - sy) * .55;
-        d = 'M' + sx + ' ' + sy + ' C' + sx + ' ' + my + ' ' + tx + ' ' + (ty - (ty - sy) * .45) + ' ' + tx + ' ' + ty;
-        var ang = Math.PI / 2;
+      if (byId[e.from].lane === byId[e.to].lane) { /* drawn over the lane thread, visible only when chosen */
+        g.appendChild(el('path', { d: 'M' + sx + ' ' + (a.y + 6) + ' L' + tx + ' ' + (b.y - 6), class: 'edge lane-edge', 'data-from': e.from, 'data-to': e.to }));
+        if (e.why) addWhy(e, sx + 10, (a.y + b.y) / 2);
+        return;
       }
-      var ex = Math.abs(b.y - a.y) < 12 ? tx - 7 * sgn : tx, ey = ty;
+      var dx = tx - sx, sgn = dx > 0 ? 1 : -1;
+      var sameRow = byId[e.from].row === byId[e.to].row;
+      if (sameRow) { /* same row: arc over */
+        sy = a.y; ty = b.y; var mx = (sx + tx) / 2;
+        var skipped = Math.abs(laneIdx[byId[e.to].lane] - laneIdx[byId[e.from].lane]) - 1, lift = 26 + 22 * skipped;
+        d = 'M' + (sx + 7 * sgn) + ' ' + (sy - 4) + ' C' + (sx + 7 * sgn) + ' ' + (sy - lift) + ' ' + (tx - 7 * sgn) + ' ' + (ty - lift) + ' ' + (tx - 7 * sgn) + ' ' + (ty - 4);
+        var ang = Math.PI / 2; ty = ty - 4;
+        var midx = mx, midy = sy - 4 - lift * .75;
+      } else {
+        var my = sy + (ty - sy) * .55, c2 = ty - (ty - sy) * .45;
+        d = 'M' + sx + ' ' + sy + ' C' + sx + ' ' + my + ' ' + tx + ' ' + c2 + ' ' + tx + ' ' + ty;
+        var ang = Math.PI / 2;
+        var midx = (sx + 3 * sx + 3 * tx + tx) / 8, midy = (sy + 3 * my + 3 * c2 + ty) / 8;
+      }
+      var ex = sameRow ? tx - 7 * sgn : tx, ey = ty;
       var h = 5.5, a1 = ang + Math.PI - .5, a2 = ang + Math.PI + .5;
       d += ' M' + (ex + h * Math.cos(a1)) + ' ' + (ey + h * Math.sin(a1)) + ' L' + ex + ' ' + ey + ' L' + (ex + h * Math.cos(a2)) + ' ' + (ey + h * Math.sin(a2));
       g.appendChild(el('path', { d: d, class: 'edge' + (e.strong ? ' strong' : ''), 'data-from': e.from, 'data-to': e.to }));
+      if (e.why) addWhy(e, midx + 6, midy);
     });
     /* rings and diamonds on top */
     NODES.forEach(function (n) {
@@ -356,6 +376,7 @@ var EDGES = [
     });
     var t = el('text', { x: laneX.work + 14, y: todayY + 6, class: 'today' }); t.textContent = 'and on it goes';
     ink.appendChild(t);
+    var wi = document.getElementById('why-ink'); wi.setAttribute('viewBox', '0 0 ' + B.width + ' ' + B.height); wi.innerHTML = ''; wi.appendChild(whyLayer);
     applyFocus();
   }
 
@@ -375,7 +396,7 @@ var EDGES = [
       var id = b.dataset.id; b.classList.toggle('on', !!on[id]); b.classList.toggle('self', id === active);
       b.setAttribute('aria-pressed', id === active ? 'true' : 'false');
     });
-    ink.querySelectorAll('.edge').forEach(function (p) {
+    board.querySelectorAll('.ink .edge, .ink .why').forEach(function (p) {
       var hit = edgesOn.some(function (e) { return e.from === p.dataset.from && e.to === p.dataset.to; });
       p.classList.toggle('on', hit);
     });
@@ -388,7 +409,10 @@ var EDGES = [
     active = active === n.id ? null : n.id; applyFocus();
   });
   board.addEventListener('mouseover', function (ev) { var b = ev.target.closest('.node'); if (b && !active && !activeLane) { active = b.dataset.id; applyFocus(); active = null; } });
+  board.addEventListener('mouseout', function (ev) { var b = ev.target.closest('.node'); if (b && !b.contains(ev.relatedTarget)) applyFocus(); });
   board.addEventListener('mouseleave', function () { applyFocus(); });
+  board.addEventListener('focusin', function (ev) { var b = ev.target.closest('.node'); if (b && !active && !activeLane) { active = b.dataset.id; applyFocus(); active = null; } });
+  board.addEventListener('focusout', function () { applyFocus(); });
   sw.addEventListener('click', function (ev) {
     var c = ev.target.closest('.chip'); if (!c) return;
     active = null; activeLane = activeLane === c.dataset.lane ? null : c.dataset.lane;

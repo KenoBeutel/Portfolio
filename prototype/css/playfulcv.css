@@ -104,9 +104,10 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; }
 @media (max-width: 719px) { .anchor { padding-top: 36px; } }
-.hero-meta { position: relative; z-index: 2; margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; }
-.now { margin: 0; max-width: 46ch; font: 500 14px/1.45 var(--f-struct); color: var(--ink-mute); }
-.anchor .now .caps { display: block; margin: 0 0 5px; font-size: 10px; letter-spacing: .18em; color: var(--ink); }
+.hero-meta { position: relative; z-index: 2; margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--ink-line); max-width: 640px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 40px; }
+.hero-meta .now { margin: 0; flex: 1 1 300px; max-width: 42ch; font: 500 15px/1.5 var(--f-struct); color: var(--ink-mute); }
+.hero-meta .now .caps { display: block; margin: 0 0 8px; font-size: 10px; letter-spacing: .2em; color: var(--ink); }
+.hero-meta .btn { flex: none; }
 @media (max-width: 359px) {
   .portrait { position: relative; right: auto; bottom: auto; height: auto; width: 56%; margin: 22px 0 0 auto; }
 }

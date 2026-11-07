@@ -8,8 +8,8 @@
 <link rel="alternate" hreflang="de" href="https://kenobeutel.github.io/Portfolio/prototype/de/cv.html">
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Curriculum vitae of Sebastian von Haaren: AI, communication and design. Communication and project management in AI research, media design, B.Sc. Business Administration.">
-<link rel="stylesheet" href="css/fonts.css?v=6">
-<link rel="stylesheet" href="css/playfulcv.css?v=6">
+<link rel="stylesheet" href="css/fonts.css?v=7">
+<link rel="stylesheet" href="css/playfulcv.css?v=7">
 <style>
 /* CV: anchor (qualifications, name stack, own line) → experience with the station thread
    → education on the same thread → calendar grid → poster foot. Three columns read top to bottom:
@@ -45,17 +45,43 @@
   .cv-list .cv .yr .caps { margin: 0; }
   .cv-list .cv .talk { grid-column: 1; }
 }
-/* print: one clean document, no site chrome */
+/* print: one clean A4 document, two pages, no site chrome */
 @media print {
-  @page { size: A4; margin: 14mm 16mm 12mm; }
-  .head, .back, .theme-btn, .skip, .foot { display: none !important; }
+  @page { size: A4; margin: 0; }
+  html, body { background: var(--paper) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   body::after { display: none; }
-  .wrap { padding: 0; max-width: none; }
-  .cv-anchor { padding-block: 0 14px; }
-  .cv-title { font-size: 30pt; }
-  .cv-list > .station > .cv { padding-block: 8px; break-inside: avoid; }
-  .sec { padding-block: 14px; }
+  .head, .back, .theme-btn, .skip, .foot, .copy, .tools { display: none !important; }
+  .wrap { padding: 13mm 15mm 10mm; max-width: none; }
+  .cv-anchor { padding-block: 0 4mm; display: flex; justify-content: space-between; align-items: flex-end; gap: 8mm; }
+  .cv-anchor .caps { margin: 0 0 2mm; }
+  .cv-title { font-size: 26pt; }
+  .print-contact { display: block !important; text-align: right; font: 500 8.5pt/1.5 var(--f-struct); }
+  .print-contact a { text-decoration: none; }
+  .sec { padding-block: 3mm 0; }
+  .sec-head { margin-bottom: 2mm; padding-top: 2mm; }
+  .sec-head h2 { font-size: 15pt; }
+  .cv-list { --col-year: 30mm; }
+  .cv-list > .station > .cv { grid-template-columns: var(--col-year) minmax(0, .9fr) minmax(0, 1.5fr) !important; gap: 0 5mm; padding-block: 3mm; break-inside: avoid; }
+  .cv-list .cv .talk { grid-column: auto !important; }
+  .cv-list .cv .yr { display: block !important; font-size: 13pt; }
+  .cv-list .cv .yr .caps { margin-top: 1.2mm !important; font-size: 6.5pt; white-space: normal; }
+  .role { font-size: 9.5pt; }
+  .org { font-size: 8pt; margin-top: 1mm; }
+  .talk li, .edu .talk li { font-size: 9.5pt; line-height: 1.38; }
+  .edu .cv { padding-block: 1.6mm; }
+  .edu .role { font-size: 9pt; }
+  .cv-grid { margin-top: 6mm; grid-template-columns: repeat(4, minmax(0, 1fr)) !important; break-inside: avoid; }
+  .cv-grid .cell { min-height: 0; padding: 3mm 3.5mm; }
+  .cv-grid .cell li { font-size: 8.5pt; }
+  .cv-grid .cell-label { font-size: 7pt; margin-bottom: 2mm; }
+  .thread { display: none; }
+  .stations { padding-left: 0; }
+  section[aria-labelledby="proj-h"] { break-before: page; padding-top: 13mm; }
+  .cv-grid .cell a { overflow-wrap: anywhere; }
+  .cv-anchor .caps { max-width: 110mm; }
+  a { color: inherit; }
 }
+.print-contact { display: none; }
 .back { margin: 0; padding-top: 34px; }
 .back a { text-decoration: none; }
 .back a:hover { text-decoration: underline; }
@@ -86,8 +112,11 @@
     <p class="back"><a class="caps" href="index.html">← back to the portfolio</a></p>
 
     <section class="cv-anchor" aria-labelledby="cv-title">
+      <div>
       <p class="caps">Sebastian von Haaren · AI · Communication · Design</p>
       <h1 class="cv-title" id="cv-title">Curriculum vitae</h1>
+      </div>
+      <p class="print-contact"><a href="mailto:sebastian.vonhaaren@gmail.com">sebastian.vonhaaren@gmail.com</a><br><a href="https://www.linkedin.com/in/sebastian-von-haaren/">linkedin.com/in/sebastian-von-haaren</a><br><a href="https://kenobeutel.github.io/Portfolio/prototype/">kenobeutel.github.io/Portfolio/prototype</a></p>
     </section>
 
     <!-- EXPERIENCE ===================================================== -->
@@ -323,6 +352,6 @@
     <span class="caps mute">Curriculum vitae · <span data-year>2026</span></span>
   </footer>
 </div>
-<script src="js/playfulcv.js?v=6"></script>
+<script src="js/playfulcv.js?v=7"></script>
 </body>
 </html>

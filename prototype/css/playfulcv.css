@@ -103,6 +103,11 @@ a:hover { text-decoration-thickness: 2px; }
   height: calc(var(--F) * 1.62); aspect-ratio: 60 / 66; margin: 0; overflow: hidden; z-index: 1;
 }
 .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; }
+/* hover: the eyes wander to the side (second photo laid exactly over the first) */
+.name { pointer-events: none; } /* the name overlaps the portrait; let hover reach the photo */
+.portrait .look { position: absolute; inset: 0; opacity: 0; transition: opacity .12s; }
+.portrait:hover .look, .portrait.is-looking .look { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .portrait .look { transition: none; } }
 @media (max-width: 719px) { .anchor { padding-top: 36px; } }
 .hero-meta { position: relative; z-index: 2; margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--ink-line); max-width: 640px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 40px; }
 .hero-meta .now { margin: 0; flex: 1 1 300px; max-width: 42ch; font: 500 15px/1.5 var(--f-struct); color: var(--ink-mute); }

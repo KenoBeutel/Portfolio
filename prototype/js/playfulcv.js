@@ -97,6 +97,12 @@
     dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
   }
 
+  /* ---------- portrait: tap makes the eyes wander on touch screens ---------- */
+  var portrait = document.querySelector('.portrait');
+  if (portrait && portrait.querySelector('.look')) {
+    portrait.addEventListener('click', function () { portrait.classList.toggle('is-looking'); });
+  }
+
   /* ---------- copy ---------- */
   document.addEventListener('click', function (e) {
     var b = e.target.closest('.copy');

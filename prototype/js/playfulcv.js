@@ -9,7 +9,8 @@
   function isDark() { return root.getAttribute('data-paper') === 'night'; }
   function paintToggle() {
     document.querySelectorAll('.theme-btn').forEach(function (b) {
-      b.setAttribute('aria-label', isDark() ? 'Switch to light paper' : 'Switch to night paper');
+      var de = document.documentElement.lang === 'de';
+      b.setAttribute('aria-label', isDark() ? (de ? 'Zu Tagpapier wechseln' : 'Switch to light paper') : (de ? 'Zu Nachtpapier wechseln' : 'Switch to night paper'));
       b.setAttribute('aria-pressed', isDark() ? 'true' : 'false');
     });
   }
@@ -101,7 +102,7 @@
     var b = e.target.closest('.copy');
     if (!b) return;
     var text = b.getAttribute('data-copy');
-    var done = function () { var o = b.textContent; b.textContent = 'copied'; setTimeout(function () { b.textContent = o; }, 1400); };
+    var done = function () { var o = b.textContent; b.textContent = document.documentElement.lang === 'de' ? 'kopiert' : 'copied'; setTimeout(function () { b.textContent = o; }, 1400); };
     try {
       navigator.clipboard.writeText(text).then(done, function () { selectText(b.previousElementSibling); });
     } catch (err) { selectText(b.previousElementSibling); }

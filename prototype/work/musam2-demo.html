@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>µSAM² click demo · Sebastian von Haaren</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="µSAM² click demo, 2026: a browser demo of interactive cell segmentation, vibe-coded in a single file in the project’s own visual identity.">
+<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="../css/playfulcv.css">
+<style>
+/* case-page additions (local to work/*.html) */
+.back { margin: 0; padding-top: 40px; }
+.back a { text-decoration: none; }
+.back a:hover { text-decoration: underline; }
+.case-anchor { padding-top: 20px; }
+.case-anchor .yr .caps { display: block; margin-top: 10px; }
+.case-sub { margin: 14px 0 0; }
+.case-stage { display: grid; grid-template-columns: var(--col-year) minmax(0, 1fr) minmax(0, 300px); gap: 0 28px; }
+.case-stage > * { grid-column: 2 / -1; }
+.case-media.hero { max-width: 560px; }
+.facts { border-top: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.facts .head-cell { border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 10px 16px 12px; }
+.facts .head-cell .hand { display: inline-block; transform: rotate(-3deg); font-size: 21px; }
+.facts .cell { min-height: 0; padding: 10px 16px 14px; }
+.facts .cell .caps { display: block; color: var(--ink-mute); margin-bottom: 6px; font-size: 10px; letter-spacing: .18em; }
+.facts .cell p { font: 500 14px/1.38 var(--f-struct); margin: 0; overflow-wrap: anywhere; max-width: none; }
+.case-next { display: grid; grid-template-columns: var(--col-year) minmax(0, 1fr); gap: 0 28px; padding-block: 8px 0; }
+.case-next > div { grid-column: 2; border-top: 1px solid var(--ink); padding-top: 18px; }
+.case-media em, .case-body em { font-style: italic; }
+@media (max-width: 899px) {
+  .case-stage, .case-next { display: block; }
+}
+</style>
+<script>try{sessionStorage.getItem('pcv-paper')==='night'&&document.documentElement.setAttribute('data-paper','night')}catch(e){}</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="duo" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="table" tableValues=".043 .47 .937"/><feFuncG type="table" tableValues=".208 .53 .902"/><feFuncB type="table" tableValues=".639 .745 .863"/></feComponentTransfer></filter><filter id="duo-night" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="table" tableValues=".059 .839"/><feFuncG type="table" tableValues=".090 .878"/><feFuncB type="table" tableValues=".188 .980"/></feComponentTransfer></filter></svg>
+<a class="skip" href="#case">Skip to content</a>
+
+<div class="wrap">
+  <header class="head">
+    <a class="sig" href="../index.html">sebastian.von.haaren</a>
+    <nav class="nav caps" aria-label="Main">
+      <a href="../index.html#ai" aria-current="page">AI</a>
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#music">Music</a>
+      <a href="../index.html#photography">Photography</a>
+      <a href="../journey.html">Journey</a>
+      <a href="../cv.html">CV</a>
+    </nav>
+    <button class="theme-btn" type="button" aria-label="Switch to night paper" aria-pressed="false">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"/></svg>
+      </button>
+  </header>
+
+  <main id="case">
+    <p class="back"><a class="caps" href="../index.html#ai">← all work</a></p>
+
+    <section class="case-anchor" aria-labelledby="case-title">
+      <div class="yr">2026<span class="caps">Research demo</span></div>
+      <div>
+        <h1 class="case-title" id="case-title">µSAM² click demo</h1>
+        <p class="case-lede">A browser demo that lets anyone feel how annotating cells with µSAM² works. Vibe-coded in a single file, dressed in the visual identity I made for the project.</p>
+      </div>
+    </section>
+
+    <div class="case-stage">
+      <figure class="case-media">
+        <img src="../img/musam2-demo-color.webp" width="1600" height="1309" alt="The demo in a browser: a fluorescence image of yeast cells, every cell covered by its own coloured mask, with a side panel listing nineteen objects">
+        <figcaption>After “Segment all”: every cell becomes its own object, in the µSAM² palette.</figcaption>
+      </figure>
+      <p style="margin:18px 0 0"><a class="btn" href="../demo/musam2/index.html" target="_blank" rel="noopener">Try the demo <span aria-hidden="true">↗</span></a></p>
+    </div>
+
+    <div class="case-body">
+      <section aria-labelledby="h-idea">
+        <h2 class="caps" id="h-idea">The idea</h2>
+        <p>µSAM² helps researchers segment cells in microscopy images: you click on a cell, and the model draws its outline. Explaining that in words takes a paragraph. Trying it takes ten seconds. So I built a demo that runs in any browser, with no installation, no server and no model behind it.</p>
+      </section>
+
+      <section aria-labelledby="h-how">
+        <h2 class="caps" id="h-how">How it works</h2>
+        <p>A left click adds a positive point, and each clicked cell becomes its own object with its own colour. A right click takes a region away again. Three synthetic micrographs show the typical cases: fluorescence, brightfield and phase contrast. On a phone, a small switch replaces the right click.</p>
+        <p>The images are generated in the page and the masks are simulated, and the demo says so openly. It shows how the workflow feels, not what the model computes.</p>
+      </section>
+
+      <section aria-labelledby="h-built">
+        <h2 class="caps" id="h-built">How it was built</h2>
+        <p>I vibe-coded it with AI, from the first sketch to one self-contained HTML file of about 40 KB. My part was the concept, the interaction, deciding what to leave out, and testing every round until clicking a cell felt right.</p>
+      </section>
+
+      <section aria-labelledby="h-look">
+        <h2 class="caps" id="h-look">The look</h2>
+        <p>The visual identity of µSAM² is mine as well: the logo with its mask shape and the plus and minus prompt badges, the colours, the typography and the rules for publication figures. I wrote it down as a design language that AI tools can apply consistently, and the demo uses exactly that system.</p>
+      </section>
+
+      <aside aria-label="Project facts">
+        <div class="facts">
+          <div class="head-cell"><span class="hand">the facts</span></div>
+          <div class="cell"><span class="caps">Year</span><p>2026</p></div>
+          <div class="cell"><span class="caps">Role</span><p>Concept · Interaction design · Visual identity · Vibe coding</p></div>
+          <div class="cell"><span class="caps">Context</span><p>µSAM², microscopy research</p></div>
+          <div class="cell"><span class="caps">Build</span><p>One HTML file, no dependencies</p></div>
+          <div class="cell"><span class="caps">Link</span><p><a href="../demo/musam2/index.html" target="_blank" rel="noopener">Open the demo</a></p></div>
+        </div>
+      </aside>
+    </div>
+
+    <nav class="case-next" aria-label="Next project">
+      <div><a class="btn" href="design-skills.html">Next: Design skills <span aria-hidden="true">→</span></a></div>
+    </nav>
+  </main>
+
+  <footer class="foot">
+    <span class="place">Göttingen</span>
+    <span class="caps mute">Portfolio · <span data-year>2026</span></span>
+  </footer>
+</div>
+
+<script src="../js/playfulcv.js"></script>
+</body>
+</html>

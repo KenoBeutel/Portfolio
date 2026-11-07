@@ -5,31 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sebastian von Haaren</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Sebastian von Haaren, designer in Göttingen: editorial design, scientific illustration, visual identities, music and photography.">
+<meta name="description" content="Sebastian von Haaren, Göttingen: AI in practice, communication and design. Vibe-coded demos, design skills for AI, editorial design and illustration.">
 <meta property="og:title" content="Sebastian von Haaren">
-<meta property="og:description" content="Editorial design, scientific illustration, visual identities. Göttingen.">
+<meta property="og:description" content="AI in practice, communication and design. Göttingen.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="img/og-image.jpg">
+<meta property="og:image" content="https://kenobeutel.github.io/Portfolio/prototype/img/og-image.jpg">
+<meta property="og:url" content="https://kenobeutel.github.io/Portfolio/prototype/">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600&family=Newsreader:ital,wght@0,400;1,400&family=Gochi+Hand&display=swap">
+<link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/playfulcv.css">
 <script>try{sessionStorage.getItem('pcv-paper')==='night'&&document.documentElement.setAttribute('data-paper','night')}catch(e){}</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="duo" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="table" tableValues=".043 .47 .937"/><feFuncG type="table" tableValues=".208 .53 .902"/><feFuncB type="table" tableValues=".639 .745 .863"/></feComponentTransfer></filter><filter id="chalk-ic" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="1.6"/></filter><filter id="duo-night" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="table" tableValues=".059 .839"/><feFuncG type="table" tableValues=".090 .878"/><feFuncB type="table" tableValues=".188 .980"/></feComponentTransfer></filter></svg>
-<a class="skip" href="#work">Skip to work</a>
+<a class="skip" href="#ai">Skip to work</a>
 
 <div class="wrap">
   <header class="head">
     <a class="sig" href="index.html">sebastian.von.haaren</a>
     <nav class="nav caps" aria-label="Main">
+      <a href="#ai">AI</a>
       <a href="#work">Work</a>
       <a href="#about">About</a>
       <a href="#music">Music</a>
       <a href="#photography">Photography</a>
+      <a href="journey.html">Journey</a>
       <a href="cv.html">CV</a>
     </nav>
     <button class="theme-btn" type="button" aria-label="Switch to night paper" aria-pressed="false">
@@ -38,17 +39,75 @@
   </header>
 
   <section class="anchor" aria-labelledby="name">
-    <p class="caps">Designer · Editorial · Illustration · Web</p>
+    <p class="caps">AI · Communication · Design</p>
     <div class="name-row">
       <h1 class="name" id="name"><span>Sebastian</span><span>von</span><span>Haaren</span></h1>
       <figure class="portrait">
         <img src="img/portrait-duo.webp" alt="Portrait of Sebastian von Haaren, printed in cobalt" width="900" height="990">
       </figure>
     </div>
-    <p class="tagline">Communication, design and project management for research, based in Göttingen.</p>
+    <p class="tagline">I bring AI to where people work with it: clearly explained, well designed and set up so that it actually helps. Based in Göttingen.</p>
   </section>
 
   <main>
+  <!-- AI IN PRACTICE ================================================ -->
+  <section class="sec" id="ai" aria-labelledby="ai-h">
+    <div class="sec-head"><h2 id="ai-h">AI in practice</h2></div>
+    <ol class="stations" reversed>
+      <li class="station" data-focus>
+        <a href="work/musam2-demo.html">
+          <div class="yr">2026<span class="caps">research demo</span></div>
+          <div class="who">
+            <p class="role">Vibe coding, interaction, identity</p>
+            <p class="org">µSAM² click demo</p>
+          </div>
+          <ul class="talk">
+            <li>A browser demo that shows how annotating cells with µSAM² feels: click a cell, get its outline. Vibe-coded with AI into a single file, in the visual identity I designed for the project.</li>
+          </ul>
+          <figure class="swap"><img src="img/musam2-thumb-duo.webp" alt="Microscopy image of yeast cells, each covered by a coloured segmentation mask" width="480" height="600" loading="lazy"><img class="c" src="img/musam2-thumb-color.webp" alt="" width="480" height="600" loading="lazy"></figure>
+        </a>
+      </li>
+      <li class="station">
+        <a href="work/design-skills.html">
+          <div class="yr">2026<span class="caps">ongoing</span></div>
+          <div class="who">
+            <p class="role">Design languages for AI</p>
+            <p class="org">Design skills · Claude</p>
+          </div>
+          <ul class="talk">
+            <li>Visual languages written down as skills, so that AI applies colour, type, figures and layout the same way every time. Plus a small site to compare them in two minutes.</li>
+          </ul>
+          <figure class="swap"><img src="img/skills-thumb-duo.webp" alt="Card of the design skill Playfulblue: a drawn vending machine with a cat beside it and a colour bar" width="480" height="600" loading="lazy"><img class="c" src="img/skills-thumb-color.webp" alt="" width="480" height="600" loading="lazy"></figure>
+        </a>
+      </li>
+      <li class="station">
+        <a href="work/ki-data-science.html">
+          <div class="yr">2023<span class="caps">two days</span></div>
+          <div class="who">
+            <p class="role">Explaining AI, concept, identity</p>
+            <p class="org">KI &amp; Data Science Entdecken · Uni Göttingen</p>
+          </div>
+          <ul class="talk">
+            <li>An interactive exhibition that made AI tangible for a broad audience: hands-on experiments, talks with researchers and texts anyone could follow. I developed the concept, the organisation and the visual identity, a modular icon system that turned AI concepts into playful shapes.</li>
+          </ul>
+          <figure class="swap"><img src="img/ki-poster-duo.webp" alt="Poster for the exhibition KI &amp; Data Science Entdecken" loading="lazy"><img class="c" src="img/ki-poster-color.webp" alt="" loading="lazy"></figure>
+        </a>
+      </li>
+      <li class="station">
+        <a href="journey.html">
+          <div class="yr">2021<span class="caps">2021 – today</span></div>
+          <div class="who">
+            <p class="role">Helping people learn</p>
+            <p class="org">University of Göttingen · CIDAS · L3S</p>
+          </div>
+          <ul class="talk">
+            <li>A self-study module and a classroom module, learning videos, two student assistants to guide. Whatever the topic, I think it through from the person who has to learn it.</li>
+          </ul>
+        </a>
+      </li>
+    </ol>
+  </section>
+
   <!-- WORK ============================================================ -->
   <section class="sec" id="work" aria-labelledby="work-h">
     <div class="sec-head"><h2 id="work-h">Work</h2></div>
@@ -77,19 +136,6 @@
             <li>Cover artwork for the single Shark Bait (2023) and the EP On Loss (2025) by Miles of Hope, a band from Göttingen of which I am a member.</li>
           </ul>
           <figure class="swap remote sq" data-ph="single cover"><img src="https://f4.bcbits.com/img/a4126326246_1x1_700.avif" alt="Cover of the EP On Loss by Miles of Hope" loading="lazy"></figure>
-        </a>
-      </li>
-      <li class="station">
-        <a href="work/ki-data-science.html">
-          <div class="yr">2023<span class="caps">two days</span></div>
-          <div class="who">
-            <p class="role">Concept, identity, organisation</p>
-            <p class="org">KI &amp; Data Science Erleben · Uni Göttingen</p>
-          </div>
-          <ul class="talk">
-            <li>Concept, visual identity and organisation of the interactive exhibition KI &amp; Data Science Erleben at the University of Göttingen. A modular icon system translated complex AI concepts into accessible shapes across posters, print and the online exhibition.</li>
-          </ul>
-          <figure class="swap"><img src="img/ki-poster-duo.webp" alt="Poster for the exhibition KI &amp; Data Science Entdecken" loading="lazy"><img class="c" src="img/ki-poster-color.webp" alt="" loading="lazy"></figure>
         </a>
       </li>
       <li class="station">
@@ -140,6 +186,7 @@
           <p>For a long time I followed the path that offered itself as the logical next step. I trained as an office administrator because, after commercial school, that simply seemed to be what you do. At some point I understood that a working life made of purely administrative tasks was keeping my thinking small, in a place with little room for ideas or change. So I changed instead, and became the first person in my entire family tree to go to university.</p>
           <p>A completely new world opened up, one in which a thought may simply be inspiration and doesn’t have to lead straight to action. Finding my way in it, suddenly an actor and no longer only a reactor, was anything but easy. So I tried things out, and along the way I noticed that what puts my thoughts in order is minimalist aesthetics: understanding through representation. That is when this passion for design appeared.</p>
           <p>Then I took a job in a data science environment, and it deals with the same thing my head deals with every day: far more information than anyone can take in at once. Data science looks for the patterns in it, and design decides how those patterns become visible and understandable to people. That space in between is where I work, and it is where projects like the Nature Methods cover or the exhibition on AI and data science come from.</p>
+          <p><a href="journey.html">The whole path, drawn as threads <span aria-hidden="true">→</span></a></p>
         </details>
         <details class="fold">
           <summary><span>How I think</span><span class="fold-sign" aria-hidden="true"></span></summary>
@@ -165,6 +212,50 @@
           <li><svg viewBox="0 0 64 56" aria-hidden="true" focusable="false"><g filter="url(#chalk-ic)"><path d="M39 11H52L55.5 21H35.5Z" class="f"/><path d="M45.5 21V50.5M41 50.5H50"/><path d="M8 31Q8 26 12.5 26H27Q31 26 31 31V41H8Z" class="s"/><path class="d" d="M8 35H31M10.5 41V50.5M28.5 41V50.5"/><line class="g" x1="4" y1="50.5" x2="60" y2="50.5"/></g></svg><span>Interior design</span></li>
           <li><svg viewBox="0 0 64 56" aria-hidden="true" focusable="false"><g filter="url(#chalk-ic)"><path d="M12 29H40V50.5H12Z" class="s"/><path d="M12 29L5.5 22.5M40 29L46.5 22.5"/><path class="d" d="M19 37H33V43H19Z"/><path d="M41 10.5L51 6.5L54.5 15L44.5 19Z" class="f"/><path class="d" d="M28 19C31.5 17 34 16 37.5 16M31 24C34.5 22 37 21 40 21"/><line class="g" x1="4" y1="50.5" x2="60" y2="50.5"/></g></svg><span>Getting rid of stuff</span></li>
       </ul>
+    </div>
+  </section>
+
+  <!-- FACTS: contact, path, skills, on the side ===================== -->
+  <section class="sec" aria-label="Contact and facts">
+    <div class="grid4 grid4-end">
+      <div class="cell">
+        <span class="cell-label">Contact</span>
+        <ul>
+          <li><a href="mailto:sebastian.vonhaaren@gmail.com">sebastian.vonhaaren@gmail.com</a> <button class="copy" type="button" data-copy="sebastian.vonhaaren@gmail.com">copy</button></li>
+          <li><a href="https://www.linkedin.com/in/sebastian-von-haaren/" target="_blank" rel="noopener">LinkedIn<span aria-hidden="true"> ↗</span></a></li>
+          <li>Göttingen<span class="mute">Germany</span></li>
+        </ul>
+      </div>
+      <div class="cell">
+        <span class="cell-label">Path</span>
+        <ul>
+          <li>Communication and project management<span class="mute">Current role · L3S Research Center, Hannover</span></li>
+          <li>Media design<span class="mute">Current role · CIDAS, University of Göttingen</span></li>
+          <li>Graphic design<span class="mute">Self-taught</span></li>
+          <li>Business Administration<span class="mute">University studies · focus on consumer behaviour</span></li>
+          <li>Office administrator<span class="mute">Vocational training</span></li>
+        </ul>
+        <a class="cell-link" href="cv.html">Full CV <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="cell">
+        <span class="cell-label">Skills</span>
+        <ul>
+          <li>AI tools<span class="mute">Claude (Projects, Skills, Claude Code) · ChatGPT · Gemini</span></li>
+          <li>Prompting and effective vibe coding</li>
+          <li>Editorial design, typesetting</li>
+          <li>Visual identity, illustration</li>
+          <li>Audio editing</li>
+          <li>Adobe CC · HTML/CSS</li>
+          <li>Languages<span class="mute">German (native) · English (fluent) · Russian (basics)</span></li>
+        </ul>
+      </div>
+      <div class="cell">
+        <span class="cell-label">On the side</span>
+        <ul>
+          <li>Music projects<span class="mute">Miles of Hope, emo · Skyglow, post-rock</span></li>
+          <li>Pottery<span class="mute">Still learning</span></li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -204,7 +295,7 @@
         <p class="yr">2022<span class="caps">Post-rock</span></p>
         <img class="cover remote-cover" src="https://f4.bcbits.com/img/a1695298054_16.jpg" alt="" loading="lazy" width="64" height="64">
         <p class="t">Skyglow<span class="band">Skyglow</span></p>
-        <p class="people">Wilke, Falk, Kilian, Alex</p>
+        <p class="people">Wilke, Falk, Kilian, Sebastian</p>
         <ul class="platforms" aria-label="Listen to Skyglow"><li><a href="https://skyglow1.bandcamp.com/album/skyglow-2" target="_blank" rel="noopener" aria-label="Skyglow on Bandcamp">Bandcamp<span aria-hidden="true"> ↗</span></a></li><li><a href="https://open.spotify.com/album/4lBtGMHU3kXQYVsM6CwEwH" target="_blank" rel="noopener" aria-label="Skyglow on Spotify">Spotify<span aria-hidden="true"> ↗</span></a></li><li><a href="https://music.apple.com/album/skyglow/1615410350" target="_blank" rel="noopener" aria-label="Skyglow on Apple Music">Apple Music<span aria-hidden="true"> ↗</span></a></li></ul>
       </li>
     </ul>
@@ -212,46 +303,6 @@
 
 
 
-  <!-- FACTS: contact, path, skills, on the side ===================== -->
-  <section class="sec" aria-label="Contact and facts">
-    <div class="grid4 grid4-end">
-      <div class="cell">
-        <span class="cell-label">Contact</span>
-        <ul>
-          <li><a href="mailto:sebastian.vonhaaren@gmail.com">sebastian.vonhaaren@gmail.com</a> <button class="copy" type="button" data-copy="sebastian.vonhaaren@gmail.com">copy</button></li>
-          <li>Göttingen<span class="mute">Germany</span></li>
-        </ul>
-      </div>
-      <div class="cell">
-        <span class="cell-label">Path</span>
-        <ul>
-          <li>Public relations &amp; knowledge management<span class="mute">Current role · data science research</span></li>
-          <li>Graphic design<span class="mute">Self-taught</span></li>
-          <li>Business Administration<span class="mute">University studies · focus on consumer behaviour</span></li>
-          <li>Office administrator<span class="mute">Vocational training</span></li>
-        </ul>
-        <a class="cell-link" href="cv.html">Full CV <span aria-hidden="true">→</span></a>
-      </div>
-      <div class="cell">
-        <span class="cell-label">Skills</span>
-        <ul>
-          <li>Editorial design, typesetting</li>
-          <li>Visual identity, illustration</li>
-          <li>AI workflows</li>
-          <li>Audio editing</li>
-          <li>Adobe CC · HTML/CSS</li>
-          <li>Languages<span class="mute">German (native) · English (fluent) · Russian (basics)</span></li>
-        </ul>
-      </div>
-      <div class="cell">
-        <span class="cell-label">On the side</span>
-        <ul>
-          <li>Music projects<span class="mute">Miles of Hope, emo · Skyglow, post-rock</span></li>
-          <li>Pottery<span class="mute">Still learning</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
 
   <!-- PHOTOGRAPHY ===================================================== -->
   <section class="sec" id="photography" aria-labelledby="photo-h">

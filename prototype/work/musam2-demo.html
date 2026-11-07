@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>µSAM² click demo · Sebastian von Haaren</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="µSAM² click demo, 2026: a browser demo of interactive cell segmentation, vibe-coded in a single file in the project’s own visual identity.">
+<meta name="description" content="µSAM² click demo, 2026: a browser demo of the interactive segmentation workflow with simulated images and masks, not the real model. Vibe-coded in a single file.">
 <link rel="stylesheet" href="../css/fonts.css">
 <link rel="stylesheet" href="../css/playfulcv.css">
 <style>
@@ -62,14 +62,14 @@
       <div class="yr">2026<span class="caps">Research demo</span></div>
       <div>
         <h1 class="case-title" id="case-title">µSAM² click demo</h1>
-        <p class="case-lede">A browser demo that lets anyone feel how annotating cells with µSAM² works. Vibe-coded in a single file, dressed in the visual identity I made for the project.</p>
+        <p class="case-lede">A browser demo that shows how simple annotating cells with µSAM² is. It is a demo, not the real model. Vibe-coded in a single file, dressed in the visual identity I made for the project.</p>
       </div>
     </section>
 
     <div class="case-stage">
       <figure class="case-media">
         <img src="../img/musam2-demo-color.webp" width="1600" height="1309" alt="The demo in a browser: a fluorescence image of yeast cells, every cell covered by its own coloured mask, with a side panel listing nineteen objects">
-        <figcaption>After “Segment all”: every cell becomes its own object, in the µSAM² palette.</figcaption>
+        <figcaption>After “Segment all”: every cell becomes its own object, in the µSAM² palette. Images and masks are simulated.</figcaption>
       </figure>
       <p style="margin:18px 0 0"><a class="btn" href="https://testymctasty.netlify.app/" target="_blank" rel="noopener">Try the demo <span aria-hidden="true">↗</span></a></p>
     </div>
@@ -77,13 +77,14 @@
     <div class="case-body">
       <section aria-labelledby="h-idea">
         <h2 class="caps" id="h-idea">The idea</h2>
-        <p>µSAM² helps researchers segment cells in microscopy images: you click on a cell, and the model draws its outline. Explaining that in words takes a paragraph. Trying it takes ten seconds. So I built a demo that runs in any browser, with no installation, no server and no model behind it.</p>
+        <p>µSAM² helps researchers segment cells in microscopy images: you click on a cell, and the model draws its outline. Explaining how simple that is takes a paragraph. Trying it takes ten seconds. So I built a demo that runs in any browser, with no installation and no server.</p>
+        <p><strong>What it is not:</strong> the demo does not run µSAM². There is no model behind it. The micrographs are generated in the page and the masks are simulated, so the results say nothing about how well the real model segments. The demo only shows the workflow and how easy it is to use.</p>
       </section>
 
       <section aria-labelledby="h-how">
         <h2 class="caps" id="h-how">How it works</h2>
         <p>A left click adds a positive point, and each clicked cell becomes its own object with its own colour. A right click takes a region away again. Three synthetic micrographs show the typical cases: fluorescence, brightfield and phase contrast. On a phone, a small switch replaces the right click.</p>
-        <p>The images are generated in the page and the masks are simulated, and the demo says so openly. It shows how the workflow feels, not what the model computes.</p>
+        <p>The demo says openly that its images and masks are simulated. It shows how the workflow feels, not what the model computes.</p>
       </section>
 
       <section aria-labelledby="h-built">
@@ -103,6 +104,7 @@
           <div class="cell"><span class="caps">Role</span><p>Concept · Interaction design · Visual identity · Vibe coding</p></div>
           <div class="cell"><span class="caps">Context</span><p>µSAM², microscopy research</p></div>
           <div class="cell"><span class="caps">Build</span><p>One HTML file, no dependencies</p></div>
+          <div class="cell"><span class="caps">Note</span><p>Demo of the workflow, not the real model. Images and masks are simulated.</p></div>
           <div class="cell"><span class="caps">Link</span><p><a href="https://testymctasty.netlify.app/" target="_blank" rel="noopener">Open the demo</a></p></div>
         </div>
       </aside>

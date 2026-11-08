@@ -49,7 +49,7 @@ PAGES['index.html'] = [
     ('content="Sebastian von Haaren, Göttingen: AI in practice, communication and design. Vibe-coded demos, design skills for AI, editorial design and illustration."',
      'content="Sebastian von Haaren, Göttingen: KI in der Praxis, Kommunikation und Gestaltung. Gevibecodete Demos, Design-Skills für KI, Editorial Design und Illustration."'),
     ('content="AI in practice, communication and design. Göttingen."', 'content="KI in der Praxis, Kommunikation und Gestaltung. Göttingen."'),
-    ('content="https://kenobeutel.github.io/Portfolio/prototype/"', 'content="https://kenobeutel.github.io/Portfolio/prototype/de/"'),
+    ('content="https://kenobeutel.github.io/Portfolio/"', 'content="https://kenobeutel.github.io/Portfolio/de/"'),
     ('>Skip to work</a>', '>Zu den Arbeiten springen</a>'),
     ('<p class="caps">AI · Communication · Design</p>', '<p class="caps">KI · Kommunikation · Gestaltung</p>'),
     ('alt="Portrait of Sebastian von Haaren, printed in cobalt"', 'alt="Porträt von Sebastian von Haaren, in Kobaltblau gedruckt"'),
@@ -151,7 +151,7 @@ PAGES['index.html'] = [
 ]
 
 PAGES['cv.html'] = [
-    ('<br><a href="https://kenobeutel.github.io/Portfolio/prototype/">kenobeutel.github.io/Portfolio/prototype</a>', '<br><a href="https://kenobeutel.github.io/Portfolio/prototype/de/">kenobeutel.github.io/Portfolio/prototype/de</a>'),
+    ('<br><a href="https://kenobeutel.github.io/Portfolio/">kenobeutel.github.io/Portfolio</a>', '<br><a href="https://kenobeutel.github.io/Portfolio/de/">kenobeutel.github.io/Portfolio/de</a>'),
     ('<title>CV · Sebastian von Haaren</title>', '<title>Lebenslauf · Sebastian von Haaren</title>'),
     ('content="Curriculum vitae of Sebastian von Haaren: AI, communication and design. Communication and project management in AI research, media design, B.Sc. Business Administration."',
      'content="Lebenslauf von Sebastian von Haaren: KI, Kommunikation und Gestaltung. Kommunikation und Projektmanagement in der KI-Forschung, Mediengestaltung, B.Sc. Betriebswirtschaftslehre."'),

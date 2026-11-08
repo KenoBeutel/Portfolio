@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lebenslauf · Sebastian von Haaren</title>
+<link rel="alternate" hreflang="en" href="https://kenobeutel.github.io/Portfolio/cv.html">
+<link rel="alternate" hreflang="de" href="https://kenobeutel.github.io/Portfolio/de/cv.html">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Lebenslauf von Sebastian von Haaren: KI, Kommunikation und Gestaltung. Kommunikation und Projektmanagement in der KI-Forschung, Mediengestaltung, B.Sc. Betriebswirtschaftslehre.">
+<link rel="stylesheet" href="../css/fonts.css?v=7">
+<link rel="stylesheet" href="../css/playfulcv.css?v=7">
+<style>
+/* CV: anchor (qualifications, name stack, own line) → experience with the station thread
+   → education on the same thread → calendar grid → poster foot. Three columns read top to bottom:
+   when | what and where | what to ask about. */
+.cv-anchor { padding-block: 40px 30px; }
+.cv-anchor .caps { margin: 0 0 16px; }
+.cv-title { margin: 0; font: 600 clamp(40px, 6vw, 72px)/.95 var(--f-struct); letter-spacing: -.035em; }
+
+.cv-list > .station > .cv {
+  display: grid; grid-template-columns: var(--col-year) minmax(0, 1fr) minmax(0, 1.25fr); gap: 0 28px;
+  padding-block: 22px; border-bottom: 1px solid var(--ink-line);
+}
+.cv-list > .station:last-child > .cv { border-bottom: 0; }
+.cv-list .talk-label { grid-template-columns: var(--col-year) minmax(0, 1fr) minmax(0, 1.25fr); }
+.cv-list { --col-year: 158px; }
+.cv .yr .caps { white-space: nowrap; }
+@media (max-width: 1023px) { .cv-list { --col-year: 132px; } .cv .yr .caps { white-space: normal; } }
+.cv .org { margin-top: 5px; }
+.edu .cv { padding-block: 16px; }
+.edu .role { font-size: 16px; }
+.edu .talk li { font-size: 17px; }
+.cv-grid { margin-top: 56px; }
+.cv-grid .cell li .mute { margin-top: 1px; }
+.tel-note { display: block; margin-top: 10px; font: 500 12px/1.4 var(--f-struct); color: var(--ink-mute); }
+
+@media (max-width: 899px) {
+  .cv-list > .station > .cv { grid-template-columns: var(--col-year) minmax(0, 1fr); gap: 10px 20px; }
+  .cv-list .cv .talk { grid-column: 2; }
+}
+@media (max-width: 559px) {
+  .cv-list > .station > .cv { grid-template-columns: minmax(0, 1fr); }
+  .cv-list .cv .yr { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .cv-list .cv .yr .caps { margin: 0; }
+  .cv-list .cv .talk { grid-column: 1; }
+}
+/* print: one clean A4 document, two pages, no site chrome */
+@media print {
+  @page { size: A4; margin: 0; }
+  html, body { background: var(--paper) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body::after { display: none; }
+  .head, .back, .theme-btn, .skip, .foot, .copy, .tools { display: none !important; }
+  .wrap { padding: 13mm 15mm 10mm; max-width: none; }
+  .cv-anchor { padding-block: 0 4mm; display: flex; justify-content: space-between; align-items: flex-end; gap: 8mm; }
+  .cv-anchor .caps { margin: 0 0 2mm; }
+  .cv-title { font-size: 26pt; }
+  .print-contact { display: block !important; text-align: right; font: 500 8.5pt/1.5 var(--f-struct); }
+  .print-contact a { text-decoration: none; }
+  .sec { padding-block: 3mm 0; }
+  .sec-head { margin-bottom: 2mm; padding-top: 2mm; }
+  .sec-head h2 { font-size: 15pt; }
+  .cv-list { --col-year: 30mm; }
+  .cv-list > .station > .cv { grid-template-columns: var(--col-year) minmax(0, .9fr) minmax(0, 1.5fr) !important; gap: 0 5mm; padding-block: 3mm; break-inside: avoid; }
+  .cv-list .cv .talk { grid-column: auto !important; }
+  .cv-list .cv .yr { display: block !important; font-size: 13pt; }
+  .cv-list .cv .yr .caps { margin-top: 1.2mm !important; font-size: 6.5pt; white-space: normal; }
+  .role { font-size: 9.5pt; }
+  .org { font-size: 8pt; margin-top: 1mm; }
+  .talk li, .edu .talk li { font-size: 9.5pt; line-height: 1.38; }
+  .edu .cv { padding-block: 1.6mm; }
+  .edu .role { font-size: 9pt; }
+  .cv-grid { margin-top: 6mm; grid-template-columns: repeat(4, minmax(0, 1fr)) !important; break-inside: avoid; }
+  .cv-grid .cell { min-height: 0; padding: 3mm 3.5mm; }
+  .cv-grid .cell li { font-size: 8.5pt; }
+  .cv-grid .cell-label { font-size: 7pt; margin-bottom: 2mm; }
+  .thread { display: none; }
+  .stations { padding-left: 0; }
+  section[aria-labelledby="proj-h"] { break-before: page; padding-top: 13mm; }
+  .cv-grid .cell a { overflow-wrap: anywhere; }
+  .cv-anchor .caps { max-width: 110mm; }
+  a { color: inherit; }
+}
+.print-contact { display: none; }
+.back { margin: 0; padding-top: 34px; }
+.back a { text-decoration: none; }
+.back a:hover { text-decoration: underline; }
+</style>
+<script>try{sessionStorage.getItem('pcv-paper')==='night'&&document.documentElement.setAttribute('data-paper','night')}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#experience">Zur Berufserfahrung springen</a>
+<div class="wrap">
+  <header class="head">
+    <a class="sig" href="index.html">sebastian.von.haaren</a>
+    <nav class="nav caps" aria-label="Hauptnavigation">
+      <a href="index.html#ai">KI</a>
+      <a href="index.html#work">Arbeiten</a>
+      <a href="index.html#about">Über mich</a>
+      <a href="index.html#music">Musik</a>
+      <a href="cv.html" aria-current="page">Lebenslauf</a>
+    </nav>
+    <div class="tools">
+      <nav class="lang caps" aria-label="Sprache"><a href="#" hreflang="de" lang="de" aria-current="true">DE</a><span aria-hidden="true">/</span><a href="../cv.html" hreflang="en" lang="en">EN</a></nav>
+      <button class="theme-btn" type="button" aria-label="Zu Nachtpapier wechseln" aria-pressed="false">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"/></svg>
+    </button>
+    </div>
+  </header>
+
+  <main>
+    <p class="back"><a class="caps" href="index.html">← zurück zum Portfolio</a></p>
+
+    <section class="cv-anchor" aria-labelledby="cv-title">
+      <div>
+      <p class="caps">Sebastian von Haaren · KI · Kommunikation · Gestaltung</p>
+      <h1 class="cv-title" id="cv-title">Lebenslauf</h1>
+      </div>
+      <p class="print-contact"><a href="mailto:sebastian.vonhaaren@gmail.com">sebastian.vonhaaren@gmail.com</a><br><a href="https://www.linkedin.com/in/sebastian-von-haaren/">linkedin.com/in/sebastian-von-haaren</a><br><a href="https://kenobeutel.github.io/Portfolio/de/">kenobeutel.github.io/Portfolio/de</a></p>
+    </section>
+
+    <!-- EXPERIENCE ===================================================== -->
+    <section class="sec" id="experience" aria-labelledby="exp-h">
+      <div class="sec-head"><h2 id="exp-h">Berufserfahrung</h2></div>
+      <div class="cv-list">
+        <ol class="stations cv-list" reversed data-straight>
+          <li class="station" data-focus>
+            <div class="cv">
+              <div class="yr">2024<span class="caps">Sep. 2024 – heute · 50 %</span></div>
+              <div>
+                <p class="role">Kommunikations- und Projektmanager</p>
+                <p class="org">L3S Research Center · Leibniz Universität Hannover</p>
+              </div>
+              <ul class="talk">
+                <li>Öffentlichkeitsarbeit für das KI-Forschungszentrum L3S und für CAIMed, das niedersächsische Zentrum für KI in der Medizin: rund fünf Forschungsveranstaltungen im Jahr, Websites, drei Social-Media-Kanäle, Layout und Grafikdesign. Ich leite zwei studentische Hilfskräfte an und koordiniere zwei Vollzeitstellen.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="station">
+            <div class="cv">
+              <div class="yr">2024<span class="caps">Jan. 2024 – heute · 50 %</span></div>
+              <div>
+                <p class="role">Mediengestalter</p>
+                <p class="org">CIDAS · University of Göttingen</p>
+              </div>
+              <ul class="talk">
+                <li>Websites, Logos, Abbildungen für wissenschaftliche Veröffentlichungen und Lehrvideos, darunter das <a href="work/nature-methods.html">Nature-Methods-Cover</a> und das Erscheinungsbild von <a href="work/musam2-demo.html">µSAM²</a>. Außerdem betreue ich die Social-Media-Kanäle von KISSKI, dem KI-Servicezentrum für kritische Infrastruktur, und unterstütze Community- und Veranstaltungsmanagement.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="station">
+            <div class="cv">
+              <div class="yr">2023<span class="caps">Jan. – Dez. 2023</span></div>
+              <div>
+                <p class="role">Projektmanager</p>
+                <p class="org">CIDAS · University of Göttingen</p>
+              </div>
+              <ul class="talk">
+                <li>Konzept, Organisation und Erscheinungsbild der Ausstellung <a href="work/ki-data-science.html">KI &amp; Data Science Entdecken</a>, die KI für ein breites Publikum greifbar gemacht hat. Außerdem habe ich die Katalogisierung von Data-Science-Lernmaterialien koordiniert und das KISSKI-Logo sowie Websites gestaltet.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="station">
+            <div class="cv">
+              <div class="yr">2021<span class="caps">Okt. 2021 – Juli 2022</span></div>
+              <div>
+                <p class="role">Projektkoordinator, Europa-Zertifikat</p>
+                <p class="org">Philosophische Fakultät · Universität Göttingen</p>
+              </div>
+              <ul class="talk">
+                <li>Planung und Koordination eines Hochschulzertifikats: ein Online-Selbstlernmodul, ein Präsenzmodul und Lernvideos, dazu Kooperationsvereinbarungen über Fakultätsgrenzen hinweg.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="station">
+            <div class="cv">
+              <div class="yr">2021<span class="caps">Mai – Nov. 2021</span></div>
+              <div>
+                <p class="role">Studentische Hilfskraft, Websites und Digital Humanities</p>
+                <p class="org">Geschichtswissenschaft · Universität Göttingen</p>
+              </div>
+              <ul class="talk">
+                <li>Websites und Grafiken für das Fach und eine Einschätzung, wie die Forschungsinfrastruktur CLARIAH-DE dessen Projekte unterstützen kann.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="station">
+            <div class="cv">
+              <div class="yr">2017<span class="caps">Sep. 2017 – Dez. 2022</span></div>
+              <div>
+                <p class="role">Content-Management</p>
+                <p class="org">xplace GmbH</p>
+              </div>
+              <ul class="talk">
+                <li>Musik- und Hörbuchinhalte in einem Content-Management-System, Chartposter für die MediaSaturn-Gruppe, Einarbeitung neuer Kolleginnen und Kollegen und Qualitätssicherung.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="station">
+            <div class="cv">
+              <div class="yr">2011<span class="caps">Juli 2011 – Sep. 2015</span></div>
+              <div>
+                <p class="role">Kaufmännischer Angestellter und Ausbilder</p>
+                <p class="org">KOBAU Betriebsführungs GmbH · Bremerhaven</p>
+              </div>
+              <ul class="talk">
+                <li>Kreditoren- und Debitorenbuchhaltung, Monatsabschlüsse und die Ausbildung von zwei Auszubildenden bis zur Abschlussprüfung.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PROJECTS ======================================================= -->
+    <section class="sec edu" aria-labelledby="proj-h">
+      <div class="sec-head"><h2 id="proj-h">Ausgewählte Projekte</h2></div>
+      <ol class="stations cv-list" reversed data-straight>
+        <li class="station">
+          <div class="cv">
+            <div class="yr">2026</div>
+            <div>
+              <p class="role"><a href="work/musam2-demo.html">µSAM²-Klickdemo</a></p>
+              <p class="org">Vibe Coding · Interaktion · Erscheinungsbild</p>
+            </div>
+            <ul class="talk"><li>Eine Browser-Demo, die zeigt, wie einfach der Segmentierungsablauf ist. Simuliert, nicht das echte Modell.</li></ul>
+          </div>
+        </li>
+        <li class="station">
+          <div class="cv">
+            <div class="yr">2026</div>
+            <div>
+              <p class="role"><a href="work/design-skills.html">Design-Skills</a></p>
+              <p class="org">Claude Skills · Designsprachen</p>
+            </div>
+            <ul class="talk"><li>Meine visuellen Stile, so aufgeschrieben, dass sich die KI daran hält.</li></ul>
+          </div>
+        </li>
+        <li class="station">
+          <div class="cv">
+            <div class="yr">2025</div>
+            <div>
+              <p class="role"><a href="work/nature-methods.html">Nature-Methods-Cover</a></p>
+              <p class="org">Illustration · Märzausgabe</p>
+            </div>
+            <ul class="talk"><li>Cover für „Segment Anything for Microscopy“ von Archit et al.</li></ul>
+          </div>
+        </li>
+        <li class="station">
+          <div class="cv">
+            <div class="yr">2023</div>
+            <div>
+              <p class="role"><a href="work/planto.html">Planto</a></p>
+              <p class="org">Autor · Editorial Design · Satz</p>
+            </div>
+            <ul class="talk"><li>Ein Buch über Gemüseanbau im Selbstverlag, geschrieben, gestaltet und gesetzt.</li></ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- EDUCATION ====================================================== -->
+    <section class="sec edu" aria-labelledby="edu-h">
+      <div class="sec-head"><h2 id="edu-h">Ausbildung</h2></div>
+      <ol class="stations cv-list" reversed data-straight>
+        <li class="station">
+          <div class="cv">
+            <div class="yr">2021</div>
+            <div>
+              <p class="role">B.Sc. Betriebswirtschaftslehre</p>
+              <p class="org">University of Göttingen</p>
+            </div>
+            <ul class="talk"><li>Schwerpunkt Konsumentenverhalten.</li></ul>
+          </div>
+        </li>
+        <li class="station">
+          <div class="cv">
+            <div class="yr">2014</div>
+            <div>
+              <p class="role">Ausbildereignung (AEVO)</p>
+              <p class="org">IHK Bremen / Bremerhaven</p>
+            </div>
+            <ul class="talk"></ul>
+          </div>
+        </li>
+        <li class="station">
+          <div class="cv">
+            <div class="yr">2011</div>
+            <div>
+              <p class="role">Bürokaufmann</p>
+              <p class="org">Ausbildung · KOBAU, Bremerhaven</p>
+            </div>
+            <ul class="talk"></ul>
+          </div>
+        </li>
+        <li class="station">
+          <div class="cv">
+            <div class="yr">2008</div>
+            <div>
+              <p class="role">Höhere Handelsschule</p>
+              <p class="org">Zwei Jahre · Bremerhaven</p>
+            </div>
+            <ul class="talk"></ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- GRID ============================================================ -->
+    <section aria-label="Kontakt, Kenntnisse, Sprachen, nebenbei">
+      <div class="grid4 cv-grid">
+      <div class="cell">
+        <span class="cell-label">Kontakt</span>
+        <ul>
+          <li><a href="mailto:sebastian.vonhaaren@gmail.com">sebastian.vonhaaren@gmail.com</a> <button class="copy" type="button" data-copy="sebastian.vonhaaren@gmail.com">kopieren</button></li>
+          <li><a href="https://www.linkedin.com/in/sebastian-von-haaren/" target="_blank" rel="noopener">LinkedIn<span aria-hidden="true"> ↗</span></a></li>
+          <li>Göttingen<span class="mute">Deutschland</span></li>
+        </ul>
+      </div>
+      <div class="cell">
+        <span class="cell-label">Kenntnisse</span>
+        <ul>
+          <li>KI-Tools<span class="mute">Claude (Projects, Skills, Claude Code) · ChatGPT · Gemini</span></li>
+          <li>Prompting und effektives Vibe Coding</li>
+          <li>Editorial Design, Satz</li>
+          <li>Erscheinungsbild, Illustration</li>
+          <li>Audiobearbeitung</li>
+          <li>Adobe CC · HTML/CSS</li>
+        </ul>
+      </div>
+      <div class="cell">
+        <span class="cell-label">Sprachen</span>
+        <ul>
+          <li>Deutsch<span class="mute">Muttersprache</span></li>
+          <li>Englisch<span class="mute">Fließend</span></li>
+          <li>Russisch<span class="mute">Grundkenntnisse</span></li>
+        </ul>
+      </div>
+      <div class="cell">
+        <span class="cell-label">Nebenbei</span>
+        <ul>
+          <li>Musikprojekte<span class="mute">Miles of Hope, emo · Skyglow, post-rock</span></li>
+          <li>Töpfern<span class="mute">Noch am Lernen</span></li>
+        </ul>
+      </div>
+    </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span class="place">Göttingen</span>
+    <span class="caps mute">Lebenslauf · <span data-year>2026</span></span>
+  </footer>
+</div>
+<script src="../js/playfulcv.js?v=7"></script>
+</body>
+</html>

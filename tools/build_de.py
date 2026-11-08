@@ -1,4 +1,4 @@
-"""Build the German pages under prototype/de/ from the English pages and add the DE/EN switch.
+"""Build the German pages under de/ from the English pages and add the DE/EN switch.
 
 Run from the repo root:  python3 tools/build_de.py
 English pages are the source. Re-run after every English change; de/ is regenerated.
@@ -7,8 +7,8 @@ import os, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from i18n_de import COMMON, PAGES
 
-ROOT = os.path.join(os.path.dirname(__file__), '..', 'prototype')
-BASE = 'https://kenobeutel.github.io/Portfolio/prototype/'
+ROOT = os.path.join(os.path.dirname(__file__), '..')
+BASE = 'https://kenobeutel.github.io/Portfolio/'
 PAGES_LIST = ['index.html', 'cv.html'] + ['work/' + f for f in sorted(os.listdir(os.path.join(ROOT, 'work'))) if f.endswith('.html')]
 
 
